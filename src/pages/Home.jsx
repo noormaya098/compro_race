@@ -3,6 +3,7 @@ import Welcome from '../components/welcome';
 import StatusbarComponents from '../components/statusbar';
 import SejarahComponeent from '../components/Sejarah';
 import OurService from '../components/Ourservice';
+import PartnerComponents from '../components/PartnerAndClient';
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
       <SejarahComponeent />
       </div>
       <OurService/>
+      <PartnerComponents/>
     </div>
   );
 }
