@@ -22,7 +22,7 @@ function SejarahComponeent() {
     };
 
     return (
-        <div className=' grid grid-cols-2 mb-52 w-9/12 mt-20 mx-auto '>
+        <div className=' grid grid-cols-2 mb-52  mt-20  '>
             <motion.div
                 initial="hidden"
                 animate={isPastTriggerPoint ? "visible" : "hidden"}
