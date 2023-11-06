@@ -8,7 +8,9 @@ import RouterPage from '../router.jsx'
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <React.StrictMode>
   <BrowserRouter>
+  <div className='min-w-full'>
     <RouterPage />
+  </div>
   </BrowserRouter>
   // </React.StrictMode>,
 )

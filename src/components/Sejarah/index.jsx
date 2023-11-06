@@ -7,7 +7,7 @@ function SejarahComponeent() {
 
     useEffect(() => {
         return scrollY.onChange((latest) => {
-            const triggerPoint = 480;
+            const triggerPoint = 450;
             setIsPastTriggerPoint(latest > triggerPoint);
         });
     }, [scrollY]);
