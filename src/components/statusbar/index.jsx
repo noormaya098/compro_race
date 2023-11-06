@@ -13,30 +13,23 @@ function StatusbarComponents({ children }) {
             // sethide(false)
         }
     })
-    const fade = {
-        initial: {
-            opacity: 0,
-            x: -200,
-        },
-        animate: {
-            opacity: 1,
-            x: 0
-        }
-    }
+
     return (
-        <div className=" bg-transparent sticky">
-            <div className="w-screen h-[117px] px-20 py-5 flex justify-between items-center">
-                <motion.div
-                    initial={{opacity : 0 , x : -200}}
-                    animate={{opacity : 1 , x : 0}}
-                    viewport={{
-                        once : true
-                    }}
-                    transition={{ type: "tween", stiffness: 100 }}
+        <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+                duration: 0.8,
+                delay: 0.5,
+                ease: [0, 0.71, 0.2, 1.01]
+            }}
+            className=" bg-transparent sticky ">
+            <div className="w-screen  h-[117px] px-20 py-5 flex justify-between items-center">
+                <div
                     className="w-[197px] h-[77px]"
                 >
                     <img src={Race_New} alt="Race New Logo" />
-                </motion.div>
+                </div>
                 <div className="flex justify-start items-start gap-10 ">
                     <div className="text-white text-2xl  cursor-pointer hover:border-b-2 font-semibold text-[16px] hover:border-white">Tentang Kami</div>
                     <div className="text-white text-2xl  cursor-pointer hover:border-b-2 font-semibold text-[16px] hover:border-white">Cek Ongkir</div>
@@ -44,7 +37,7 @@ function StatusbarComponents({ children }) {
                     <div className="text-white text-2xl  cursor-pointer hover:border-b-2 font-semibold text-[16px] hover:border-white">Race Karir</div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }
 

@@ -5,10 +5,10 @@ import SejarahComponeent from '../components/Sejarah';
 
 function Home() {
   return (
-    <>
+    <div className=' overflow-hidden'>
       <Welcome />
       <SejarahComponeent />
-    </>
+    </div>
   );
 }
 
