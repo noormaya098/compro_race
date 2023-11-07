@@ -1,8 +1,11 @@
-import React, { useEffect } from 'react';
-import Race_New from "../../assets/Race_New.png"
+import React, { useEffect, useState } from 'react';
+import Race_New from "../../assets/Race_New _Bg.png"
 import { motion, useMotionValueEvent, useScroll } from "framer-motion"
+import { useLocation, useNavigate } from 'react-router-dom';
 function StatusbarComponents({ children }) {
     const { scrollY } = useScroll()
+    const router = useLocation();
+    const [pathname, setPathname] = useState(router.pathname);
     useMotionValueEvent(scrollY, "change", (latest) => {
         const Sebelumnya = scrollY.getPrevious()
         console.log(latest)
@@ -13,6 +16,19 @@ function StatusbarComponents({ children }) {
             // sethide(false)
         }
     })
+    useEffect(() => {
+        setPathname(router.pathname);
+    }, [router.pathname]);
+
+    const pindahhalaman = useNavigate()
+    function UbahHalaman(e) {
+        console.log(e);
+        if (e === "cekresi") {
+            pindahhalaman("/cekresi")
+        } else if (e === "/") {
+            pindahhalaman("/")
+        }
+    }
 
     return (
         <motion.div
@@ -23,7 +39,7 @@ function StatusbarComponents({ children }) {
             //     delay: 0.5,
             //     ease: [0, 0.71, 0.2, 1.01]
             // }}
-            className=" bg-transparent sticky ">
+            className={`sticky ${pathname === "/" ? "bg-transparent " : "bg-red-500 "} `}>
             <div className="w-screen  h-[117px] px-20 py-5 flex justify-between items-center">
                 <div
                     className="w-[197px] h-[77px]"
@@ -31,9 +47,9 @@ function StatusbarComponents({ children }) {
                     <img src={Race_New} alt="Race New Logo" />
                 </div>
                 <div className="flex justify-start items-start gap-10 ">
-                    <div className="text-white text-2xl  cursor-pointer hover:border-b-2 font-semibold text-[16px] hover:border-white">Tentang Kami</div>
+                    <div id='/' onClick={(e) => UbahHalaman(e.target.id)} className="text-white text-2xl  cursor-pointer hover:border-b-2 font-semibold text-[16px] hover:border-white">Tentang Kami</div>
                     <div className="text-white text-2xl  cursor-pointer hover:border-b-2 font-semibold text-[16px] hover:border-white">Cek Ongkir</div>
-                    <div className="text-white text-2xl  cursor-pointer hover:border-b-2 font-semibold text-[16px] hover:border-white">Cek Resi</div>
+                    <div id='cekresi' onClick={(e) => UbahHalaman(e.target.id)} className="text-white text-2xl  cursor-pointer hover:border-b-2 font-semibold text-[16px] hover:border-white">Cek Resi</div>
                     <div className="text-white text-2xl  cursor-pointer hover:border-b-2 font-semibold text-[16px] hover:border-white">Race Karir</div>
                 </div>
             </div>
