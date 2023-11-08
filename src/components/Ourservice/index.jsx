@@ -49,7 +49,7 @@ function OurService() {
                     variants={jempolorang}
                     transition={{ type: "tween" }}
                 >
-                    <h1 className='text-center text-[64px] text-white font-semibold  mt-28'>Our Service</h1>
+                    <h1 className='text-center text-[64px] text-white font-semibold ph:text-[32px] ph:mt-36 mt-28'>Our Service</h1>
                 </motion.div>
                 <div className='w-9/12 mx-auto mt-16  '>
                     <motion.div
@@ -58,9 +58,9 @@ function OurService() {
                         variants={charter}
                         transition={{ type: "tween" }}
                     >
-                        <h1 className='text-white text-[48px] font-semibold'>Charter & Courier</h1>
+                        <h1 className='text-white text-[48px] font-semibold ph:text-[24px]'>Charter & Courier</h1>
                     </motion.div>
-                    <div className='card-wrapper grid grid-cols-3 mt-16 '>
+                    <div className='card-wrapper grid grid-cols-3 mt-16 ph:grid-cols-1 ph:space-y-7'>
                         <motion.div
                             className='w-[341px] bg-white h-[468px] rounded-[20px]'
                             initial="hidden"
@@ -111,10 +111,10 @@ function OurService() {
                 </div>
             </div >
             <div
-                className='w-9/12 mx-auto mt-16'
+                className='w-9/12 mx-auto mt-16   '
 
             >
-                <div className=' w-[1064px] h-[385px] mt-40 '>
+                <div className=' w-[1064px]  h-[385px] mt-40 '>
                     <motion.p
                         initial="hidden"
                         animate={nilaiScroll >= 2000 ? "visible" : "hidden"}
@@ -123,8 +123,8 @@ function OurService() {
                             hidden: { opacity: 0, x: -200 }
                         }}
                         transition={{ duration: 1, delay: 0.2 }}
-                        className='text-[#F05423] text-[36px] font-semibold '>E-commerce Fulfillment</motion.p>
-                    <div className=' grid grid-cols-2 mt-8'>
+                        className='text-[#F05423] text-[36px] ph:text-[24px] font-semibold '>E-commerce Fulfillment</motion.p>
+                    <div className=' grid grid-cols-2 mt-8 ph:grid-cols-1 '>
                         <motion.div
                             initial="hidden"
                             animate={nilaiScroll >= 2000 ? "visible" : "hidden"}
@@ -134,9 +134,9 @@ function OurService() {
                             }}
                             transition={{ duration: 1, delay: 0.2 }}
                         >
-                            <img src={fulfilment} />
+                            <img className='ph:w-[280px] ph:h-[175px]' src={fulfilment} />
                         </motion.div>
-                        <div className='items-center '>
+                        <div className='items-center ph:text-start '>
                             <motion.p
                                 initial="hidden"
                                 animate={nilaiScroll >= 2000 ? "visible" : "hidden"}
@@ -145,7 +145,7 @@ function OurService() {
                                     hidden: { opacity: 0, y: -200 }
                                 }}
                                 transition={{ duration: 1, delay: 0.2 }}
-                                className='mt-9 text-[20px] text-[#F05423]'>Race serving all operational fulfillment activities, starting from the Inbound process, QC Checking, Labeling, Storing, Packing, Outbound to Delivery</motion.p>
+                                className='mt-9 text-[20px] ph:text-[14px] text-[#F05423]'>Race serving all operational fulfillment activities,<br/> starting from the Inbound process, QC Checking,<br/>  Labeling, Storing, Packing, Outbound to Delivery</motion.p>
                             <motion.p
                                 initial="hidden"
                                 animate={nilaiScroll >= 2000 ? "visible" : "hidden"}
@@ -154,7 +154,7 @@ function OurService() {
                                     hidden: { opacity: 0, x: 200 }
                                 }}
                                 transition={{ duration: 1, delay: 0.2 }}
-                                className='mt-12 text-[20px] text-[#F05423]'>Freeing SMEs and business people from the burden of fixed costs, Fulfillment Service as well as providing opportunities to develop business in strategic areas in Indonesia with minimal risk</motion.p>
+                                className='mt-12 text-[20px] ph:text-[14px] text-[#F05423]'>Freeing SMEs and business people from the burden <br/> of fixed costs, Fulfillment Service as well as providing <br/> opportunities to develop business in <br/> strategic areas in Indonesia with minimal risk</motion.p>
                         </div>
                     </div>
                 </div>
