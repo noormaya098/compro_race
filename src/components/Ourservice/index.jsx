@@ -51,7 +51,7 @@ function OurService() {
                 >
                     <h1 className='text-center text-[64px] text-white font-semibold ph:text-[32px] ph:mt-36 mt-28'>Our Service</h1>
                 </motion.div>
-                <div className='w-9/12 mx-auto mt-16  '>
+                <div className='w-9/12 mx-auto mt-16 ph:w-11/12   '>
                     <motion.div
                         initial="hidden"
                         animate={isPastTriggerPoint2 ? "visible" : "hidden"}
@@ -60,8 +60,8 @@ function OurService() {
                     >
                         <h1 className='text-white text-[48px] font-semibold ph:text-[24px]'>Charter & Courier</h1>
                     </motion.div>
-                    <div className='card-wrapper grid grid-cols-3 mt-16 ph:grid-cols-1 ph:space-y-7'>
-                        <motion.div
+                    <div className='card-wrapper grid grid-cols-3 mt-16 ph:grid-cols-1 ph:space-y-7 ph:flex ph:flex-col items-center'>
+                        <motion.div 
                             className='w-[341px] bg-white h-[468px] rounded-[20px]'
                             initial="hidden"
                             animate={isPastTriggerPoint3 ? "visible" : "hidden"}
