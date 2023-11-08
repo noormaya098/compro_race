@@ -145,7 +145,7 @@ function OurService() {
                                     hidden: { opacity: 0, y: -200 }
                                 }}
                                 transition={{ duration: 1, delay: 0.2 }}
-                                className='mt-9 text-[20px] ph:text-[14px] text-[#F05423]'>Race serving all operational fulfillment activities, starting from the Inbound process, QC Checking,  Labeling, Storing, Packing, Outbound to Delivery</motion.p>
+                                className='mt-9 text-[20px] ph:text-[16px] text-[#F05423]'>Race serving all operational fulfillment activities, starting from the Inbound process, QC Checking,  Labeling, Storing, Packing, Outbound to Delivery</motion.p>
                             <motion.p
                                 initial="hidden"
                                 animate={nilaiScroll >= 2000 ? "visible" : "hidden"}
@@ -154,7 +154,7 @@ function OurService() {
                                     hidden: { opacity: 0, x: 200 }
                                 }}
                                 transition={{ duration: 1, delay: 0.2 }}
-                                className='mt-12 text-[20px] ph:text-[14px] text-[#F05423]'>Freeing SMEs and business people from the burden  of fixed costs, Fulfillment Service as well as providing  opportunities to develop business in  strategic areas in Indonesia with minimal risk</motion.p>
+                                className='mt-12 text-[20px] ph:text-[16px] text-[#F05423]'>Freeing SMEs and business people from the burden  of fixed costs, Fulfillment Service as well as providing  opportunities to develop business in  strategic areas in Indonesia with minimal risk</motion.p>
                         </div>
                     </div>
                 </div>

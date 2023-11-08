@@ -15,7 +15,7 @@ function PartnerComponents() {
     return (
         <div className='w-9/12 mx-auto mt-56 mb-32'>
             <h1 className='text-center text-[48px] font-semibold'>Partner and Clients</h1>
-            <div className='wrap-gambar grid grid-cols-4 mt-20'>
+            <div className='wrap-gambar grid grid-cols-4 mt-20 ph:space-x-5'>
                 <div>
                     <img src={erlangga} />
                 </div>
@@ -54,11 +54,11 @@ function PartnerComponents() {
                     <img src={chilibeli} />
                 </div>
 
-            </div> 
+            </div>
             <div className='w-full'>
-                <h1 className='text-[48px] text-center font-semibold mt-16'>Excited to collaborate with  RACE?</h1>
+                <h1 className='text-[48px] text-center font-semibold mt-16 ph:text-[32px] ph:mt-[50px]'>Excited to collaborate with  RACE?</h1>
                 <div className=' text-center justify-items-center flex justify-center w-full'>
-                    <button className='bg-[#F05423] w-[150px] h-[60px] font-semibold text-white mt-6 text-[24px] mb-64 rounded-md'>Contact us</button>
+                    <button className='bg-[#F05423] w-[150px] h-[60px] font-semibold text-white mt-6 text-[24px] mb-64 ph:rounded-xl ph:mt-12 rounded-md'>Contact us</button>
                 </div>
             </div>
         </div>
