@@ -4,7 +4,7 @@ import CekResiKomponents from '../../components/CekResi'
 
 function CekResi() {
   return (
-    <div>
+    <div className=''>
       <StatusbarComponents />
       <CekResiKomponents />
     </div>
