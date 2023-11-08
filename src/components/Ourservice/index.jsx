@@ -114,7 +114,7 @@ function OurService() {
                 className='w-9/12 mx-auto mt-16   '
 
             >
-                <div className=' w-[1064px]  h-[385px] mt-40 '>
+                <div className=' md:w-[1064px]   h-[385px] mt-40 '>
                     <motion.p
                         initial="hidden"
                         animate={nilaiScroll >= 2000 ? "visible" : "hidden"}
@@ -145,7 +145,7 @@ function OurService() {
                                     hidden: { opacity: 0, y: -200 }
                                 }}
                                 transition={{ duration: 1, delay: 0.2 }}
-                                className='mt-9 text-[20px] ph:text-[14px] text-[#F05423]'>Race serving all operational fulfillment activities,<br/> starting from the Inbound process, QC Checking,<br/>  Labeling, Storing, Packing, Outbound to Delivery</motion.p>
+                                className='mt-9 text-[20px] ph:text-[14px] text-[#F05423]'>Race serving all operational fulfillment activities, starting from the Inbound process, QC Checking,  Labeling, Storing, Packing, Outbound to Delivery</motion.p>
                             <motion.p
                                 initial="hidden"
                                 animate={nilaiScroll >= 2000 ? "visible" : "hidden"}
@@ -154,7 +154,7 @@ function OurService() {
                                     hidden: { opacity: 0, x: 200 }
                                 }}
                                 transition={{ duration: 1, delay: 0.2 }}
-                                className='mt-12 text-[20px] ph:text-[14px] text-[#F05423]'>Freeing SMEs and business people from the burden <br/> of fixed costs, Fulfillment Service as well as providing <br/> opportunities to develop business in <br/> strategic areas in Indonesia with minimal risk</motion.p>
+                                className='mt-12 text-[20px] ph:text-[14px] text-[#F05423]'>Freeing SMEs and business people from the burden  of fixed costs, Fulfillment Service as well as providing  opportunities to develop business in  strategic areas in Indonesia with minimal risk</motion.p>
                         </div>
                     </div>
                 </div>

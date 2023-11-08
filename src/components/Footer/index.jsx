@@ -10,7 +10,7 @@ function FooterComponents() {
             backgroundRepeat: 'no-repeat'
         }}>
             <div className='w-11/12 mx-auto'>
-                <div className=' grid grid-cols-5  '>
+                <div className=' grid grid-cols-6  '>
                     <div className='mt-5'>
                         <img className='w-[88px] h-[57px]' src={RaceLogo} />
                     </div>
@@ -19,9 +19,7 @@ function FooterComponents() {
                         <p className='text-[16px]'>Profil Perusahaan</p>
                         <p className='text-[16px]'>Hubungan Kami</p>
                         <p className='text-[16px]'>Karir</p>
-                        <p className='text-[24px] mt-8'>Lainnya</p>
-                        <p className='text-[16px]'>FAQ</p>
-                        <p className='text-[16px]'>Kemitraan</p>
+
                     </div>
                     <div className='mt-5 text-white'>
                         <p className='text-[24px]'>Produk</p>
@@ -33,6 +31,11 @@ function FooterComponents() {
                         <p className='text-[16px]'>Lacak Resi</p>
                         <p className='text-[16px]'>Cek Tarif</p>
                         <p className='text-[16px]'>Lokasi</p>
+                    </div>
+                    <div className='mt-5 text-white'>
+                        <p className='text-[24px] '>Lainnya</p>
+                        <p className='text-[16px]'>FAQ</p>
+                        <p className='text-[16px]'>Kemitraan</p>
                     </div>
                     <div className='mt-5 text-white'>
                         <p className='text-[24px]'>Download Apps</p>
