@@ -58,7 +58,7 @@ function PartnerComponents() {
             <div className='w-full'>
                 <h1 className='text-[48px] text-center font-semibold mt-16'>Excited to collaborate with  RACE?</h1>
                 <div className=' text-center justify-items-center flex justify-center w-full'>
-                    <button className='bg-[#F05423] w-[200px] h-[78px] font-semibold text-white mt-6 text-[24px] rounded-md'>Contact us</button>
+                    <button className='bg-[#F05423] w-[150px] h-[60px] font-semibold text-white mt-6 text-[24px] mb-64 rounded-md'>Contact us</button>
                 </div>
             </div>
         </div>

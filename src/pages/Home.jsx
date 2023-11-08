@@ -4,6 +4,7 @@ import StatusbarComponents from '../components/statusbar';
 import SejarahComponeent from '../components/Sejarah';
 import OurService from '../components/Ourservice';
 import PartnerComponents from '../components/PartnerAndClient';
+import FooterComponents from '../components/Footer';
 
 function Home() {
   return (
@@ -15,6 +16,7 @@ function Home() {
       </div>
       <OurService/>
       <PartnerComponents/>
+      <FooterComponents/>
     </div>
   );
 }
