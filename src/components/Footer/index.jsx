@@ -47,6 +47,8 @@ function FooterComponents() {
                     </div>
                 </div>
             </div>
+
+            {/* mobile */}
             <div className='w-full hidden ph:block bottom-0 h-[612px] overflow-hidden ' style={{
                 backgroundImage: `url(${BackgroundMobile})`, backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
@@ -70,7 +72,7 @@ function FooterComponents() {
                         <ul className='text-[13px]'>Kemitraan</ul>
                         <ul className='mt-5 text-[16px]'>Download Apps</ul>
                     </div>
-                    <div className='grid grid-cols-2 mt-3'>
+                    <div className='grid grid-cols-2 mt-3 w-full '>
                         <div>
                             <img src={googleplay} />
                         </div>

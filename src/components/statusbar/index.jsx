@@ -56,7 +56,7 @@ function StatusbarComponents({ children }) {
 
             </motion.div>
             <div className='opacity-100 md:opacity-0 ml-5 mt-7 h-7 flex items-center ph:flex ph:justify-between  mx-auto w-11/12'>
-                <div className='rounded-full bg-opacity-50 bg-red-500 w-[40px] h-[40px] flex items-center justify-center'>
+                <div className={`rounded-full  ${pathname === "/" ? "bg-white bg-opacity-20" : "bg-red-500 bg-opacity-70"}  w-[40px] h-[40px] flex items-center justify-center`}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-align-justify">
                         <line x1="3" y1="6" x2="21" y2="6" />
                         <line x1="3" y1="12" x2="21" y2="12" />
