@@ -6,12 +6,14 @@ import fulfilment from "../../assets/fulfilment 1.png"
 import { motion, useMotionValueEvent, useScroll } from "framer-motion"
 function OurService() {
     const { scrollY } = useScroll();
+    const [nilaiScroll, setnilaiScroll] = useState()
     const [isPastTriggerPoint, setIsPastTriggerPoint] = useState(false);
     const [isPastTriggerPoint2, setIsPastTriggerPoint2] = useState(false);
     const [isPastTriggerPoint3, setIsPastTriggerPoint3] = useState(false);
 
     useEffect(() => {
         return scrollY.onChange((latest) => {
+            setnilaiScroll(latest)
             const triggerPoint = 1269;
             const triggerPoint2 = 1500;
             const triggerPoint3 = 1600;
@@ -108,16 +110,51 @@ function OurService() {
 
                 </div>
             </div >
-            <div className='w-9/12 mx-auto mt-16'>
-                <div className=' w-[1064px] h-[385px] '>
-                    <p className='text-[#F05423] text-[36px] font-semibold '>E-commerce Fulfillment</p>
+            <div
+                className='w-9/12 mx-auto mt-16'
+
+            >
+                <div className=' w-[1064px] h-[385px] mt-40 '>
+                    <motion.p
+                        initial="hidden"
+                        animate={nilaiScroll >= 2000 ? "visible" : "hidden"}
+                        variants={{
+                            visible: { opacity: 1, x: 0 },
+                            hidden: { opacity: 0, x: -200 }
+                        }}
+                        transition={{ duration: 1, delay: 0.2 }}
+                        className='text-[#F05423] text-[36px] font-semibold '>E-commerce Fulfillment</motion.p>
                     <div className=' grid grid-cols-2 mt-8'>
-                        <div>
+                        <motion.div
+                            initial="hidden"
+                            animate={nilaiScroll >= 2000 ? "visible" : "hidden"}
+                            variants={{
+                                visible: { opacity: 1, x: 0 },
+                                hidden: { opacity: 0, x: -200 }
+                            }}
+                            transition={{ duration: 1, delay: 0.2 }}
+                        >
                             <img src={fulfilment} />
-                        </div>
+                        </motion.div>
                         <div className='items-center '>
-                            <p className='mt-9 text-[20px] text-[#F05423]'>Race serving all operational fulfillment activities, starting from the Inbound process, QC Checking, Labeling, Storing, Packing, Outbound to Delivery</p>
-                            <p className='mt-12 text-[20px] text-[#F05423]'>Freeing SMEs and business people from the burden of fixed costs, Fulfillment Service as well as providing opportunities to develop business in strategic areas in Indonesia with minimal risk</p>
+                            <motion.p
+                                initial="hidden"
+                                animate={nilaiScroll >= 2000 ? "visible" : "hidden"}
+                                variants={{
+                                    visible: { opacity: 1, y: 0 },
+                                    hidden: { opacity: 0, y: -200 }
+                                }}
+                                transition={{ duration: 1, delay: 0.2 }}
+                                className='mt-9 text-[20px] text-[#F05423]'>Race serving all operational fulfillment activities, starting from the Inbound process, QC Checking, Labeling, Storing, Packing, Outbound to Delivery</motion.p>
+                            <motion.p
+                                initial="hidden"
+                                animate={nilaiScroll >= 2000 ? "visible" : "hidden"}
+                                variants={{
+                                    visible: { opacity: 1, x: 0 },
+                                    hidden: { opacity: 0, x: 200 }
+                                }}
+                                transition={{ duration: 1, delay: 0.2 }}
+                                className='mt-12 text-[20px] text-[#F05423]'>Freeing SMEs and business people from the burden of fixed costs, Fulfillment Service as well as providing opportunities to develop business in strategic areas in Indonesia with minimal risk</motion.p>
                         </div>
                     </div>
                 </div>

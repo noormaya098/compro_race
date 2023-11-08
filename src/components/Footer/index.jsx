@@ -5,7 +5,7 @@ import googleplay from "../../assets/image 11.png"
 import appstore from "../../assets/image 12.png"
 function FooterComponents() {
     return (
-        <div className='w-screen bg-red-400 bottom-0 h-[404px] ' style={{
+        <div className='w-full bg-red-400 bottom-0 h-[404px] overflow-hidden ' style={{
             backgroundImage: `url(${footerbg})`, backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat'
         }}>
