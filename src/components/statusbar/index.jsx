@@ -71,7 +71,7 @@ function StatusbarComponents({ children }) {
                 </div>
                 {/* <img className='w-[62px] h-[48px]' src={Race_News} /> */}
             </div>
-            <div className={`${DiClickNihstate === false ? "opacity-0" : "opacity-100 "} md:hidden  h-screen bg-white mb-64 w-1/2 fixed z-[1]`}>
+            <div className={`${DiClickNihstate === false ? "opacity-0" : "opacity-100 "} md:hidden  h-screen ph:hidden bg-white mb-64 w-1/2 fixed z-[1]`}>
                 <div className='flex justify-end m-3'>
                     <svg onClick={(e) => {
                         setDiClickNihstate(false)
