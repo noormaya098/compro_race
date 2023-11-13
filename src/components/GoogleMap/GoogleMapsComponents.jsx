@@ -1,32 +1,91 @@
-import React from 'react';
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
-import { keygoogle } from '../../Api/GoogleApi'; // Ensure this import is correct
+import React, { useState, useEffect } from 'react';
+import { GoogleMap, Marker, DirectionsRenderer, useJsApiLoader } from '@react-google-maps/api';
+import { GoogleApiKey } from '../../Api/GoogleApi';
+import GoogleMpasStore from '../../ZustandStore/GooglemapStore';
 
-function MapsGoogle({ width = '100%', height = '400px', AlamatMuatBongkarCoordinate }) {
+function MapsGoogle({ width = '100%', height = '400px', LatLongMuat, LatLongBongkar }) {
+    const [map, setMap] = useState(null);
+    const [directionJalanan, setDirectionJalanan] = useState(null);
+    const { validasimaps } = GoogleMpasStore()
     const containerStyle = {
         width: width,
         height: height,
     };
 
-    const { isLoaded } = useJsApiLoader({
+    const { isLoaded, loadError } = useJsApiLoader({
         id: 'google-map-script',
-        googleMapsApiKey: keygoogle
+        googleMapsApiKey: GoogleApiKey // Replace with your actual API key
     });
 
-    const center = AlamatMuatBongkarCoordinate || { lat: -34.397, lng: 150.644 };
+    useEffect(() => {
+        if (!isLoaded || !LatLongMuat || !LatLongBongkar) {
+            return;
+        }
 
+        const calculateRoute = async () => {
+            if (typeof window.google === 'undefined') {
+                console.error('Google Maps API is not defined.');
+                return;
+            }
+
+            const directionsService = new window.google.maps.DirectionsService();
+
+            try {
+                const result = await directionsService.route({
+                    origin: new window.google.maps.LatLng(LatLongMuat.lat, LatLongMuat.lng),
+                    destination: new window.google.maps.LatLng(LatLongBongkar.lat, LatLongBongkar.lng),
+                    travelMode: window.google.maps.TravelMode.DRIVING,
+                });
+                setDirectionJalanan(result);
+                GoogleMpasStore.setState({ validasimaps: true })
+            } catch (error) {
+                console.error('Failed to get route: ', error);
+            }
+        };
+
+        calculateRoute();
+    }, [isLoaded, LatLongMuat, LatLongBongkar]); // Added isLoaded to the dependency array
+
+    const center = {
+        lat: (LatLongMuat.lat + LatLongBongkar.lat) / 2,
+        lng: (LatLongMuat.lng + LatLongBongkar.lng) / 2
+    };
+
+    const mapOnLoad = React.useCallback(function callback(map) {
+        setMap(map);
+    }, []);
+
+    const mapOnUnmount = React.useCallback(function callback(map) {
+        setMap(null);
+    }, []);
+
+    if (loadError) {
+        return <div>Error loading maps</div>;
+    }
     if (!isLoaded) {
-        return <div>Loading...</div>;
+        return <div></div>;
     }
 
     return (
-        <GoogleMap
-            mapContainerStyle={containerStyle}
-            center={center}
-            zoom={10}
-        >
-            {/* Child components like markers, info windows, etc. */}
-        </GoogleMap>
+        <>
+            {directionJalanan && (
+                <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={14} onLoad={mapOnLoad} onUnmount={mapOnUnmount}>
+                    <Marker position={{ lat: LatLongMuat.lat, lng: LatLongMuat.lng }} />
+                    <Marker position={{ lat: LatLongBongkar.lat, lng: LatLongBongkar.lng }} />
+                    {directionJalanan && (
+                        <DirectionsRenderer
+                            directions={directionJalanan}
+                            options={{
+                                polylineOptions: {
+                                    strokeColor: '#1B5EEE',
+                                    strokeWeight: 2,
+                                },
+                            }}
+                        />
+                    )}
+                </GoogleMap>
+            )}
+        </>
     );
 }
 
