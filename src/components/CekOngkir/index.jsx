@@ -38,8 +38,8 @@ function CekOngkirComponents() {
                         <div className=' mx-auto font-semibold text-[32px]'>Check Service Prices</div>
                         <div className='flex justify-start '>
                             <div className='w-screen  h-[114px]  flex justify-start mt-10 border rounded-lg shadow-md'>
-                                <div className='flex  m-5 space-x-28'>
-                                    <div>
+                                <div className='grid grid-cols-4  m-5 space-x-28'>
+                                    <div className=''>
                                         <p className='text-[#F05423]'>From</p>
                                         <Select placeholder='Departure City' className='mt-6 w-full'
                                             showSearch
