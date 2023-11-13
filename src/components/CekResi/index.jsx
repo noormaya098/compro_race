@@ -46,8 +46,8 @@ function CekResiKomponents() {
     const historykendaraan = async (id_msm) => {
         try {
             const data = await axios.get(`https://api.eurekalogistics.co.id/sm/get-history-kendaraan?id_msm=${id_msm}`)
-            console.log(data.data);
-            setDataHistory([data.data])
+            console.log(data?.data);
+            setDataHistory([data?.data])
         } catch (error) {
 
         }
