@@ -3,6 +3,7 @@ import Race_New from "../../assets/Race_New_Baru.png"
 import { motion, useMotionValueEvent, useScroll } from "framer-motion"
 import { useLocation, useNavigate } from 'react-router-dom';
 import Race_News from "../../assets/Race_New _Bg.png"
+import ClickSiteBarStore from '../../ZustandStore/ClickSiteBar';
 function StatusbarComponents({ children }) {
     const { scrollY } = useScroll()
     const router = useLocation();
@@ -35,9 +36,14 @@ function StatusbarComponents({ children }) {
             pindahhalaman("/karir")
         }
     }
+    const DiClickNihstate = ClickSiteBarStore(state => state.DiClickNih)
+    const setDiClickNihstate = ClickSiteBarStore(state => state.setDiClickNih)
+    useEffect(() => {
 
+    }, [DiClickNihstate])
+    console.log(`ini di statusbar`, DiClickNihstate);
     return (
-        <>
+        <div>
             <motion.div
                 className={`ph:hidden  ${pathname === "/" ? "bg-transparent " : "bg-white shadow-md "} ${NilaiScroll > 50 ? " top-0 fixed transition-all duration-1000  ease-in-out bg-white shadow-md z-50" : "opacity-1 transition-all top-0 fixed"}   `}>
                 <div className="w-screen  h-[117px] px-20 py-5 flex justify-between items-center">
@@ -53,20 +59,40 @@ function StatusbarComponents({ children }) {
                         <div id='karir' onClick={(e) => UbahHalaman(e.target.id)} className={`${pathname === "/" ? " " : "text-[#F05423]  "}${NilaiScroll > 50 ? " text-[#FEBCA7]" : NilaiScroll <= 3 && pathname === "/" ? "text-white" : ""} text-2xl  cursor-pointer hover:border-b-2 font-semibold text-[16px] hover:border-white`}>Race Karir</div>
                     </div>
                 </div>
-
             </motion.div>
-            <div className='opacity-100 md:opacity-0 ml-5 mt-7 h-7 flex items-center ph:flex ph:justify-between  mx-auto w-11/12'>
-                <div className={`rounded-full  ${pathname === "/" ? "bg-white bg-opacity-20" : "bg-red-500 bg-opacity-70"}  w-[40px] h-[40px] flex items-center justify-center`}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-align-justify">
+
+            <div className={`md:hidden ${DiClickNihstate === true ? "ph:hidden" : "ph:opacity-100"}  ml-5 mt-7 h-7 flex items-center ph:flex ph:justify-end  mx-auto w-11/12`}>
+                <div className={`rounded-full  ${pathname === "/" ? "bg-white bg-opacity-80" : "bg-orange-600 bg-opacity-100"}  w-[40px] h-[40px] flex items-center justify-center`}>
+                    <svg onClick={() => setDiClickNihstate(true)} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-align-justify">
                         <line x1="3" y1="6" x2="21" y2="6" />
                         <line x1="3" y1="12" x2="21" y2="12" />
                         <line x1="3" y1="18" x2="21" y2="18" />
                     </svg>
                 </div>
-                <img className='w-[62px] h-[48px]' src={Race_News} />
+                {/* <img className='w-[62px] h-[48px]' src={Race_News} /> */}
             </div>
-
-        </>
+            <div className={`${DiClickNihstate === false ? "opacity-0" : "opacity-100 "} md:hidden  h-screen bg-white mb-64 w-1/2 fixed z-[1]`}>
+                <div className='flex justify-end m-3'>
+                    <svg onClick={(e) => {
+                        setDiClickNihstate(false)
+                        console.log(e)
+                    }} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-align-right"><line x1="21" x2="3" y1="6" y2="6" /><line x1="21" x2="9" y1="12" y2="12" /><line x1="21" x2="7" y1="18" y2="18" /></svg>
+                </div>
+                <div className='flex justify-center mt-10'>
+                    <img src={Race_New} />
+                </div>
+                <div className='menu text-center mt-14 space-y-10 font-semibold'>
+                    <ul id='/' onClick={(e) => UbahHalaman(e.target.id)} className='text-[16px] text-[#FEBCA7]'>Tentang Kami</ul>
+                    <ul id='cekongkir' onClick={(e) => UbahHalaman(e.target.id)} className='text-[16px] text-[#FEBCA7]'>Cek Ongkir</ul>
+                    <ul id='cekresi' onClick={(e) => UbahHalaman(e.target.id)} className='text-[16px] text-[#FEBCA7]'>Cek Resi</ul>
+                    <ul id='karir' onClick={(e) => UbahHalaman(e.target.id)} className='text-[16px] text-[#FEBCA7]'>Race Karir</ul>
+                    <div className=' text-center  '>
+                        <p className='mt-64'>Hubungi Kami</p>
+                        <button className='mt-4 w-[92px] font-semibold text-white h-[37px] bg-[#F05423] rounded-lg'>Contact us</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     );
 }
 
