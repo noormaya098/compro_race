@@ -18,7 +18,7 @@ function CekResiKomponents() {
         try {
             const data = await axios.get(`
         https://elogs.eurekalogistics.co.id/data_json/operasional/get_detail_sm?msm=${InputanNilai}`)
-            if (data.data === null) {
+            if (data?.data === null) {
                 notification.error({
                     message: "Data Tidak Ditemukan"
                 })
@@ -30,7 +30,7 @@ function CekResiKomponents() {
                     AlamatMuat: data?.data?.alamat_muat,
                     AlamatBongkar: data?.data?.alamat_bongkar
                 })
-                setdataDetailsemua([data.data]);
+                setdataDetailsemua([data?.data]);
                 GetLatLongMuatBongkar(data?.data?.alamat_muat, data?.data?.alamat_bongkar);
                 historykendaraan(data?.data?.id_msm)
 
@@ -52,8 +52,8 @@ function CekResiKomponents() {
 
         }
     }
-    console.log(DataHistory[0].data);
-    const mapdata = DataHistory[0].data.map((i) =>
+    console.log(DataHistory[0]?.data);
+    const mapdata = DataHistory[0]?.data.map((i) =>
         i
     )
     console.log(mapdata);
