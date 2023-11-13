@@ -1,7 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Rectangle from "../../assets/Rectangle 37.png"
 import FooterComponents from '../Footer'
+import MapsGoogle from '../GoogleMap/GoogleMapsComponents'
+import axios from 'axios'
+import { notification } from 'antd'
 function CekResiKomponents() {
+    const [InputanNilai, setInputanNilai] = useState("")
+    console.log(InputanNilai);
+    const AmbilDetailAwal = async () => {
+        try {
+
+
+            const data = await axios.get(`
+        https://elogs.eurekalogistics.co.id/data_json/operasional/get_detail_sm?msm=${InputanNilai}`)
+        notification.success({
+            message: "Berhasil Mendapatkan Data"
+        })   
+        console.log(data);
+        } catch (error) {
+            notification.error({
+                message: "Terjadi Error"
+            })
+        }
+    }
+    useState(() => {
+        AmbilDetailAwal()
+    }, [])
+
     return (
         <>
             <div className='mt-32 w-9/12 mx-auto  '>
@@ -13,11 +38,12 @@ function CekResiKomponents() {
                     </p>
 
                     <div className='md:w-[1064px] md:h-[105px] ph:h-[130px] flex flex-col  mt-5 shadow rounded-lg'>
-                        <input className='md:w-[874px] md:h-[60px] m-5  border rounded-md' placeholder='Masukkan nomor resi pengiriman anda'></input>
+                        <input className='md:w-[874px] md:h-[60px] m-5  border rounded-md' onChange={(e) => setInputanNilai(e.target.value)} placeholder='Masukkan nomor resi pengiriman anda'></input>
                         <div className='flex justify-center'>
-                            <button className='bg-[#F05423] ph:w-[260px]  p-3 rounded-md h-[45px] text-white font-semibold '>Search</button>
+                            <button className='bg-[#F05423] ph:w-[260px]  p-3 rounded-md h-[45px] text-white font-semibold ' onClick={AmbilDetailAwal}>Search</button>
                         </div>
                     </div>
+
                     <div className='text-start mt-8 text-[16px] text-[#F05423] font-semibold'>Detail pengiriman paket anda</div>
                     <div className='table border-2  w-full h-[404px] mb-10 rounded-xl mt-3 '>
                         <div className='m-5'>
@@ -34,7 +60,7 @@ function CekResiKomponents() {
                             <p className='mt-3'>Detail Status</p>
                             <p>Sedang Transit di DC Cakung (Jakarta Timur)</p>
                             <div className='flex justify-center'>
-                            <button className='h-[37px] w-full rounded-lg mt-5 text-orange-600 bg-white border-2 border-orange-600'>Close</button>
+                                <button className='h-[37px] w-full rounded-lg mt-5 text-orange-600 bg-white border-2 border-orange-600'>Close</button>
                             </div>
                         </div>
                     </div>
@@ -44,13 +70,20 @@ function CekResiKomponents() {
                     <p className=" text-start text-[32px] font-semibold font-['Plus_Jakarta_Sans'] bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(92deg, #F05423 11.5%, #A83CCE 46.87%, #3D62B0 85.41%)' }}>
                         Lacak Paket Anda
                     </p>
+
                     <div className='md:w-[1064px] md:h-[105px] ph:h-[130px] mt-5 shadow rounded-lg'>
-                        <input className='md:w-[874px] md:h-[60px] m-5  border rounded-md' placeholder='Masukkan nomor resi pengiriman anda'></input>
-                        <button className='bg-[#F05423] ph:w-[260px]  p-3 rounded-md h-[45px] text-white font-semibold '>Search</button>
+                        <input onChange={(e) => setInputanNilai(e.target.value)} className='md:w-[874px] md:h-[60px] m-5  border rounded-md' placeholder='Masukkan nomor resi pengiriman anda'></input>
+                        <button className='bg-[#F05423] ph:w-[260px]  p-3 rounded-md h-[45px] text-white font-semibold ' onClick={AmbilDetailAwal}>Search</button>
                     </div>
+                </div>
+                <div className='justify-center flex mt-32 ph:hidden w-5/12 mx-auto'>
+                    <MapsGoogle />
                 </div>
                 <div className='justify-center flex mt-32 ph:hidden'>
                     <img className='' src={Rectangle} />
+                </div>
+
+                <div>
                 </div>
                 <p className='ph:hidden text-center mt-24 mb-24 text-black'>Ada kendala?<span className='text-[#F05423]'>Hubungi kami</span> </p>
             </div>
