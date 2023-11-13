@@ -111,8 +111,8 @@ function CekResiKomponents() {
             title: 'Waktu',
             dataIndex: 'pickupDate',
             key: 'pickupDate',
-            render : (item)=>{
-                <Tag>{item.pickupDate}</Tag>
+            render: (pickupDate) => {
+                return pickupDate 
             }
         },
         {
