@@ -48,7 +48,17 @@ function StatusbarComponents({ children }) {
 
   const menu = (
     <Menu>
-       
+      <Menu.Item
+        key="/"
+        onClick={(e) => {
+          toggleDropdown();
+          UbahHalaman(e.key);
+        }}
+      >
+        <div className="hover:text-red-400 text-gray-400">
+        Tentang Kami
+        </div>
+      </Menu.Item>
       <Menu.Item
         key="cekongkir"
         onClick={(e) => {
