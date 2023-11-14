@@ -3,7 +3,7 @@ import Rectangle from "../../assets/Rectangle 37.png"
 import FooterComponents from '../Footer'
 import MapsGoogle from '../GoogleMap/GoogleMapsComponents'
 import axios from 'axios'
-import { notification, Table,Tag } from 'antd'
+import { notification, Table, Tag } from 'antd'
 import GoogleMpasStore from '../../ZustandStore/GooglemapStore'
 import { getCoordinates } from '../../funcs/GetLongLatGoogle'
 function CekResiKomponents() {
@@ -17,7 +17,8 @@ function CekResiKomponents() {
     const AmbilDetailAwal = async () => {
         try {
             const data = await axios.get(`
-        https://elogs.eurekalogistics.co.id/data_json/operasional/get_detail_sm?msm=${InputanNilai}`)
+            http://apirace.eurekalogistics.co.id/sp/get-sm-detail?msm=${InputanNilai}`)
+            console.log(`data`, data?.data?.data[0]);
             if (data?.data === null) {
                 notification.error({
                     message: "Data Tidak Ditemukan"
@@ -27,12 +28,12 @@ function CekResiKomponents() {
                     message: "Sukses Mendapatkan Data"
                 })
                 GoogleMpasStore.setState({
-                    AlamatMuat: data?.data?.alamat_muat,
-                    AlamatBongkar: data?.data?.alamat_bongkar
+                    AlamatMuat: data?.data?.data[0]?.alamatMuat,
+                    AlamatBongkar: data?.data?.data[0]?.alamatBongkar
                 })
-                setdataDetailsemua([data?.data]);
-                GetLatLongMuatBongkar(data?.data?.alamat_muat, data?.data?.alamat_bongkar);
-                historykendaraan(data?.data?.id_msm)
+                setdataDetailsemua([data?.data?.data[0]]);
+                GetLatLongMuatBongkar(data?.data?.data[0]?.alamatMuat, data?.data?.data[0]?.alamatBongkar);
+                historykendaraan(data?.data?.data[0]?.idMsm)
 
 
             }
@@ -45,7 +46,7 @@ function CekResiKomponents() {
 
     const historykendaraan = async (id_msm) => {
         try {
-            const data = await axios.get(`https://api.eurekalogistics.co.id/sm/get-history-kendaraan?id_msm=${id_msm}`)
+            const data = await axios.get(` http://apirace.eurekalogistics.co.id/sp/get-history-kendaraan?id_msm=${id_msm}`)
             console.log(data?.data);
             setDataHistory([data?.data])
         } catch (error) {
@@ -58,6 +59,7 @@ function CekResiKomponents() {
     )
     console.log(mapdata);
     async function GetLatLongMuatBongkar(AlamatMuat, AlamatBongkar) {
+        console.log(`dari func`, AlamatMuat, AlamatBongkar);
         const muat = await getCoordinates(AlamatMuat); // Assuming getCoordinates is the correct function to call
         const bongkar = await getCoordinates(AlamatBongkar);
         setLatLongMuat(muat)
@@ -73,13 +75,13 @@ function CekResiKomponents() {
     const columns = [
         {
             title: 'Alamat Asal',
-            dataIndex: 'alamat_muat',
-            key: 'alamat_muat',
+            dataIndex: 'alamatMuat',
+            key: 'alamatMuat',
         },
         {
             title: 'Alamat Tujuan',
-            dataIndex: 'alamat_bongkar',
-            key: 'alamat_bongkar',
+            dataIndex: 'alamatBongkar',
+            key: 'alamatBongkar',
         },
 
     ];
@@ -93,16 +95,39 @@ function CekResiKomponents() {
             title: 'Jenis Kendaraan',
             dataIndex: 'jenisKendaraan',
             key: 'jenisKendaraan',
+            render: (jenisKendaraan) => {
+                if (jenisKendaraan === "") {
+                    return "-"
+                } else {
+                    return jenisKendaraan
+                }
+            }
         },
         {
             title: 'Nopol',
             dataIndex: 'kodeKendaraan',
             key: 'kodeKendaraan',
+            render: (kodeKendaraan) => {
+                if (kodeKendaraan === "") {
+                    return "-"
+                } else {
+                    return kodeKendaraan
+                }
+
+            }
         },
         {
             title: 'Nama Driver',
             dataIndex: 'driver',
             key: 'driver',
+            render: (driver) => {
+                if (driver === "") {
+                    return "-"
+                } else {
+                    return driver
+                }
+
+            }
         },
 
     ];
@@ -112,7 +137,7 @@ function CekResiKomponents() {
             dataIndex: 'pickupDate',
             key: 'pickupDate',
             render: (pickupDate) => {
-                return pickupDate 
+                return pickupDate
             }
         },
         {
@@ -168,6 +193,7 @@ function CekResiKomponents() {
                     </div>
                 </div>
                 {/* Ini PC */}
+
                 <div className='ph:hidden'>
                     <p className=" text-start text-[32px] font-semibold font-['Plus_Jakarta_Sans'] bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(92deg, #F05423 11.5%, #A83CCE 46.87%, #3D62B0 85.41%)' }}>
                         Lacak Paket Anda
@@ -178,26 +204,29 @@ function CekResiKomponents() {
                         <button className='bg-[#F05423] ph:w-[260px]  p-3 rounded-md h-[45px] text-white font-semibold ' onClick={AmbilDetailAwal}>Search</button>
                     </div>
                 </div>
-                <div className='justify-center grid grid-cols-2 mx-auto mt-32 ph:hidden w-full space-x-3 '>
-                    <div className=' p-5 border-2 shadow-xl rounded-md'>
-                        <div className='font-bold text-center text-[23px]'>Tracking Kiriman</div>
-                        <div className='mt-4'>
-                            <p className='text-[27px] font-bold'>Detail Alamat</p>
-                            <Table columns={columns} dataSource={dataDetailsemua} pagination={false} />
-                            <Table className='mt-1' columns={columns2} dataSource={DataHistory} pagination={false} />
-                            <p className='text-[27px] font-bold mt-3'>History Pengiriman</p>
-                            <Table className='mt-1' columns={columns3} dataSource={mapdata} pagination={false}  />
+                {LatLongMuat && (
+                    <div className='justify-center grid grid-cols-2 mx-auto mt-32 ph:hidden w-full space-x-3 '>
+                        <div className=' p-5 border-2 shadow-xl rounded-md   '>
+                            <div className='font-bold text-center text-[23px]'>Tracking Kiriman</div>
+                            <div className='mt-4'>
+                                <p className='text-[27px] font-bold'>Detail Alamat</p>
+                                <Table columns={columns} dataSource={dataDetailsemua} pagination={false} />
+                                <Table className='mt-1' columns={columns2} dataSource={DataHistory} pagination={false} />
+                                <p className='text-[27px] font-bold mt-3'>History Pengiriman</p>
+                                <Table className='mt-1' columns={columns3} dataSource={mapdata} pagination={false} />
+                            </div>
+                        </div>
+                        <div className='flex flex-col p-5 shadow-xl rounded-md border-2'>
+                            <div className=''>
+                                <MapsGoogle LatLongMuat={LatLongMuat} LatLongBongkar={LatLongBongkar} />
 
-
+                            </div>
+                            <div className='mt-3  h-full justify-center flex items-center border-2 shadow-md rounded-md'>
+                                <img alt='Foto' />
+                            </div>
                         </div>
                     </div>
-                    <div className='flex flex-col p-5 shadow-xl rounded-md border-2'>
-                        <div className=''>
-                            <MapsGoogle LatLongMuat={LatLongMuat} LatLongBongkar={LatLongBongkar} />
-
-                        </div>
-                    </div>
-                </div>
+                )}
                 {validasimaps === false && (
                     <div className='justify-center flex mt-32 ph:hidden'>
                         <img className='' src={Rectangle} />

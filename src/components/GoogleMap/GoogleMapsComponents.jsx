@@ -47,10 +47,11 @@ function MapsGoogle({ width = '100%', height = '400px', LatLongMuat, LatLongBong
     }, [isLoaded, LatLongMuat, LatLongBongkar]); // Added isLoaded to the dependency array
 
     const center = {
-        lat: (LatLongMuat.lat + LatLongBongkar.lat) / 2,
-        lng: (LatLongMuat.lng + LatLongBongkar.lng) / 2
+        lat: (LatLongMuat?.lat + LatLongBongkar?.lat) / 2,
+        lng: (LatLongMuat?.lng + LatLongBongkar?.lng) / 2
     };
-
+console.log(`LatLongMuat`,LatLongMuat);
+console.log(`LatLongBongkar`,LatLongBongkar);
     const mapOnLoad = React.useCallback(function callback(map) {
         setMap(map);
     }, []);
