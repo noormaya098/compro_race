@@ -75,13 +75,13 @@ function CekResiKomponents() {
     const columns = [
         {
             title: 'Alamat Asal',
-            dataIndex: 'alamatMuat',
-            key: 'alamatMuat',
+            dataIndex: 'muat',
+            key: 'muat',
         },
         {
             title: 'Alamat Tujuan',
-            dataIndex: 'alamatBongkar',
-            key: 'alamatBongkar',
+            dataIndex: 'bongkar',
+            key: 'bongkar',
         },
 
     ];
