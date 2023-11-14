@@ -17,7 +17,7 @@ function CekResiKomponents() {
     const AmbilDetailAwal = async () => {
         try {
             const data = await axios.get(`
-            http://apirace.eurekalogistics.co.id/sp/get-sm-detail?msm=${InputanNilai}`)
+            https://apirace.eurekalogistics.co.id/sp/get-sm-detail?msm=${InputanNilai}`)
             console.log(`data`, data?.data?.data[0]);
             if (data?.data === null) {
                 notification.error({
@@ -46,7 +46,7 @@ function CekResiKomponents() {
 
     const historykendaraan = async (id_msm) => {
         try {
-            const data = await axios.get(` http://apirace.eurekalogistics.co.id/sp/get-history-kendaraan?id_msm=${id_msm}`)
+            const data = await axios.get(` https://apirace.eurekalogistics.co.id/sp/get-history-kendaraan?id_msm=${id_msm}`)
             console.log(data?.data);
             setDataHistory([data?.data])
         } catch (error) {
