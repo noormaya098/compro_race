@@ -3,7 +3,7 @@ import Rectangle from "../../assets/Rectangle 37.png"
 import FooterComponents from '../Footer'
 import MapsGoogle from '../GoogleMap/GoogleMapsComponents'
 import axios from 'axios'
-import { notification, Table, Tag } from 'antd'
+import { notification, Table, Tag ,Image } from 'antd'
 import GoogleMpasStore from '../../ZustandStore/GooglemapStore'
 import { getCoordinates } from '../../funcs/GetLongLatGoogle'
 function CekResiKomponents() {
@@ -28,11 +28,11 @@ function CekResiKomponents() {
                     message: "Sukses Mendapatkan Data"
                 })
                 GoogleMpasStore.setState({
-                    AlamatMuat: data?.data?.data[0]?.alamatMuat,
-                    AlamatBongkar: data?.data?.data[0]?.alamatBongkar
+                    AlamatMuat: data?.data?.data[0]?.muat,
+                    AlamatBongkar: data?.data?.data[0]?.bongkar
                 })
                 setdataDetailsemua([data?.data?.data[0]]);
-                GetLatLongMuatBongkar(data?.data?.data[0]?.alamatMuat, data?.data?.data[0]?.alamatBongkar);
+                GetLatLongMuatBongkar(data?.data?.data[0]?.muat, data?.data?.data[0]?.bongkar);
                 historykendaraan(data?.data?.data[0]?.idMsm)
 
 
@@ -151,6 +151,31 @@ function CekResiKomponents() {
             key: 'status',
         },
     ];
+    const columns4 = [
+        // {
+        //     title: 'Update Date',
+        //     dataIndex: 'updateDate',
+        //     key: 'pickupDate',
+        //     render: (pickupDate) => {
+        //         return pickupDate
+        //     }
+        // },
+        {
+            title: 'status',
+            dataIndex: 'keterangan',
+            key: 'keterangan',
+        },
+        {
+            title: 'foto',
+            dataIndex: 'foto',
+            width:"80px",
+            key: 'foto',
+            render: (foto) => {
+                return <Image  
+               src={foto} />
+            }
+        },
+    ];
     return (
         <>
             <div className='mt-32 w-9/12 mx-auto  '>
@@ -205,7 +230,7 @@ function CekResiKomponents() {
                     </div>
                 </div>
                 {LatLongMuat && (
-                    <div className='justify-center grid grid-cols-2 mx-auto mt-32 ph:hidden w-full space-x-3 '>
+                    <div className='justify-center grid grid-cols-2 mx-auto mt-32 ph:hidden w-full space-x-3 overflow-auto h-[580px]'>
                         <div className=' p-5 border-2 shadow-xl rounded-md   '>
                             <div className='font-bold text-center text-[23px]'>Tracking Kiriman</div>
                             <div className='mt-4'>
@@ -221,8 +246,9 @@ function CekResiKomponents() {
                                 <MapsGoogle LatLongMuat={LatLongMuat} LatLongBongkar={LatLongBongkar} />
 
                             </div>
-                            <div className='mt-3  h-full justify-center flex items-center border-2 shadow-md rounded-md'>
-                                <img alt='Foto' />
+                            <div className='mt-3  h-full  border-2 shadow-md rounded-md'>
+                                <Table columns={columns4} dataSource={DataHistory[0]?.data} pagination={false}/>
+                                {/* <img alt='Foto' /> */}
                             </div>
                         </div>
                     </div>
