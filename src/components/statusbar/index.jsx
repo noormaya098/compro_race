@@ -123,14 +123,14 @@ function StatusbarComponents({ children }) {
     <div>
       <motion.div
         className={`ph:hidden  ${
-          pathname === "/" ? "bg-transparent " : "bg-white shadow-md "
+          pathname === "/" ? "bg-white " : "bg-white shadow-md "
         } ${
           NilaiScroll > 50
             ? " top-0 fixed transition-all duration-1000  ease-in-out bg-white shadow-md z-50"
             : "opacity-1 transition-all top-0 fixed"
         }   `}
       >
-        <div className="w-screen  h-[117px] px-20 py-5 flex justify-between items-center">
+        <div className="w-screen  h-[100px] px-20 py-5 flex justify-between items-center">
           <div className="w-[197px] h-[77px] ">
             <img src={Race_New} alt="Race New Logo" />
           </div>
@@ -144,7 +144,7 @@ function StatusbarComponents({ children }) {
                 NilaiScroll > 50
                   ? " text-[#FEBCA7]"
                   : NilaiScroll <= 3 && pathname === "/"
-                  ? "text-white"
+                  ? "text-[#f05423]"
                   : ""
               }  cursor-pointer hover:border-b-2 font-semibold text-[16px] hover:border-white`}
             >
@@ -159,7 +159,7 @@ function StatusbarComponents({ children }) {
                 NilaiScroll > 50
                   ? " text-[#FEBCA7]"
                   : NilaiScroll <= 3 && pathname === "/"
-                  ? "text-white"
+                  ? "text-[#f05423]"
                   : ""
               } cursor-pointer hover:border-b-2 font-semibold text-[16px] hover:border-white`}
             >
@@ -172,7 +172,7 @@ function StatusbarComponents({ children }) {
                 NilaiScroll > 50
                   ? " text-[#FEBCA7]"
                   : NilaiScroll <= 3 && pathname === "/"
-                  ? "text-white"
+                  ? "text-[#f05423]"
                   : ""
               }  text-2xl  cursor-pointer hover:border-b-2 font-semibold text-[16px] hover:border-white `}
             >
@@ -185,7 +185,7 @@ function StatusbarComponents({ children }) {
                 NilaiScroll > 50
                   ? " text-[#FEBCA7]"
                   : NilaiScroll <= 3 && pathname === "/"
-                  ? "text-white"
+                  ? "text-[#f05423]"
                   : ""
               } text-2xl  cursor-pointer hover:border-b-2 font-semibold text-[16px] hover:border-white`}
             >
