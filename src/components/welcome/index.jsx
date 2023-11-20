@@ -1,65 +1,52 @@
 // Welcome.js
 import React from "react";
 import Race_New_Bg from "../../assets/Race_New _Bg.png";
-import Race_Logo from "../../assets/Race_New_Baru.png";
-import Background from "../../assets/Background.png";
-import StatusbarComponents from "../statusbar";
-import SejarahComponeent from "../Sejarah";
-import { motion } from "framer-motion";
+import Property1 from "../../assets/Property 1=Banner 1.png";
+import Property2 from "../../assets/Property 1=Banner 2.png";
+import Property3 from "../../assets/Property 1=Banner 3.png";
+import StatusbarComponents from '../statusbar';
+import SejarahComponeent from '../Sejarah';
+import { motion } from 'framer-motion';
+import { Carousel } from 'antd';
 function Welcome() {
-  return (
-    <>
-      <div
-        className="h-screen overflow-hidden "
-        style={{ backgroundImage: `url(${Background})` }}
-      >
-        <StatusbarComponents />
-        
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            duration: 0.8,
-            delay: 0.5,
-            ease: [0, 0.71, 0.2, 1.01],
-          }}
-          className="text-white mt-32 "
-        >
-          
-          {/* <div className='flex justify-center mb-10'>
+    return (
+        <>
+            <StatusbarComponents />
+            <div
+                className=' overflow-hidden  bg-yellow-200 md:w-screen'>
+                {/* <motion.div
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{
+                        duration: 0.8,
+                        delay: 0.5,
+                        ease: [0, 0.71, 0.2, 1.01]
+                    }}
+                    className='text-white  mt-32 '> */}
+                {/* <div className='flex justify-center mb-10'>
                         <img className='md:opacity-0 ' src={Race_New_Bg} />
                     </div> */}
-          <div className="w-11/12 mx-auto">
-          <img className="hidden md:block mb-10 w-[10%]" src={Race_Logo} />
-            <p className="text-[24px] md:text-[48px] text-start ">
-              Welcome to Raja Cepat
-            </p>
-            <div className=" text-[14px] text-start md:text-[24px] mx-auto mt-8">
-              Fast, Safe delivery and Customer satisfaction<br/> is our <span className="text-[#f05423]">priority</span>. 
-              Find the best logistics solution <br/> for your needs here! priority <span className="text-[#3D62B0]">shipping</span> needs here!
+                <Carousel autoplay className='md:w-screen bg-red-400 flex justify-center md:h-1/6'>
+                    <div className='flex justify-center'>
+                        <img className='w-screen' src={Property1} />
+                    </div>
+
+                    <div>
+                        <img className='w-screen' src={Property2} />
+                    </div>
+                    <div>
+                        <img className='w-screen' src={Property3} />
+                    </div>
+
+                </Carousel>
+                {/* </motion.div> */}
             </div>
-          </div>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            duration: 0.8,
-            delay: 0.5,
-            ease: [0, 0.71, 0.2, 1.01],
-          }}
-          className="flex justify-center mt-10 "
-        >
-          {/* <img className="hidden md:block" src={Race_New_Bg} /> */}
-          <div className="md:hidden mt-16">
-            <button className=" border-white border-2 w-[105px] h-[38px] text-white font-semibold text-[14px] rounded-[10px]">
-              Start Explore
-            </button>
-          </div>
-        </motion.div>
-      </div>
-    </>
-  );
+                <div className='h-auto bg-red-500 flex items-center justify-between p-12 mx-auto'>
+                    <p> Let’s explore more about Raja Cepat</p>
+                    <button>Explore Now</button>
+                </div>
+        </>
+    );
 }
 
 export default Welcome;

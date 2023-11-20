@@ -1,1 +1,1 @@
-export const keygoogle = "AIzaSyCMl-ppZQiP5YTKGQanpSub0oghNck7w_M"
+export const GoogleApiKey = "AIzaSyCMl-ppZQiP5YTKGQanpSub0oghNck7w_M"
