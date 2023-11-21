@@ -123,7 +123,7 @@ function OurService() {
                             hidden: { opacity: 0, x: -200 }
                         }}
                         transition={{ duration: 1, delay: 0.2 }}
-                        className='text-[#F05423] text-[36px] ph:text-[24px] font-semibold '>E-commerce Fulfillment</motion.p>
+                        className='text-[#F05423] text-[36px] ph:text-[24px] font-semibold'>E-commerce Fulfillment</motion.p>
                     <div className=' grid grid-cols-2 mt-8 ph:grid-cols-1 '>
                         <motion.div
                             initial="hidden"
