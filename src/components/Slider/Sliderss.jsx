@@ -57,14 +57,17 @@ function Sliderss() {
           </p>
         </motion.div>
       </div>
+
+
+      {/* slide */}
       <div className="mx-auto w-9/12 grid grid-cols-5 mt-4 justify-center gap-x-4 gap-y-6">
         {data.map((item, index) => (
           <div key={index}>
-            <Card className="border border-blue-600 shadow-lg">
+            <Card className="border border-blue-700 shadow-xl">
               <Image src={item.image} />
               <p className="text-[#3D62B0] text-[16px] font-bold">{item.title}</p>
               <p className="text-black mt-2 text-[14px]">
-                Capacity Max :{item.capacity}
+                Capacity Max :  {item.capacity}
               </p>
               <p className="text-black mt-2 text-[14px]">
                 Vol (cm) : <br />

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import race_sip from "../../assets/race_sip.png";
 import avatarrace from "../../assets/avatar-race2020 1.png";
+import Background from "../../assets/backgroundMilenial.png";
+import assetsss from "../../assets/Assetmilestone.png";
 
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 function SejarahComponeent() {
@@ -32,9 +34,9 @@ function SejarahComponeent() {
         transition={{ type: "tween" }}
         className="md:w-9/12 flex flex-col items-center mx-auto"
       >
-        <img className="w-[253px] h-[253px] " src={avatarrace} />
+        <img className="w-[500px] h-[350px] " src={assetsss} />
         <p
-          className="text-[32px] font-bold text-center text-5xl"
+          className="text-[32px] font-bold text-center text-5xl mt-20"
           style={{
             background: "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
             WebkitBackgroundClip: "text",
