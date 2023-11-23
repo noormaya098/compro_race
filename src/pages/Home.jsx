@@ -6,8 +6,12 @@ import OurService from '../components/Ourservice';
 import PartnerComponents from '../components/PartnerAndClient';
 import FooterComponents from '../components/Footer';
 import SideBarComponents from '../components/sidebar/SideBar';
+import { app, dbdatabase } from '../firebase/config';
+import { doc, onSnapshot } from "firebase/firestore";
 
 function Home() {
+
+
   return (
     <div className=' overflow-hidden'>
       {/* <SideBarComponents/> */}

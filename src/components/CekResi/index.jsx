@@ -6,6 +6,8 @@ import axios from "axios";
 import { notification, Table, Tag, Image } from "antd";
 import GoogleMpasStore from "../../ZustandStore/GooglemapStore";
 import { getCoordinates } from "../../funcs/GetLongLatGoogle";
+import { dbdatabase } from "../../firebase/config";
+import { doc, onSnapshot } from "firebase/firestore";
 function CekResiKomponents() {
   const [InputanNilai, setInputanNilai] = useState("");
   const {
@@ -17,7 +19,11 @@ function CekResiKomponents() {
   } = GoogleMpasStore();
   const [LatLongMuat, setLatLongMuat] = useState("");
   const [LatLongBongkar, setLatLongBongkar] = useState("");
-
+  const firestore = dbdatabase
+  console.log(`firestore ini`, firestore);
+  const unsub = onSnapshot(doc(firestore, "location", "123"), (doc) => {
+    console.log("Current data: ", doc.data());
+  });
   const [DataHistory, setDataHistory] = useState([]);
   const [dataDetailsemua, setdataDetailsemua] = useState([]);
   const AmbilDetailAwal = async () => {

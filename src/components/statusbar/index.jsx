@@ -13,7 +13,7 @@ function StatusbarComponents({ children }) {
   useMotionValueEvent(scrollY, "change", (latest) => {
     const Sebelumnya = scrollY.getPrevious();
     setNilaiScroll(latest);
-    console.log(`ini scroll nilai`, NilaiScroll);
+    // console.log(`ini scroll nilai`, NilaiScroll);
     if (latest > Sebelumnya && latest > 50) {
       // sethide(true)
     } else {
