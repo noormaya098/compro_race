@@ -32,8 +32,8 @@ function MapsGoogle({ width = '100%', height = '400px', LatLongMuat, LatLongBong
 
             try {
                 const result = await directionsService.route({
-                    origin: new window.google.maps.LatLng(LatLongMuat.lat, LatLongMuat.lng),
-                    destination: new window.google.maps.LatLng(LatLongBongkar.lat, LatLongBongkar.lng),
+                    origin: new window.google.maps.LatLng(LatLongMuat?.lat, LatLongMuat?.lng),
+                    destination: new window.google.maps.LatLng(LatLongBongkar?.lat, LatLongBongkar?.lng),
                     travelMode: window.google.maps.TravelMode.DRIVING,
                 });
                 setDirectionJalanan(result);
@@ -71,8 +71,8 @@ console.log(`LatLongBongkar`,LatLongBongkar);
         <>
             {directionJalanan && (
                 <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={14} onLoad={mapOnLoad} onUnmount={mapOnUnmount}>
-                    <Marker position={{ lat: LatLongMuat.lat, lng: LatLongMuat.lng }} />
-                    <Marker position={{ lat: LatLongBongkar.lat, lng: LatLongBongkar.lng }} />
+                    <Marker position={{ lat: LatLongMuat?.lat, lng: LatLongMuat?.lng }} />
+                    <Marker position={{ lat: LatLongBongkar?.lat, lng: LatLongBongkar?.lng }} />
                     {directionJalanan && (
                         <DirectionsRenderer
                             directions={directionJalanan}

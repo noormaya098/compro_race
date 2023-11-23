@@ -70,17 +70,19 @@ function CekResiKomponents() {
       setDataHistory([data?.data]);
     } catch (error) { }
   };
-  
+
   console.log(DataHistory[0]?.data);
   const mapdata = DataHistory[0]?.data.map((i) => i);
   console.log(mapdata);
 
   async function GetLatLongMuatBongkar(AlamatMuat, AlamatBongkar) {
+    setLoading(true)
     console.log(`dari func`, AlamatMuat, AlamatBongkar);
     const muat = await getCoordinates(AlamatMuat); // Assuming getCoordinates is the correct function to call
     const bongkar = await getCoordinates(AlamatBongkar);
     setLatLongMuat(muat);
     setLatLongBongkar(bongkar);
+    setLoading(false)
   }
   useEffect(() => {
     if (LatLongMuat && LatLongBongkar) {
@@ -301,8 +303,8 @@ function CekResiKomponents() {
           </div>
         )}
         {/* INI Maps HP */}
-        {LatLongMuat && (
-          <div className=" md:hidden">
+        {Loading || LatLongMuat && (
+          <div className=" md:hidden overflow-auto">
             <div className="mt-4 ">
               <p className="text-[27px] font-bold">Detail Alamat</p>
               <Table
