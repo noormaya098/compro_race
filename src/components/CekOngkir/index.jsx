@@ -5,7 +5,7 @@ import Regular from "../../assets/Regular.png";
 import FooterComponents from "../Footer";
 import SideBarComponents from "../sidebar/SideBar";
 import ClickSiteBarStore from "../../ZustandStore/ClickSiteBar";
-import { Input, Select } from "antd";
+import { Input, Select , Divider } from "antd";
 import "./Carausel.css";
 import {
   GetProvinsi,
@@ -203,7 +203,7 @@ function CekOngkirComponents() {
                 Our Services
               </p>
 
-              <div className="grid grid-cols-3 space-x-20 mt-10">
+              <div className="grid grid-cols-3 space-x-20 mt-10 ">
                 <div className="w-[258px] h-[325px] ">
                   <img src={orangnaikmotor} />
                   <p className="text-[#F05423] mt-5 text-[24px] font-semibold">
