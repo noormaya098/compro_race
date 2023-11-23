@@ -70,9 +70,11 @@ function CekResiKomponents() {
       setDataHistory([data?.data]);
     } catch (error) { }
   };
+  
   console.log(DataHistory[0]?.data);
   const mapdata = DataHistory[0]?.data.map((i) => i);
   console.log(mapdata);
+
   async function GetLatLongMuatBongkar(AlamatMuat, AlamatBongkar) {
     console.log(`dari func`, AlamatMuat, AlamatBongkar);
     const muat = await getCoordinates(AlamatMuat); // Assuming getCoordinates is the correct function to call
