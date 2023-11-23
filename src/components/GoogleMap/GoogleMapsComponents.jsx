@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { GoogleMap, Marker, DirectionsRenderer, useJsApiLoader } from '@react-google-maps/api';
 import { GoogleApiKey } from '../../Api/GoogleApi';
 import GoogleMpasStore from '../../ZustandStore/GooglemapStore';
-
-function MapsGoogle({ width = '100%', height = '400px', LatLongMuat, LatLongBongkar }) {
+import iconTruck from "../../assets/Truck (1).png"
+function MapsGoogle({ width = '100%', height = '400px', LatLongMuat, LatLongBongkar, LokasiDriverLongLat }) {
     const [map, setMap] = useState(null);
     const [directionJalanan, setDirectionJalanan] = useState(null);
     const { validasimaps } = GoogleMpasStore()
@@ -50,8 +50,8 @@ function MapsGoogle({ width = '100%', height = '400px', LatLongMuat, LatLongBong
         lat: (LatLongMuat?.lat + LatLongBongkar?.lat) / 2,
         lng: (LatLongMuat?.lng + LatLongBongkar?.lng) / 2
     };
-console.log(`LatLongMuat`,LatLongMuat);
-console.log(`LatLongBongkar`,LatLongBongkar);
+    console.log(`LatLongMuat`, LatLongMuat);
+    console.log(`LatLongBongkar`, LatLongBongkar);
     const mapOnLoad = React.useCallback(function callback(map) {
         setMap(map);
     }, []);
@@ -73,6 +73,12 @@ console.log(`LatLongBongkar`,LatLongBongkar);
                 <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={14} onLoad={mapOnLoad} onUnmount={mapOnUnmount}>
                     <Marker position={{ lat: LatLongMuat?.lat, lng: LatLongMuat?.lng }} />
                     <Marker position={{ lat: LatLongBongkar?.lat, lng: LatLongBongkar?.lng }} />
+                    <Marker icon={{
+                        url: iconTruck,
+                        scaledSize: new window.google.maps.Size(30, 30), // Adjust the size here
+                        origin: new window.google.maps.Point(0, 0),
+                        anchor: new window.google.maps.Point(25, 25)
+                    }}  position={{ lat: LokasiDriverLongLat?.latitude, lng: LokasiDriverLongLat?.longitude }} />
                     {directionJalanan && (
                         <DirectionsRenderer
                             directions={directionJalanan}

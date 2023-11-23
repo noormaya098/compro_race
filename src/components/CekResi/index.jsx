@@ -20,6 +20,7 @@ function CekResiKomponents() {
   const [Loading, setLoading] = useState(false)
   const [LatLongMuat, setLatLongMuat] = useState("");
   const [LatLongBongkar, setLatLongBongkar] = useState("");
+  const [LokasiDriverLongLat, setLokasiDriverLongLat] = useState(null)
   const firestore = dbdatabase
   console.log(`firestore ini`, firestore);
   const unsub = onSnapshot(doc(firestore, "location", "123"), (doc) => {
@@ -33,6 +34,8 @@ function CekResiKomponents() {
       const data = await axios.get(`
             https://apirace.eurekalogistics.co.id/sp/get-sm-detail?msm=${InputanNilai}`);
       console.log(`data`, data?.data?.data[0]);
+      setLokasiDriverLongLat(data?.data?.data?.[0]?.positionDriverNow
+      )
       if (data?.data === null) {
         notification.error({
           message: "Data Tidak Ditemukan",
@@ -61,6 +64,7 @@ function CekResiKomponents() {
     }
   };
 
+  console.log(`LokasiDriverLongLat`,LokasiDriverLongLat);
   const historykendaraan = async (id_msm) => {
     try {
       const data = await axios.get(
@@ -289,6 +293,7 @@ function CekResiKomponents() {
                 <MapsGoogle
                   LatLongMuat={LatLongMuat}
                   LatLongBongkar={LatLongBongkar}
+                  LokasiDriverLongLat={LokasiDriverLongLat}
                 />
               </div>
               <div className="mt-3  h-full  border-2 shadow-md rounded-md">
@@ -331,6 +336,7 @@ function CekResiKomponents() {
                 <MapsGoogle
                   LatLongMuat={LatLongMuat}
                   LatLongBongkar={LatLongBongkar}
+                  LokasiDriverLongLat={LokasiDriverLongLat}
                 />
               </div>
               <div className="mt-3  h-full  border-2 shadow-md rounded-md">
