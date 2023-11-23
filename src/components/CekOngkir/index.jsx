@@ -12,7 +12,15 @@ import {
   useProvinsiStore,
 } from "../../ZustandStore/GetProvinsiStore";
 import { GetPriceListCost } from "../../funcs/GetPriceListCost";
+import { dbdatabase } from "../../firebase/config";
+import { doc, onSnapshot } from "firebase/firestore";
 function CekOngkirComponents() {
+  const firestore = dbdatabase
+  console.log(`firestore ini`, firestore);
+  const unsub = onSnapshot(doc(firestore, "location", "123"), (doc) => {
+    console.log("Current data: ", doc.data());
+  });
+
   const DiClickNihstate = ClickSiteBarStore((state) => state.DiClickNih);
   const { selectprovinsi, DatasemuaMuat, DatasemuaBongkar, gram, result } =
     useProvinsiStore();
@@ -32,9 +40,8 @@ function CekOngkirComponents() {
           className={`${DiClickNihstate == false ? "" : ""} ph:hidden`}
         ></div>
         <div
-          className={`mobile w-9-12 bg-red-300 ${
-            DiClickNihstate === true ? "" : "mt-10"
-          } ph:hidden`}
+          className={`mobile w-9-12 bg-red-300 ${DiClickNihstate === true ? "" : "mt-10"
+            } ph:hidden`}
         >
           <div className="mt-">
             <div

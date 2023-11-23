@@ -13,7 +13,7 @@ function StatusbarComponents({ children }) {
   useMotionValueEvent(scrollY, "change", (latest) => {
     const Sebelumnya = scrollY.getPrevious();
     setNilaiScroll(latest);
-    console.log(`ini scroll nilai`, NilaiScroll);
+    // console.log(`ini scroll nilai`, NilaiScroll);
     if (latest > Sebelumnya && latest > 50) {
       // sethide(true)
     } else {
@@ -43,7 +43,7 @@ function StatusbarComponents({ children }) {
   const toggleDropdown = () => {
     setClickBurger(!ClickBurger);
   };
-  useEffect(() => {}, [DiClickNihstate]);
+  useEffect(() => { }, [DiClickNihstate]);
   console.log(`ini di statusbar`, DiClickNihstate);
 
   const menu = (
@@ -56,7 +56,7 @@ function StatusbarComponents({ children }) {
         }}
       >
         <div className="hover:text-red-400 text-gray-400">
-        Tentang Kami
+          Tentang Kami
         </div>
       </Menu.Item>
       <Menu.Item
@@ -67,7 +67,7 @@ function StatusbarComponents({ children }) {
         }}
       >
         <div className="hover:text-red-400 text-gray-400">
-        Cek Ongkir
+          Cek Ongkir
         </div>
       </Menu.Item>
       <Menu.Item
@@ -77,8 +77,8 @@ function StatusbarComponents({ children }) {
           UbahHalaman(e.key);
         }}
       >
-       <div className="hover:text-red-400 text-gray-400">
-        Cek Resi
+        <div className="hover:text-red-400 text-gray-400">
+          Cek Resi
         </div>
       </Menu.Item>
       <Menu.Item
@@ -89,7 +89,7 @@ function StatusbarComponents({ children }) {
         }}
       >
         <div className="hover:text-red-400 text-gray-400">
-        Race Karir
+          Race Karir
         </div>
       </Menu.Item>
     </Menu>
@@ -122,15 +122,13 @@ function StatusbarComponents({ children }) {
   return (
     <div>
       <motion.div
-        className={`ph:hidden  ${
-          pathname === "/" ? "bg-white " : "bg-white shadow-md "
-        } ${
-          NilaiScroll > 50
+        className={`ph:hidden  ${pathname === "/" ? "bg-white " : "bg-white shadow-md "
+          } ${NilaiScroll > 50
             ? " top-0 fixed transition-all duration-1000  ease-in-out bg-white shadow-md z-50"
-            : "opacity-1 transition-all top-0 fixed"
-        }   `}
+            : "top-0 fixed transition-all duration-1000  ease-in-out bg-white shadow-md z-50"
+          }   `}
       >
-        <div className="w-screen  h-[100px] px-20 py-5 flex justify-between items-center">
+        <div className="w-screen h-[100px] px-20 py-5 flex justify-between items-center">
           <div className="w-[197px] h-[77px] ">
             <img src={Race_New} alt="Race New Logo" />
           </div>
@@ -138,56 +136,50 @@ function StatusbarComponents({ children }) {
             <div
               id="/"
               onClick={(e) => UbahHalaman(e.target.id)}
-              className={`${
-                pathname === "/" ? " " : "text-[#F05423] "
-              }  text-2xl ${
-                NilaiScroll > 50
+              className={`${pathname === "/" ? " " : "text-[#F05423] "
+                }  text-2xl ${NilaiScroll > 50
                   ? " text-[#FEBCA7]"
                   : NilaiScroll <= 3 && pathname === "/"
-                  ? "text-[#f05423]"
-                  : ""
-              }  cursor-pointer hover:border-b-2 font-semibold text-[16px] hover:border-white`}
+                    ? "text-[#f05423]"
+                    : ""
+                }  cursor-pointer hover:border-b-2 font-semibold text-[16px] hover:border-white`}
             >
               Tentang Kami
             </div>
             <div
               id="cekongkir"
               onClick={(e) => UbahHalaman(e.target.id)}
-              className={` text-2xl ${
-                pathname === "/" ? " " : "text-[#F05423]  "
-              } ${
-                NilaiScroll > 50
+              className={` text-2xl ${pathname === "/" ? " " : "text-[#F05423]  "
+                } ${NilaiScroll > 50
                   ? " text-[#FEBCA7]"
                   : NilaiScroll <= 3 && pathname === "/"
-                  ? "text-[#f05423]"
-                  : ""
-              } cursor-pointer hover:border-b-2 font-semibold text-[16px] hover:border-white`}
+                    ? "text-[#f05423]"
+                    : ""
+                } cursor-pointer hover:border-b-2 font-semibold text-[16px] hover:border-white`}
             >
               Cek Ongkir
             </div>
             <div
               id="cekresi"
               onClick={(e) => UbahHalaman(e.target.id)}
-              className={`${pathname === "/" ? " " : "text-[#F05423]  "}${
-                NilaiScroll > 50
+              className={`${pathname === "/" ? " " : "text-[#F05423]  "}${NilaiScroll > 50
                   ? " text-[#FEBCA7]"
                   : NilaiScroll <= 3 && pathname === "/"
-                  ? "text-[#f05423]"
-                  : ""
-              }  text-2xl  cursor-pointer hover:border-b-2 font-semibold text-[16px] hover:border-white `}
+                    ? "text-[#f05423]"
+                    : ""
+                }  text-2xl  cursor-pointer hover:border-b-2 font-semibold text-[16px] hover:border-white `}
             >
               Cek Resi
             </div>
             <div
               id="karir"
               onClick={(e) => UbahHalaman(e.target.id)}
-              className={`${pathname === "/" ? " " : "text-[#F05423]  "}${
-                NilaiScroll > 50
+              className={`${pathname === "/" ? " " : "text-[#F05423]  "}${NilaiScroll > 50
                   ? " text-[#FEBCA7]"
                   : NilaiScroll <= 3 && pathname === "/"
-                  ? "text-[#f05423]"
-                  : ""
-              } text-2xl  cursor-pointer hover:border-b-2 font-semibold text-[16px] hover:border-white`}
+                    ? "text-[#f05423]"
+                    : ""
+                } text-2xl  cursor-pointer hover:border-b-2 font-semibold text-[16px] hover:border-white`}
             >
               Race Karir
             </div>
@@ -196,52 +188,49 @@ function StatusbarComponents({ children }) {
       </motion.div>
 
       <>
-      <div
-        className={`md:hidden ${
-          DiClickNihstate ? 'ph:hidden' : 'ph:opacity-100'
-        } ml-5 mt-7 h-7 flex items-center ph:flex ph:justify-end mx-auto w-11/12 relative`}
-      >
-        <Dropdown overlay={menu} trigger={['click']} placement="bottomLeft">
-          <Button
-            className={`rounded-full  ${
-              pathname === '/' ? 'bg-white bg-opacity-80' : 'bg-orange-600 bg-opacity-100'
-            } w-[40px] h-[40px] flex items-center justify-center`}
-            onClick={toggleDropdown}
-          >
-            {DiClickNihstate ? 'X' : 
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#ffffff"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-align-justify"
-              >
-                <line x1="3" y1="6" x2="21" y2="6" />
-                <line x1="3" y1="12" x2="21" y2="12" />
-                <line x1="3" y1="18" x2="21" y2="18" />
-              </svg>
-            }
-          </Button>
-        </Dropdown>
+        <div
+          className={`md:hidden ${DiClickNihstate ? 'ph:hidden' : 'ph:opacity-100 '
+            } ml-5 mt-7 h-7 flex items-center ph:flex ph:justify-end mx-auto w-11/12 relative`}
+        >
+          <Dropdown overlay={menu} trigger={['click']} placement="bottomLeft">
+            <Button
+              className={`rounded-full bg-orange-500 mb-5  ${pathname === '/' ? 'bg-white bg-opacity-80' : 'bg-orange-600 bg-opacity-100'
+                } w-[40px] h-[40px] flex items-center justify-center`}
+              onClick={toggleDropdown}
+            >
+              {DiClickNihstate ? 'X' :
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#ffffff"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-align-justify"
+                >
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <line x1="3" y1="12" x2="21" y2="12" />
+                  <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+              }
+            </Button>
+          </Dropdown>
 
-        {DiClickNihstate && (
-          <div className="absolute top-0 right-0 mt-2 mr-2">
-            <button className="text-white" onClick={toggleDropdown}>
-              X
-            </button>
-          </div>
-        )}
-      </div>
-    </>
+          {DiClickNihstate && (
+            <div className="absolute top-0 right-0 mt-2 mr-2">
+              <button className="text-white" onClick={toggleDropdown}>
+                X
+              </button>
+            </div>
+          )}
+        </div>
+      </>
       <div
-        className={`${
-          DiClickNihstate === false ? "opacity-0" : "opacity-100 "
-        } md:hidden  h-screen ph:hidden bg-white mb-64 w-1/2 fixed z-[1]`}
+        className={`${DiClickNihstate === false ? "opacity-0" : "opacity-100 "
+          } md:hidden  h-screen ph:hidden bg-white mb-64 w-1/2 fixed z-[1]`}
       >
         <div className="flex justify-end m-3">
           <svg

@@ -6,6 +6,8 @@ import axios from "axios";
 import { notification, Table, Tag, Image } from "antd";
 import GoogleMpasStore from "../../ZustandStore/GooglemapStore";
 import { getCoordinates } from "../../funcs/GetLongLatGoogle";
+import { dbdatabase } from "../../firebase/config";
+import { doc, onSnapshot } from "firebase/firestore";
 function CekResiKomponents() {
   const [InputanNilai, setInputanNilai] = useState("");
   const {
@@ -15,12 +17,18 @@ function CekResiKomponents() {
     AlamatBongkarCoord,
     validasimaps,
   } = GoogleMpasStore();
+  const [Loading, setLoading] = useState(false)
   const [LatLongMuat, setLatLongMuat] = useState("");
   const [LatLongBongkar, setLatLongBongkar] = useState("");
-
+  const firestore = dbdatabase
+  console.log(`firestore ini`, firestore);
+  const unsub = onSnapshot(doc(firestore, "location", "123"), (doc) => {
+    console.log("Current data: ", doc.data());
+  });
   const [DataHistory, setDataHistory] = useState([]);
   const [dataDetailsemua, setdataDetailsemua] = useState([]);
   const AmbilDetailAwal = async () => {
+    setLoading(true)
     try {
       const data = await axios.get(`
             https://apirace.eurekalogistics.co.id/sp/get-sm-detail?msm=${InputanNilai}`);
@@ -44,7 +52,9 @@ function CekResiKomponents() {
         );
         historykendaraan(data?.data?.data[0]?.idMsm);
       }
+      setLoading(false)
     } catch (error) {
+      setLoading(false)
       notification.error({
         message: "Terjadi Error",
       });
@@ -58,17 +68,21 @@ function CekResiKomponents() {
       );
       console.log(data?.data);
       setDataHistory([data?.data]);
-    } catch (error) {}
+    } catch (error) { }
   };
+
   console.log(DataHistory[0]?.data);
   const mapdata = DataHistory[0]?.data.map((i) => i);
   console.log(mapdata);
+
   async function GetLatLongMuatBongkar(AlamatMuat, AlamatBongkar) {
+    setLoading(true)
     console.log(`dari func`, AlamatMuat, AlamatBongkar);
     const muat = await getCoordinates(AlamatMuat); // Assuming getCoordinates is the correct function to call
     const bongkar = await getCoordinates(AlamatBongkar);
     setLatLongMuat(muat);
     setLatLongBongkar(bongkar);
+    setLoading(false)
   }
   useEffect(() => {
     if (LatLongMuat && LatLongBongkar) {
@@ -183,10 +197,10 @@ function CekResiKomponents() {
           <p
             className=" text-center text-[32px] font-bold font-['Plus_Jakarta_Sans'] bg-clip-text text-transparent"
             style={{
-                background: "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
+              background: "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
           >
             Lacak Paket Anda
           </p>
@@ -205,35 +219,15 @@ function CekResiKomponents() {
                   await GetLatLongMuatBongkar();
                 }}
               >
-                Search
+                {Loading ? "Loading..." : "Search"}
               </button>
             </div>
           </div>
-
+          {/* 
           <div className="text-start mt-8 text-[16px] text-[#F05423] font-semibold">
             Detail pengiriman paket anda
-          </div>
-          <div className="table border-2  w-full h-[404px] mb-10 rounded-xl mt-3 ">
-            <div className="m-5">
-              <p>Nomor Resi</p>
-              <p>ASDKJ1329132101</p>
-              <p className="mt-3">Tanggal Pengiriman</p>
-              <p>03 Oktober 2023</p>
-              <p className="mt-3">Status</p>
-              <p>On Delivery</p>
-              <p className="mt-3">Proses</p>
-              <p>Sedang Diantar</p>
-              <p className="mt-3">Waktu Pengiriman</p>
-              <p>18:00 WIB</p>
-              <p className="mt-3">Detail Status</p>
-              <p>Sedang Transit di DC Cakung (Jakarta Timur)</p>
-              <div className="flex justify-center">
-                <button className="h-[37px] w-full rounded-lg mt-5 text-orange-600 bg-white border-2 border-orange-600">
-                  Close
-                </button>
-              </div>
-            </div>
-          </div>
+          </div> */}
+
         </div>
         {/* Ini PC */}
 
@@ -291,6 +285,48 @@ function CekResiKomponents() {
               </div>
             </div>
             <div className="flex flex-col p-5 shadow-xl rounded-md border-2">
+              <div className="">
+                <MapsGoogle
+                  LatLongMuat={LatLongMuat}
+                  LatLongBongkar={LatLongBongkar}
+                />
+              </div>
+              <div className="mt-3  h-full  border-2 shadow-md rounded-md">
+                <Table
+                  columns={columns4}
+                  dataSource={DataHistory[0]?.data}
+                  pagination={false}
+                />
+                {/* <img alt='Foto' /> */}
+              </div>
+            </div>
+          </div>
+        )}
+        {/* INI Maps HP */}
+        {Loading || LatLongMuat && (
+          <div className=" md:hidden overflow-auto">
+            <div className="mt-4 ">
+              <p className="text-[27px] font-bold">Detail Alamat</p>
+              <Table
+                columns={columns}
+                dataSource={dataDetailsemua}
+                pagination={false}
+              />
+              <Table
+                className="mt-1"
+                columns={columns2}
+                dataSource={DataHistory}
+                pagination={false}
+              />
+              <p className="text-[27px] font-bold mt-3">History Pengiriman</p>
+              <Table
+                className="mt-1"
+                columns={columns3}
+                dataSource={mapdata}
+                pagination={false}
+              />
+            </div>
+            <div className="flex flex-col p-5 shadow-xl rounded-md border-2 mt-10 mb-10">
               <div className="">
                 <MapsGoogle
                   LatLongMuat={LatLongMuat}
