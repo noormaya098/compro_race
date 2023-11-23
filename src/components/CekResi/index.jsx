@@ -151,10 +151,10 @@ function CekResiKomponents() {
   const columns3 = [
     {
       title: "Waktu",
-      dataIndex: "pickupDate",
-      key: "pickupDate",
-      render: (pickupDate) => {
-        return pickupDate;
+      dataIndex: "updateDate",
+      key: "updateDate",
+      render: (updateDate) => {
+        return updateDate;
       },
     },
     {
