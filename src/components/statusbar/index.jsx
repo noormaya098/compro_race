@@ -128,7 +128,7 @@ function StatusbarComponents({ children }) {
             : "top-0 fixed transition-all duration-1000  ease-in-out bg-white shadow-md z-50"
           }   `}
       >
-        <div className="w-screen   h-[100px] px-20 py-5 flex justify-between items-center">
+        <div className="w-screen h-[100px] px-20 py-5 flex justify-between items-center">
           <div className="w-[197px] h-[77px] ">
             <img src={Race_New} alt="Race New Logo" />
           </div>
@@ -189,12 +189,12 @@ function StatusbarComponents({ children }) {
 
       <>
         <div
-          className={`md:hidden ${DiClickNihstate ? 'ph:hidden' : 'ph:opacity-100'
+          className={`md:hidden ${DiClickNihstate ? 'ph:hidden' : 'ph:opacity-100 '
             } ml-5 mt-7 h-7 flex items-center ph:flex ph:justify-end mx-auto w-11/12 relative`}
         >
           <Dropdown overlay={menu} trigger={['click']} placement="bottomLeft">
             <Button
-              className={`rounded-full  ${pathname === '/' ? 'bg-white bg-opacity-80' : 'bg-orange-600 bg-opacity-100'
+              className={`rounded-full bg-orange-500 mb-5  ${pathname === '/' ? 'bg-white bg-opacity-80' : 'bg-orange-600 bg-opacity-100'
                 } w-[40px] h-[40px] flex items-center justify-center`}
               onClick={toggleDropdown}
             >
