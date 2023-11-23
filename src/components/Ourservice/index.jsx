@@ -4,6 +4,7 @@ import sameday from "../../assets/sameday.png"
 import Regular from "../../assets/Regular.png"
 import fulfilment from "../../assets/fulfilment 1.png"
 import { motion, useMotionValueEvent, useScroll } from "framer-motion"
+import Sliderss from '../Slider/Sliderss'
 function OurService() {
     const { scrollY } = useScroll();
     const [nilaiScroll, setnilaiScroll] = useState()
@@ -110,6 +111,7 @@ function OurService() {
 
                 </div>
             </div >
+            <Sliderss />
             <div
                 className='w-9/12 mx-auto mt-16   '
 
