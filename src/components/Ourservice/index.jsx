@@ -59,7 +59,8 @@ function OurService() {
                         variants={charter}
                         transition={{ type: "tween" }}
                     >
-                        <h1 className='text-white text-[48px] font-semibold ph:text-[24px]'>Charter & Courier</h1>
+                        <h1 className='text-white text-center text-[32px] font-semibold ph:text-[24px]'>Charter & Courier</h1>
+                        <p className='text-white text-center text-[16px]'>We have a few product that can fit in you any situations, let take a look!</p>
                     </motion.div>
                     <div className='card-wrapper grid grid-cols-3 mt-16 ph:grid-cols-1 ph:space-y-7 ph:flex ph:flex-col items-center'>
                         <motion.div 

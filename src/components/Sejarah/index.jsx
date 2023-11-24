@@ -60,31 +60,31 @@ function SejarahComponeent() {
         <div className="text-[64px] ph:text-[32px] ph:mt-6 text-[#F05423] font-bold">
           2022
         </div>
-        <p className="text-[24px] ph:text-[14px] ph:font-semibold text-[#F05423]">
+        <p className="text-[24px] ph:text-[14px] ph:font-semibold ">
           RACE Operates in Jawa, Sulawesi, and Sumatera.
         </p>
         <div className="text-[64px] ph:text-[32px] text-[#F05423] font-bold mt-10 ">
           2021
         </div>
-        <p className="text-[24px]  ph:text-[14px] ph:font-semibold text-[#F05423]">
+        <p className="text-[24px]  ph:text-[14px] ph:font-semibold ">
           RACE Operates in Denpasar, Bali.
         </p>
         <div className="text-[64px]  ph:text-[32px] text-[#F05423] font-bold mt-10">
           2020
         </div>
-        <p className="text-[24px]  ph:text-[14px] ph:font-semibold text-[#F05423]">
+        <p className="text-[24px]  ph:text-[14px] ph:font-semibold ">
           RACE Operates in Bandung, Semarang, Yogyakarta, and Surabaya.
         </p>
         <div className="text-[64px]  ph:text-[32px] text-[#F05423] font-bold mt-10">
           2019
         </div>
-        <p className="text-[24px]  ph:text-[14px] ph:font-semibold text-[#F05423]">
+        <p className="text-[24px]  ph:text-[14px] ph:font-semibold ">
           RACE Hub Start Operates.
         </p>
         <div className="text-[64px]  ph:text-[32px] text-[#F05423] font-bold mt-10">
           2017
         </div>
-        <p className="text-[24px]  ph:text-[14px] ph:font-semibold text-[#F05423] ">
+        <p className="text-[24px]  ph:text-[14px] ph:font-semibold  ">
           RACE Operates.
         </p>
       </motion.div>
