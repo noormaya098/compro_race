@@ -217,6 +217,7 @@ function CekResiKomponents() {
             ></input>
             <div className="flex justify-center">
               <button
+              disabled={Loading}
                 className="bg-[#F05423] ph:w-[260px]  p-3 rounded-md h-[45px] text-white font-semibold "
                 onClick={async () => {
                   await AmbilDetailAwal();
@@ -253,15 +254,16 @@ function CekResiKomponents() {
               placeholder="Masukkan nomor resi pengiriman anda"
             ></input>
             <button
+            disabled={Loading}
               className="bg-[#F05423] ph:w-[260px]  p-3 rounded-md h-[45px] text-white font-semibold "
               onClick={AmbilDetailAwal}
             >
-              Search
+              {Loading ? "Loading..." : "Search"}
             </button>
           </div>
         </div>
         {LatLongMuat && (
-          <div className="justify-center grid grid-cols-2 mx-auto mt-32 ph:hidden w-full space-x-3 overflow-auto h-[580px]">
+          <div className="justify-center grid grid-cols-2 mx-auto mt-32 ph:hidden w-full space-x-3  ">
             <div className=" p-5 border-2 shadow-xl rounded-md   ">
               <div className="font-bold text-center text-[23px]">
                 Tracking Kiriman
@@ -308,7 +310,7 @@ function CekResiKomponents() {
           </div>
         )}
         {/* INI Maps HP */}
-        {Loading || LatLongMuat && (
+        {LatLongMuat  == null && (
           <div className=" md:hidden overflow-auto">
             <div className="mt-4 ">
               <p className="text-[27px] font-bold">Detail Alamat</p>
