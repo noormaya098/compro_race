@@ -8,8 +8,8 @@ import GoogleMpasStore from "../../ZustandStore/GooglemapStore";
 import { getCoordinates } from "../../funcs/GetLongLatGoogle";
 import { dbdatabase } from "../../firebase/config";
 import { doc, onSnapshot } from "firebase/firestore";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 function CekResiKomponents() {
-  const [InputanNilai, setInputanNilai] = useState("");
   const {
     AlamatMuat,
     AlamatBongkar,
@@ -17,25 +17,30 @@ function CekResiKomponents() {
     AlamatBongkarCoord,
     validasimaps,
   } = GoogleMpasStore();
-  const [Loading, setLoading] = useState(false)
+  const [Loading, setLoading] = useState(false);
+  const location = useLocation();
+  const params = new URLSearchParams(location.search);
+  const nosm = params.get("nosm");
+  console.log(`nosm`,nosm);
+  const [InputanNilai, setInputanNilai] = useState(nosm);
   const [LatLongMuat, setLatLongMuat] = useState("");
   const [LatLongBongkar, setLatLongBongkar] = useState("");
-  const [LokasiDriverLongLat, setLokasiDriverLongLat] = useState(null)
-  const firestore = dbdatabase
+  const [LokasiDriverLongLat, setLokasiDriverLongLat] = useState(null);
+  const firestore = dbdatabase;
   console.log(`firestore ini`, firestore);
   const unsub = onSnapshot(doc(firestore, "location", "123"), (doc) => {
     console.log("Current data: ", doc.data());
   });
   const [DataHistory, setDataHistory] = useState([]);
   const [dataDetailsemua, setdataDetailsemua] = useState([]);
+  const navigate = useNavigate();
   const AmbilDetailAwal = async () => {
-    setLoading(true)
+    setLoading(true);
     try {
       const data = await axios.get(`
             https://apirace.eurekalogistics.co.id/sp/get-sm-detail?msm=${InputanNilai}`);
       console.log(`data`, data?.data?.data[0]);
-      setLokasiDriverLongLat(data?.data?.data?.[0]?.positionDriverNow
-      )
+      setLokasiDriverLongLat(data?.data?.data?.[0]?.positionDriverNow);
       if (data?.data === null) {
         notification.error({
           message: "Data Tidak Ditemukan",
@@ -55,16 +60,22 @@ function CekResiKomponents() {
         );
         historykendaraan(data?.data?.data[0]?.idMsm);
       }
-      setLoading(false)
+      setLoading(false);
     } catch (error) {
-      setLoading(false)
+      setLoading(false);
       notification.error({
         message: "Terjadi Error",
       });
     }
   };
 
-  console.log(`LokasiDriverLongLat`,LokasiDriverLongLat);
+  useEffect(()=>{
+    if (nosm != null) {
+      AmbilDetailAwal()
+    }
+  },[])
+
+  console.log(`LokasiDriverLongLat`, LokasiDriverLongLat);
   const historykendaraan = async (id_msm) => {
     try {
       const data = await axios.get(
@@ -72,26 +83,29 @@ function CekResiKomponents() {
       );
       console.log(data?.data);
       setDataHistory([data?.data]);
-    } catch (error) { }
+    } catch (error) {}
   };
 
   console.log(DataHistory[0]?.data);
   const mapdata = DataHistory[0]?.data.map((i) => i);
   console.log(mapdata);
+  async function PindahHalaman(asw) {
+    navigate(`/cekresi/result?nosm=${asw}`);
+  }
 
   async function GetLatLongMuatBongkar(AlamatMuat, AlamatBongkar) {
-    setLoading(true)
+    setLoading(true);
     console.log(`dari func`, AlamatMuat, AlamatBongkar);
     const muat = await getCoordinates(AlamatMuat); // Assuming getCoordinates is the correct function to call
     const bongkar = await getCoordinates(AlamatBongkar);
     setLatLongMuat(muat);
     setLatLongBongkar(bongkar);
-    setLoading(false)
+    setLoading(false);
   }
   useEffect(() => {
     if (LatLongMuat && LatLongBongkar) {
     }
-  }, [LatLongMuat, LatLongBongkar]);
+  }, [LatLongMuat, LatLongBongkar,nosm]);
 
   const columns = [
     {
@@ -217,11 +231,12 @@ function CekResiKomponents() {
             ></input>
             <div className="flex justify-center">
               <button
-              disabled={Loading}
+                disabled={Loading}
                 className="bg-[#F05423] ph:w-[260px]  p-3 rounded-md h-[45px] text-white font-semibold "
                 onClick={async () => {
                   await AmbilDetailAwal();
                   await GetLatLongMuatBongkar();
+                  await PindahHalaman();
                 }}
               >
                 {Loading ? "Loading..." : "Search"}
@@ -232,7 +247,6 @@ function CekResiKomponents() {
           <div className="text-start mt-8 text-[16px] text-[#F05423] font-semibold">
             Detail pengiriman paket anda
           </div> */}
-
         </div>
         {/* Ini PC */}
 
@@ -252,11 +266,15 @@ function CekResiKomponents() {
               onChange={(e) => setInputanNilai(e.target.value)}
               className="md:w-[874px] md:h-[60px] m-5  border rounded-md"
               placeholder="Masukkan nomor resi pengiriman anda"
+              value={nosm}
             ></input>
             <button
-            disabled={Loading}
+              disabled={Loading}
               className="bg-[#F05423] ph:w-[260px]  p-3 rounded-md h-[45px] text-white font-semibold "
-              onClick={AmbilDetailAwal}
+              onClick={() => {
+                PindahHalaman(InputanNilai);
+                AmbilDetailAwal();
+              }}
             >
               {Loading ? "Loading..." : "Search"}
             </button>
@@ -310,7 +328,7 @@ function CekResiKomponents() {
           </div>
         )}
         {/* INI Maps HP */}
-        {LatLongMuat  == null && (
+        {LatLongMuat == null && (
           <div className=" md:hidden overflow-auto">
             <div className="mt-4 ">
               <p className="text-[27px] font-bold">Detail Alamat</p>

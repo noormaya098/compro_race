@@ -10,6 +10,7 @@ function RouterPage() {
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/cekresi' element={<CekResi />} />
+                <Route path='/cekresi/result' element={<CekResi />} />
                 <Route path='/cekongkir' element={<CekOngkirPages />} />
                 <Route path='/karir' element={<CekResi />} />
                 <Route path='*' element={<div className=''>
