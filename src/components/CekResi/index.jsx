@@ -21,20 +21,36 @@ function CekResiKomponents() {
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const nosm = params.get("nosm");
-  console.log(`nosm`, nosm);
   const [InputanNilai, setInputanNilai] = useState(nosm);
   const [LatLongMuat, setLatLongMuat] = useState("");
   const [LatLongBongkar, setLatLongBongkar] = useState("");
   const [LokasiDriverLongLat, setLokasiDriverLongLat] = useState(null);
   const firestore = dbdatabase;
-  console.log(`firestore ini`, firestore);
+  function copylink() {
+    const url = `https://track.rajacepat.com//cekresi/result?nosm=${nosm}`;
+    navigator.clipboard.writeText(url).then(() => {
+      notification.success({
+        message: "Link Berhasil di Copy"
+      })
+      console.log(`Link copied: ${url}`);
+    }, (err) => {
+      console.error('Could not copy text: ', err);
+    });
+  }
+  // console.log(`firestore ini`, firestore);
   const unsub = onSnapshot(doc(firestore, "location", "123"), (doc) => {
     console.log("Current data: ", doc.data());
   });
   const [DataHistory, setDataHistory] = useState([]);
   const [dataDetailsemua, setdataDetailsemua] = useState([]);
   const navigate = useNavigate();
-
+  function ubahnosm(e) {
+    if (nosm === null) {
+      return InputanNilai
+    } else {
+      return InputanNilai
+    }
+  }
   const AmbilDetailAwal = async () => {
     setLoading(true);
     try {
@@ -84,7 +100,7 @@ function CekResiKomponents() {
       );
       console.log(data?.data);
       setDataHistory([data?.data]);
-    } catch (error) {}
+    } catch (error) { }
   };
 
   console.log(DataHistory[0]?.data);
@@ -226,6 +242,7 @@ function CekResiKomponents() {
 
           <div className="md:w-[1064px] md:h-[105px] ph:h-[130px] flex flex-col  mt-5 shadow rounded-lg">
             <input
+              value={ubahnosm()}
               className="md:w-[874px] md:h-[60px] m-5  border rounded-md"
               onChange={(e) => setInputanNilai(e.target.value)}
               placeholder="Masukkan nomor resi pengiriman anda"
@@ -264,10 +281,13 @@ function CekResiKomponents() {
 
           <div className="md:w-full md:h-[105px] ph:h-[130px] mt-5 shadow rounded-lg">
             <input
-              onChange={(e) => setInputanNilai(e.target.value)}
+              onChange={(e) => {
+                ubahnosm(e.target.value)
+                setInputanNilai(e.target.value)
+              }}
               className="md:w-[874px] md:h-[60px] m-5  border rounded-md"
               placeholder="Masukkan nomor resi pengiriman anda"
-              value={nosm}
+              value={ubahnosm()}
             ></input>
             <button
               disabled={Loading}
@@ -279,14 +299,14 @@ function CekResiKomponents() {
             >
               {Loading ? "Loading..." : "Search"}
             </button>
-            {dataDetailsemua == [] && (
-              <button className="bg-[#30a953] ph:w-[260px]  p-3 rounded-md h-[45px] ml-5 text-white font-semibold ">
+            {DataHistory[0]?.data != null && (
+              <button onClick={copylink} className="bg-[#30a953] ph:w-[260px]  p-3 rounded-md h-[45px] ml-5 text-white font-semibold ">
                 CopyURL
               </button>
             )}
           </div>
         </div>
-        {!LatLongMuat && (
+        {DataHistory[0]?.data && (
           <div className="justify-center grid grid-cols-2 mx-auto mt-32 ph:hidden w-full space-x-3  ">
             <div className=" p-5 border-2 shadow-xl rounded-md   ">
               <div className="font-bold text-center text-[23px]">
