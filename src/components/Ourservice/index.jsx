@@ -52,16 +52,15 @@ function OurService() {
                 >
                     <h1 className='text-center text-[64px] text-white font-semibold ph:text-[32px] ph:mt-36 mt-28'>Our Service</h1>
                 </motion.div>
-                <div className='w-9/12 mx-auto mt-16 ph:w-11/12   '>
+                <div className='w-7/12 mx-auto mt-16 ph:w-11/12 '>
                     <motion.div
                         initial="hidden"
                         animate={isPastTriggerPoint2 ? "visible" : "hidden"}
                         variants={charter}
                         transition={{ type: "tween" }}
                     >
-                        <h1 className='text-white text-center text-[32
-                            px] font-semibold ph:text-[24px]'>Charter & Courier</h1>
-                        <p className='text-white text-center text-[16px]'>We have a few product that can fit in you any situations, let take a look!</p>
+                        <h1 className='text-white text-center text-[40px] font-semibold ph:text-[24px]'>Charter & Courier</h1>
+                        <p className='text-white text-center text-[24px]'>We have a few product that can fit in you any situations, let take a look!</p>
                     </motion.div>
                     <div className='card-wrapper grid grid-cols-3 mt-16 ph:grid-cols-1 ph:space-y-7 ph:flex ph:flex-col items-center'>
                         <motion.div 
@@ -69,11 +68,11 @@ function OurService() {
                             initial="hidden"
                             animate={isPastTriggerPoint3 ? "visible" : "hidden"}
                             variants={kiri}
-                            transition={{ duration: 1 }}
+                            transition={{ duration: 0.5 }}
                         >
                             <div className='flex justify-center '>
                                 <img src={orangnaikmotor} />
-                            </div>1
+                            </div>
                             <div className='mx-7 '>
                                 <p className='text-[#F05423] font-semibold text-start text-[32px]'>Same day Services</p>
                                 <p className='text-[#FE8A66] font-medium text-start text-[20px] mt-3'>Delivery on the same day or within 8 hours</p>
@@ -84,7 +83,7 @@ function OurService() {
                             initial="hidden"
                             animate={isPastTriggerPoint3 ? "visible" : "hidden"}
                             variants={jempolorang}
-                            transition={{ duration: 1, delay: 0.2 }} // You can stagger the animations with delays
+                            transition={{ duration: 0.5, delay: 0.2 }} // You can stagger the animations with delays
                         >
                             <div className='flex justify-center '>
                                 <img src={sameday} />
@@ -99,7 +98,7 @@ function OurService() {
                             initial="hidden"
                             animate={isPastTriggerPoint3 ? "visible" : "hidden"}
                             variants={kanan}
-                            transition={{ duration: 1, delay: 0.4 }}
+                            transition={{ duration: 0.5, delay: 0.4 }}
                         >
                             <div className='flex justify-center '>
                                 <img src={Regular} />
@@ -115,7 +114,7 @@ function OurService() {
             </div >
             <Sliderss />
             <div
-                className='w-9/12 mx-auto mt-16   '
+                className='w-7/12 mx-auto mt-16   '
 
             >
                 <div className=' md:w-[1064px]   h-[385px] mt-40 '>

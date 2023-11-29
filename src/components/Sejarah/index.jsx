@@ -46,14 +46,15 @@ function SejarahComponeent() {
           Milestone of the Company
         </p>
         <p className="text-[24px] mt-5 md:text-black ph:text-black text-center">
-          Pada tahun 2017, Raja Cepat berdiri. Berkat kepercayaan customer
-          setia, kini RACE bisa membentangkan layanan menyeluruh ke penjuru
-          negri.<br/> Tidak hanya itu, RACE juga mengutamakan pelayanan
-          pelanggan demi meningkatkan kepuasan pelanggan dalam mempercayakan
-          RACE sebagai ekspedisi yang dapat diandalkan.
+          In 2017, Raja Cepat (RACE) was founded. Thanks to loyal customers for
+          trusting RACE to help their business in expedition, RACE can now
+          provide comprehensive services throughout the country. Not only that,
+          RACE also prioritizes customer service in order to increase customer
+          satisfaction in trusting RACE as a reliable expedition.
         </p>
       </motion.div>
       <motion.div
+      className="ml-10"
         initial="hidden"
         animate={isPastTriggerPoint ? "visible" : "hidden"}
         variants={jempolorangkanan}

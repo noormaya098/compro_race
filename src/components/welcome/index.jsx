@@ -43,8 +43,8 @@ function Welcome() {
         {/* </motion.div> */}
       </div>
       <div className="h-auto bg-gradient-to-r from-orange-500 via-purple-500 to-blue-500 flex items-center justify-between p-12 mx-auto">
-        <p className="text-white text-lg">Let's explore more about RajaCepat</p>
-        <button className="bg-transparent text-white font-bold py-2 px-4 border border-white rounded-2xl">
+        <p className="text-white text-[24px]">Let's explore more about RajaCepat</p>
+        <button className="bg-transparent text-[24px] text-white font-bold py-2 px-4 border border-white rounded-2xl">
           Explore Now
         </button>
       </div>

@@ -17,27 +17,27 @@ function FooterComponents() {
                             <img className='w-[88px] h-[57px]' src={RaceLogo} />
                         </div>
                         <div className='mt-5 text-white'>
-                            <p className='text-[24px]'>Perusahaan</p>
-                            <p className='text-[16px]'>Profil Perusahaan</p>
-                            <p className='text-[16px]'>Hubungan Kami</p>
-                            <p className='text-[16px]'>Karir</p>
+                            <p className='text-[24px]'>Raja Cepat</p>
+                            <p className='text-[16px]'>Company Profile</p>
+                            <p className='text-[16px]'>Contact Us</p>
+                            <p className='text-[16px]'>Career</p>
 
                         </div>
                         <div className='mt-5 text-white'>
-                            <p className='text-[24px]'>Produk</p>
+                            <p className='text-[24px]'>Product</p>
                             <p className='text-[16px]'>Delivery Service</p>
                             <p className='text-[16px]'>Fulfillment Service</p>
                         </div>
                         <div className='mt-5 text-white'>
                             <p className='text-[24px]'>Pengiriman</p>
-                            <p className='text-[16px]'>Lacak Resi</p>
-                            <p className='text-[16px]'>Cek Tarif</p>
-                            <p className='text-[16px]'>Lokasi</p>
+                            <p className='text-[16px]'>Tracking</p>
+                            <p className='text-[16px]'>Shipping Cost</p>
+                            <p className='text-[16px]'>Our Locations</p>
                         </div>
                         <div className='mt-5 text-white'>
-                            <p className='text-[24px] '>Lainnya</p>
+                            <p className='text-[24px] '>Others</p>
                             <p className='text-[16px]'>FAQ</p>
-                            <p className='text-[16px]'>Kemitraan</p>
+                            <p className='text-[16px]'>Partnership</p>
                         </div>
                         <div className='mt-5 text-white'>
                             <p className='text-[24px]'>Download Apps</p>
