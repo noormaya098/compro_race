@@ -103,7 +103,7 @@ function CekResiKomponents() {
     } catch (error) { }
   };
 
-  console.log(DataHistory[0]?.data);
+  console.log(`data dataDetailsemua`, );
   const mapdata = DataHistory[0]?.data.map((i) => i);
   console.log(mapdata);
   async function PindahHalaman(asw) {
@@ -113,8 +113,8 @@ function CekResiKomponents() {
   async function GetLatLongMuatBongkar(AlamatMuat, AlamatBongkar) {
     setLoading(true);
     console.log(`dari func`, AlamatMuat, AlamatBongkar);
-    const muat = await getCoordinates(AlamatMuat); // Assuming getCoordinates is the correct function to call
-    const bongkar = await getCoordinates(AlamatBongkar);
+    const muat = await getCoordinates(dataDetailsemua?.[0].alamatMuat?.alamat); // Assuming getCoordinates is the correct function to call
+    const bongkar = await getCoordinates(dataDetailsemua?.[0].alamatBongkar?.alamat);
     setLatLongMuat(muat);
     setLatLongBongkar(bongkar);
     setLoading(false);
@@ -127,13 +127,25 @@ function CekResiKomponents() {
   const columns = [
     {
       title: "Alamat Asal",
-      dataIndex: "muat",
-      key: "muat",
+      dataIndex: ["alamatMuat", "alamat"], // Accessing nested property
+      key: "alamatMuat",
     },
     {
       title: "Alamat Tujuan",
-      dataIndex: "bongkar",
-      key: "bongkar",
+      dataIndex: ["alamatBongkar", "alamat"], // Accessing nested property
+      key: "alamatBongkar",
+    },
+    {
+      title: "No Telp Driver",
+      dataIndex: "telp",
+      key: "telp",
+      render: (telp) => {
+        if (telp === "") {
+          return "-";
+        } else {
+          return telp;
+        }
+      },
     },
   ];
   const columns2 = [
@@ -156,13 +168,13 @@ function CekResiKomponents() {
     },
     {
       title: "Nopol",
-      dataIndex: "kodeKendaraan",
-      key: "kodeKendaraan",
-      render: (kodeKendaraan) => {
-        if (kodeKendaraan === "") {
+      dataIndex: "Nopol",
+      key: "Nopol",
+      render: (Nopol) => {
+        if (Nopol === "") {
           return "-";
         } else {
-          return kodeKendaraan;
+          return Nopol;
         }
       },
     },
@@ -178,6 +190,7 @@ function CekResiKomponents() {
         }
       },
     },
+    
   ];
   const columns3 = [
     {
