@@ -32,11 +32,11 @@ function SejarahComponeent() {
         animate={isPastTriggerPoint ? "visible" : "hidden"}
         variants={jempolorang}
         transition={{ type: "tween" }}
-        className="md:w-9/12 flex flex-col items-center mx-auto"
+        className="md:w-12/12 flex flex-col items-center mx-auto"
       >
-        <img className="w-[500px] h-[350px] " src={assetsss} />
+        <img className="w-[600px] h-[350px] " src={assetsss} />
         <p
-          className="text-[32px] font-bold text-center text-5xl mt-20"
+          className="text-[40px] font-bold text-center mt-20"
           style={{
             background: "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
             WebkitBackgroundClip: "text",
@@ -48,7 +48,9 @@ function SejarahComponeent() {
         <p className="text-[24px] mt-5 md:text-black ph:text-black text-center">
           Pada tahun 2017, Raja Cepat berdiri. Berkat kepercayaan customer
           setia, kini RACE bisa membentangkan layanan menyeluruh ke penjuru
-          negri. Tidak hanya itu, RACE juga pada
+          negri.<br/> Tidak hanya itu, RACE juga mengutamakan pelayanan
+          pelanggan demi meningkatkan kepuasan pelanggan dalam mempercayakan
+          RACE sebagai ekspedisi yang dapat diandalkan.
         </p>
       </motion.div>
       <motion.div
