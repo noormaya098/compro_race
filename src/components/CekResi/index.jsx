@@ -27,7 +27,7 @@ function CekResiKomponents() {
   const [LokasiDriverLongLat, setLokasiDriverLongLat] = useState(null);
   const firestore = dbdatabase;
   function copylink() {
-    const url = `https://track.rajacepat.com//cekresi/result?nosm=${nosm}`;
+    const url = `https://track.rajacepat.com/cekresi/result?nosm=${nosm}`;
     navigator.clipboard.writeText(url).then(() => {
       notification.success({
         message: "Link Berhasil di Copy"
