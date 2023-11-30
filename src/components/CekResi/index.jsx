@@ -268,7 +268,7 @@ function CekResiKomponents() {
             <div className="flex justify-center">
               <button
                 disabled={Loading}
-                className="bg-[#F05423] ph:w-[260px]  p-3 rounded-md h-[45px] text-white font-semibold font-plus-jakarta"
+                className="bg-[#F05423] ph:w-[260px]  p-3 rounded-md h-[45px] text-white font-semibold font-plus-jakarta text-center"
                 onClick={async () => {
                   await AmbilDetailAwal();
                   await GetLatLongMuatBongkar();
@@ -311,7 +311,7 @@ function CekResiKomponents() {
             ></input>
             <button
               disabled={Loading}
-              className="bg-[#F05423] ph:w-[260px]  p-3 rounded-md h-[45px] text-white font-semibold font-plus-jakarta"
+              className="bg-[#F05423] ph:w-[260px]  p-3 rounded-md h-[45px] text-white font-semibold font-plus-jakarta text-center"
               onClick={() => {
                 PindahHalaman(InputanNilai);
                 AmbilDetailAwal();
