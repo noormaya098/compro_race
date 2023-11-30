@@ -436,7 +436,7 @@ function CekResiKomponents() {
         <div></div>
         <p className="ph:hidden text-center mt-24 mb-24 text-black font-plus-jakarta">
           Any Problems?
-          <span className="text-[#F05423] font-plus-jakarta ">Contact Us</span>{" "}
+          <span className="text-[#F05423] font-plus-jakarta ml-2 cursor-pointer">Contact our Customer Service</span>{" "}
         </p>
       </div>
       <FooterComponents />

@@ -157,7 +157,7 @@ function CekOngkirComponents() {
                           console.log(error);
                         }
                       }}
-                      className="w-[130px] h-[64px] bg-[#F05423] text-white rounded-lg font-plus-jakarta"
+                      className="w-[135px] h-[64px] bg-[#F05423] text-white rounded-lg font-plus-jakarta text-center"
                     >
                       Search
                     </button>
@@ -240,9 +240,10 @@ function CekOngkirComponents() {
                 </div>
               </div>
             </div>
-            <p className="text-center mt-36 text-black font-plus-jakarta">
-              Any Problems?<span className="text-[#F05423] font-plus-jakarta">Contact Us</span>{" "}
-            </p>
+            <p className="ph:hidden text-center mt-24 mb-24 text-black font-plus-jakarta">
+          Any Problems?
+          <span className="text-[#F05423] font-plus-jakarta ml-2 cursor-pointer">Contact our Customer Service</span>{" "}
+        </p>
           </div>
           <div className="mt-28 ph:hidden">
             <FooterComponents />
@@ -353,7 +354,7 @@ function CekOngkirComponents() {
                       console.log(error);
                     }
                   }}
-                  className="bg-[#F05423] w-[240px] h-[40px] text-white font-semibold rounded-lg font-plus-jakarta"
+                  className="bg-[#F05423] w-[240px] h-[40px] text-white font-semibold rounded-lg font-plus-jakarta text-center"
                 >
                   Search
                 </button>
