@@ -28,14 +28,17 @@ function CekResiKomponents() {
   const firestore = dbdatabase;
   function copylink() {
     const url = `https://track.rajacepat.com/cekresi/result?nosm=${nosm}`;
-    navigator.clipboard.writeText(url).then(() => {
-      notification.success({
-        message: "Link Berhasil di Copy"
-      })
-      console.log(`Link copied: ${url}`);
-    }, (err) => {
-      console.error('Could not copy text: ', err);
-    });
+    navigator.clipboard.writeText(url).then(
+      () => {
+        notification.success({
+          message: "Link Berhasil di Copy",
+        });
+        console.log(`Link copied: ${url}`);
+      },
+      (err) => {
+        console.error("Could not copy text: ", err);
+      }
+    );
   }
   // console.log(`firestore ini`, firestore);
   const unsub = onSnapshot(doc(firestore, "location", "123"), (doc) => {
@@ -46,9 +49,9 @@ function CekResiKomponents() {
   const navigate = useNavigate();
   function ubahnosm(e) {
     if (nosm === null) {
-      return InputanNilai
+      return InputanNilai;
     } else {
-      return InputanNilai
+      return InputanNilai;
     }
   }
   const AmbilDetailAwal = async () => {
@@ -72,8 +75,8 @@ function CekResiKomponents() {
         });
         setdataDetailsemua([data?.data?.data[0]]);
         GetLatLongMuatBongkar(
-          data?.data?.data[0]?.alamatMuat?.alamat,
-          data?.data?.data[0]?.alamatBongkar?.alamat
+          data?.data?.data[0]?.muat,
+          data?.data?.data[0]?.bongkar
         );
         historykendaraan(data?.data?.data[0]?.idMsm);
       }
@@ -86,7 +89,11 @@ function CekResiKomponents() {
     }
   };
 
-
+  useEffect(() => {
+    if (nosm != null) {
+      AmbilDetailAwal();
+    }
+  }, []);
 
   console.log(`LokasiDriverLongLat`, LokasiDriverLongLat);
   const historykendaraan = async (id_msm) => {
@@ -96,10 +103,10 @@ function CekResiKomponents() {
       );
       console.log(data?.data);
       setDataHistory([data?.data]);
-    } catch (error) { }
+    } catch (error) {}
   };
 
-  console.log(`data dataDetailsemua`,);
+  console.log(`data dataDetailsemua`);
   const mapdata = DataHistory[0]?.data.map((i) => i);
   console.log(mapdata);
   async function PindahHalaman(asw) {
@@ -109,8 +116,10 @@ function CekResiKomponents() {
   async function GetLatLongMuatBongkar(AlamatMuat, AlamatBongkar) {
     setLoading(true);
     console.log(`dari func`, AlamatMuat, AlamatBongkar);
-    const muat = await getCoordinates(AlamatMuat); // Assuming getCoordinates is the correct function to call
-    const bongkar = await getCoordinates(AlamatBongkar);
+    const muat = await getCoordinates(dataDetailsemua?.[0].alamatMuat?.alamat); // Assuming getCoordinates is the correct function to call
+    const bongkar = await getCoordinates(
+      dataDetailsemua?.[0].alamatBongkar?.alamat
+    );
     setLatLongMuat(muat);
     setLatLongBongkar(bongkar);
     setLoading(false);
@@ -120,11 +129,6 @@ function CekResiKomponents() {
     }
   }, [LatLongMuat, LatLongBongkar, nosm]);
 
-  useEffect( () => {
-    if (nosm != null) {
-       AmbilDetailAwal();
-    }
-  }, []);
   const columns = [
     {
       title: "Alamat Asal",
@@ -191,7 +195,6 @@ function CekResiKomponents() {
         }
       },
     },
-
   ];
   const columns3 = [
     {
@@ -251,7 +254,8 @@ function CekResiKomponents() {
               WebkitTextFillColor: "transparent",
             }}
           >
-            Lacak Paket Anda
+            {/* Lacak Paket Anda */}
+            Track Your Package
           </p>
 
           <div className="md:w-[1064px] md:h-[105px] ph:h-[130px] flex flex-col  mt-5 shadow rounded-lg">
@@ -290,17 +294,18 @@ function CekResiKomponents() {
                 "linear-gradient(92deg, #F05423 11.5%, #A83CCE 46.87%, #3D62B0 85.41%)",
             }}
           >
-            Lacak Paket Anda
+            {/* Lacak Paket Anda */}
+            Track Your Package
           </p>
 
           <div className="md:w-full md:h-[105px] ph:h-[130px] mt-5 shadow rounded-lg">
             <input
               onChange={(e) => {
-                ubahnosm(e.target.value)
-                setInputanNilai(e.target.value)
+                ubahnosm(e.target.value);
+                setInputanNilai(e.target.value);
               }}
               className="md:w-[874px] md:h-[60px] m-5  border rounded-md font-plus-jakarta "
-              style={{  paddingLeft: '20px' }}// Mengatur warna teks menjadi hitam
+              style={{ paddingLeft: "20px" }} // Mengatur warna teks menjadi hitam
               placeholder="Masukkan nomor resi pengiriman anda"
               value={ubahnosm()}
             ></input>
@@ -315,7 +320,10 @@ function CekResiKomponents() {
               {Loading ? "Loading..." : "Search"}
             </button>
             {DataHistory[0]?.data != null && (
-              <button onClick={copylink} className="bg-[#30a953] ph:w-[260px]  p-3 rounded-md h-[45px] ml-5 text-white font-semibold font-plus-jakarta ">
+              <button
+                onClick={copylink}
+                className="bg-[#30a953] ph:w-[260px]  p-3 rounded-md h-[45px] ml-5 text-white font-semibold font-plus-jakarta "
+              >
                 CopyURL
               </button>
             )}
@@ -327,8 +335,10 @@ function CekResiKomponents() {
               <div className="font-bold text-center text-[23px]">
                 Tracking Kiriman
               </div>
-              <div className="mt-4"> 
-                <p className="text-[27px] font-bold font-plus-jakarta">Detail Alamat</p>
+              <div className="mt-4">
+                <p className="text-[27px] font-bold font-plus-jakarta">
+                  Detail Alamat
+                </p>
                 <Table
                   columns={columns}
                   dataSource={dataDetailsemua}
@@ -340,7 +350,9 @@ function CekResiKomponents() {
                   dataSource={DataHistory}
                   pagination={false}
                 />
-                <p className="text-[27px] font-bold mt-3 font-plus-jakarta">History Pengiriman</p>
+                <p className="text-[27px] font-bold mt-3 font-plus-jakarta">
+                  History Pengiriman
+                </p>
                 <Table
                   className="mt-1"
                   columns={columns3}
@@ -369,10 +381,12 @@ function CekResiKomponents() {
           </div>
         )}
         {/* INI Maps HP */}
-        {DataHistory[0]?.data && (
+        {LatLongMuat == null && (
           <div className=" md:hidden overflow-auto">
             <div className="mt-4 ">
-              <p className="text-[27px] font-bold font-plus-jakarta">Detail Alamat</p>
+              <p className="text-[27px] font-bold font-plus-jakarta">
+                Detail Alamat
+              </p>
               <Table
                 columns={columns}
                 dataSource={dataDetailsemua}
@@ -384,7 +398,9 @@ function CekResiKomponents() {
                 dataSource={DataHistory}
                 pagination={false}
               />
-              <p className="text-[27px] font-bold mt-3 font-plus-jakarta">History Pengiriman</p>
+              <p className="text-[27px] font-bold mt-3 font-plus-jakarta">
+                History Pengiriman
+              </p>
               <Table
                 className="mt-1"
                 columns={columns3}
@@ -419,7 +435,8 @@ function CekResiKomponents() {
 
         <div></div>
         <p className="ph:hidden text-center mt-24 mb-24 text-black font-plus-jakarta">
-          Any Problems?<span className="text-[#F05423] font-plus-jakarta ">Contact Us</span>{" "}
+          Any Problems?
+          <span className="text-[#F05423] font-plus-jakarta ">Contact Us</span>{" "}
         </p>
       </div>
       <FooterComponents />
