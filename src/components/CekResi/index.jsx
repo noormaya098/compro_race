@@ -72,8 +72,8 @@ function CekResiKomponents() {
         });
         setdataDetailsemua([data?.data?.data[0]]);
         GetLatLongMuatBongkar(
-          data?.data?.data[0]?.muat,
-          data?.data?.data[0]?.bongkar
+          data?.data?.data[0]?.alamatMuat?.alamat,
+          data?.data?.data[0]?.alamatBongkar?.alamat
         );
         historykendaraan(data?.data?.data[0]?.idMsm);
       }
@@ -86,11 +86,7 @@ function CekResiKomponents() {
     }
   };
 
-  useEffect(() => {
-    if (nosm != null) {
-      AmbilDetailAwal();
-    }
-  }, []);
+
 
   console.log(`LokasiDriverLongLat`, LokasiDriverLongLat);
   const historykendaraan = async (id_msm) => {
@@ -103,7 +99,7 @@ function CekResiKomponents() {
     } catch (error) { }
   };
 
-  console.log(`data dataDetailsemua`, );
+  console.log(`data dataDetailsemua`,);
   const mapdata = DataHistory[0]?.data.map((i) => i);
   console.log(mapdata);
   async function PindahHalaman(asw) {
@@ -113,8 +109,8 @@ function CekResiKomponents() {
   async function GetLatLongMuatBongkar(AlamatMuat, AlamatBongkar) {
     setLoading(true);
     console.log(`dari func`, AlamatMuat, AlamatBongkar);
-    const muat = await getCoordinates(dataDetailsemua?.[0].alamatMuat?.alamat); // Assuming getCoordinates is the correct function to call
-    const bongkar = await getCoordinates(dataDetailsemua?.[0].alamatBongkar?.alamat);
+    const muat = await getCoordinates(AlamatMuat); // Assuming getCoordinates is the correct function to call
+    const bongkar = await getCoordinates(AlamatBongkar);
     setLatLongMuat(muat);
     setLatLongBongkar(bongkar);
     setLoading(false);
@@ -124,6 +120,11 @@ function CekResiKomponents() {
     }
   }, [LatLongMuat, LatLongBongkar, nosm]);
 
+  useEffect( () => {
+    if (nosm != null) {
+       AmbilDetailAwal();
+    }
+  }, []);
   const columns = [
     {
       title: "Alamat Asal",
@@ -190,7 +191,7 @@ function CekResiKomponents() {
         }
       },
     },
-    
+
   ];
   const columns3 = [
     {
@@ -368,7 +369,7 @@ function CekResiKomponents() {
           </div>
         )}
         {/* INI Maps HP */}
-        {LatLongMuat == null && (
+        {DataHistory[0]?.data && (
           <div className=" md:hidden overflow-auto">
             <div className="mt-4 ">
               <p className="text-[27px] font-bold font-plus-jakarta">Detail Alamat</p>
