@@ -17,30 +17,30 @@ function FooterComponents() {
                             <img className='w-[88px] h-[57px]' src={RaceLogo} />
                         </div>
                         <div className='mt-5 text-white'>
-                            <p className='text-[24px]'>Raja Cepat</p>
-                            <p className='text-[16px]'>Company Profile</p>
-                            <p className='text-[16px]'>Contact Us</p>
-                            <p className='text-[16px]'>Career</p>
+                            <p className='text-[24px] font-plus-jakarta'>Raja Cepat</p>
+                            <p className='text-[16px] font-plus-jakarta'>Company Profile</p>
+                            <p className='text-[16px] font-plus-jakarta'>Contact Us</p>
+                            <p className='text-[16px] font-plus-jakarta'>Career</p>
 
                         </div>
                         <div className='mt-5 text-white'>
-                            <p className='text-[24px]'>Product</p>
-                            <p className='text-[16px]'>Delivery Service</p>
-                            <p className='text-[16px]'>Fulfillment Service</p>
+                            <p className='text-[24px] font-plus-jakarta'>Product</p>
+                            <p className='text-[16px] font-plus-jakarta'>Delivery Service</p>
+                            <p className='text-[16px] font-plus-jakarta'>Fulfillment Service</p>
                         </div>
                         <div className='mt-5 text-white'>
-                            <p className='text-[24px]'>Pengiriman</p>
-                            <p className='text-[16px]'>Tracking</p>
-                            <p className='text-[16px]'>Shipping Cost</p>
-                            <p className='text-[16px]'>Our Locations</p>
+                            <p className='text-[24px] font-plus-jakarta'>Pengiriman</p>
+                            <p className='text-[16px] font-plus-jakarta'>Tracking</p>
+                            <p className='text-[16px] font-plus-jakarta'>Shipping Cost</p>
+                            <p className='text-[16px] font-plus-jakarta'>Our Locations</p>
                         </div>
                         <div className='mt-5 text-white'>
-                            <p className='text-[24px] '>Others</p>
-                            <p className='text-[16px]'>FAQ</p>
-                            <p className='text-[16px]'>Partnership</p>
+                            <p className='text-[24px] font-plus-jakarta '>Others</p>
+                            <p className='text-[16px] font-plus-jakarta'>FAQ</p>
+                            <p className='text-[16px] font-plus-jakarta'>Partnership</p>
                         </div>
                         <div className='mt-5 text-white'>
-                            <p className='text-[24px]'>Download Apps</p>
+                            <p className='text-[24px] font-plus-jakarta'>Download Apps</p>
                             <img className='mt-3 w-[150px] h-[48px]' src={googleplay} />
                             <img className="mt-3 w-[150px] h-[48px]" src={appstore} />
                         </div>
@@ -56,21 +56,21 @@ function FooterComponents() {
                 <div className='w-9/12 mx-auto mt-10'>
                     <img className='w-[88px] h-[57px]' src={RaceLogo} />
                     <div className='text-white mt-4'>
-                        <ul className='text-[16px]'>Perusahaan</ul>
+                        <ul className='text-[16px] font-plus-jakarta'>Perusahaan</ul>
                         <ul className='text-[13px]'>Profil perusahaan</ul>
                         <ul className='text-[13px]'>Hubungi Kami</ul>
                         <ul className='text-[13px]'>karir</ul>
-                        <ul className='mt-5 text-[16px]'>Produk</ul>
+                        <ul className='mt-5 text-[16px] font-plus-jakarta'>Produk</ul>
                         <ul className='text-[13px]'>Delivery Service</ul>
                         <ul className='text-[13px]'>Fulfillment Service</ul>
-                        <ul className='mt-5 text-[16px]'>Pengiriman</ul>
+                        <ul className='mt-5 text-[16px] font-plus-jakarta'>Pengiriman</ul>
                         <ul className='text-[13px]'>Lacak Resi</ul>
                         <ul className='text-[13px]'>Cek Tarif</ul>
                         <ul className='text-[13px]'>Lokasi</ul>
-                        <ul className='mt-5 text-[16px]'>Lainnya</ul>
+                        <ul className='mt-5 text-[16px] font-plus-jakarta'>Lainnya</ul>
                         <ul className='text-[13px]'>FAQ</ul>
                         <ul className='text-[13px]'>Kemitraan</ul>
-                        <ul className='mt-5 text-[16px]'>Download Apps</ul>
+                        <ul className='mt-5 text-[16px] font-plus-jakarta'>Download Apps</ul>
                     </div>
                     <div className='grid grid-cols-2 mt-3 w-full '>
                         <div>

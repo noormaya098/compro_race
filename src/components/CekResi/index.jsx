@@ -243,7 +243,7 @@ function CekResiKomponents() {
         <div className=" md:hidden mt-32 w-11/12 mx-auto  ">
           <img className="" src={Rectangle} />
           <p
-            className=" text-center text-[32px] font-bold font-['Plus_Jakarta_Sans'] bg-clip-text text-transparent"
+            className=" text-center text-[32px] font-bold font-['Plus_Jakarta_Sans'] bg-clip-text text-transparent font-plus-jakarta"
             style={{
               background: "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
               WebkitBackgroundClip: "text",
@@ -263,7 +263,7 @@ function CekResiKomponents() {
             <div className="flex justify-center">
               <button
                 disabled={Loading}
-                className="bg-[#F05423] ph:w-[260px]  p-3 rounded-md h-[45px] text-white font-semibold "
+                className="bg-[#F05423] ph:w-[260px]  p-3 rounded-md h-[45px] text-white font-semibold font-plus-jakarta"
                 onClick={async () => {
                   await AmbilDetailAwal();
                   await GetLatLongMuatBongkar();
@@ -283,7 +283,7 @@ function CekResiKomponents() {
 
         <div className="ph:hidden">
           <p
-            className=" text-start text-[32px] font-semibold font-['Plus_Jakarta_Sans'] bg-clip-text text-transparent"
+            className=" text-start text-[32px] font-semibold font-['Plus_Jakarta_Sans'] bg-clip-text text-transparent font-plus-jakarta"
             style={{
               backgroundImage:
                 "linear-gradient(92deg, #F05423 11.5%, #A83CCE 46.87%, #3D62B0 85.41%)",
@@ -298,13 +298,14 @@ function CekResiKomponents() {
                 ubahnosm(e.target.value)
                 setInputanNilai(e.target.value)
               }}
-              className="md:w-[874px] md:h-[60px] m-5  border rounded-md"
+              className="md:w-[874px] md:h-[60px] m-5  border rounded-md font-plus-jakarta "
+              style={{  paddingLeft: '20px' }}// Mengatur warna teks menjadi hitam
               placeholder="Masukkan nomor resi pengiriman anda"
               value={ubahnosm()}
             ></input>
             <button
               disabled={Loading}
-              className="bg-[#F05423] ph:w-[260px]  p-3 rounded-md h-[45px] text-white font-semibold "
+              className="bg-[#F05423] ph:w-[260px]  p-3 rounded-md h-[45px] text-white font-semibold font-plus-jakarta"
               onClick={() => {
                 PindahHalaman(InputanNilai);
                 AmbilDetailAwal();
@@ -313,7 +314,7 @@ function CekResiKomponents() {
               {Loading ? "Loading..." : "Search"}
             </button>
             {DataHistory[0]?.data != null && (
-              <button onClick={copylink} className="bg-[#30a953] ph:w-[260px]  p-3 rounded-md h-[45px] ml-5 text-white font-semibold ">
+              <button onClick={copylink} className="bg-[#30a953] ph:w-[260px]  p-3 rounded-md h-[45px] ml-5 text-white font-semibold font-plus-jakarta ">
                 CopyURL
               </button>
             )}
@@ -325,8 +326,8 @@ function CekResiKomponents() {
               <div className="font-bold text-center text-[23px]">
                 Tracking Kiriman
               </div>
-              <div className="mt-4">
-                <p className="text-[27px] font-bold">Detail Alamat</p>
+              <div className="mt-4"> 
+                <p className="text-[27px] font-bold font-plus-jakarta">Detail Alamat</p>
                 <Table
                   columns={columns}
                   dataSource={dataDetailsemua}
@@ -338,7 +339,7 @@ function CekResiKomponents() {
                   dataSource={DataHistory}
                   pagination={false}
                 />
-                <p className="text-[27px] font-bold mt-3">History Pengiriman</p>
+                <p className="text-[27px] font-bold mt-3 font-plus-jakarta">History Pengiriman</p>
                 <Table
                   className="mt-1"
                   columns={columns3}
@@ -370,7 +371,7 @@ function CekResiKomponents() {
         {LatLongMuat == null && (
           <div className=" md:hidden overflow-auto">
             <div className="mt-4 ">
-              <p className="text-[27px] font-bold">Detail Alamat</p>
+              <p className="text-[27px] font-bold font-plus-jakarta">Detail Alamat</p>
               <Table
                 columns={columns}
                 dataSource={dataDetailsemua}
@@ -382,7 +383,7 @@ function CekResiKomponents() {
                 dataSource={DataHistory}
                 pagination={false}
               />
-              <p className="text-[27px] font-bold mt-3">History Pengiriman</p>
+              <p className="text-[27px] font-bold mt-3 font-plus-jakarta">History Pengiriman</p>
               <Table
                 className="mt-1"
                 columns={columns3}
@@ -390,7 +391,7 @@ function CekResiKomponents() {
                 pagination={false}
               />
             </div>
-            <div className="flex flex-col p-5 shadow-xl rounded-md border-2 mt-10 mb-10">
+            <div className="flex flex-col p-5 shadow-xl rounded-md border-2 mt-10 mb-10 font-plus-jakarta">
               <div className="">
                 <MapsGoogle
                   LatLongMuat={LatLongMuat}
@@ -398,7 +399,7 @@ function CekResiKomponents() {
                   LokasiDriverLongLat={LokasiDriverLongLat}
                 />
               </div>
-              <div className="mt-3  h-full  border-2 shadow-md rounded-md">
+              <div className="mt-3  h-full  border-2 shadow-md rounded-md font-plus-jakarta">
                 <Table
                   columns={columns4}
                   dataSource={DataHistory[0]?.data}
@@ -416,8 +417,8 @@ function CekResiKomponents() {
         )}
 
         <div></div>
-        <p className="ph:hidden text-center mt-24 mb-24 text-black">
-          Ada kendala?<span className="text-[#F05423]">Hubungi kami</span>{" "}
+        <p className="ph:hidden text-center mt-24 mb-24 text-black font-plus-jakarta">
+          Any Problems?<span className="text-[#F05423] font-plus-jakarta ">Contact Us</span>{" "}
         </p>
       </div>
       <FooterComponents />

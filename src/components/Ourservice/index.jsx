@@ -50,7 +50,7 @@ function OurService() {
                     variants={jempolorang}
                     transition={{ type: "tween" }}
                 >
-                    <h1 className='text-center text-[64px] text-white font-semibold ph:text-[32px] ph:mt-36 mt-28'>Our Service</h1>
+                    <h1 className='text-center text-[64px] text-white font-semibold ph:text-[32px] ph:mt-36 mt-28 font-plus-jakarta'>Our Service</h1>
                 </motion.div>
                 <div className='w-7/12 mx-auto mt-16 ph:w-11/12 '>
                     <motion.div
@@ -59,12 +59,12 @@ function OurService() {
                         variants={charter}
                         transition={{ type: "tween" }}
                     >
-                        <h1 className='text-white text-center text-[40px] font-semibold ph:text-[24px]'>Charter & Courier</h1>
-                        <p className='text-white text-center text-[24px]'>We have a few product that can fit in you any situations, let take a look!</p>
+                        <h1 className='text-white text-center text-[40px] font-semibold ph:text-[24px] font-plus-jakarta'>Charter & Courier</h1>
+                        <p className='text-white text-center text-[24px] font-plus-jakarta'>We have a few product that can fit in you any situations, let take a look!</p>
                     </motion.div>
                     <div className='card-wrapper grid grid-cols-3 mt-16 ph:grid-cols-1 ph:space-y-7 ph:flex ph:flex-col items-center'>
                         <motion.div 
-                            className='w-[341px] bg-white h-[468px] rounded-[20px]'
+                            className='w-[341px] bg-white h-[468px] rounded-[20px] font-plus-jakarta'
                             initial="hidden"
                             animate={isPastTriggerPoint3 ? "visible" : "hidden"}
                             variants={kiri}
@@ -74,8 +74,8 @@ function OurService() {
                                 <img src={orangnaikmotor} />
                             </div>
                             <div className='mx-7 '>
-                                <p className='text-[#F05423] font-semibold text-start text-[32px]'>Same day Services</p>
-                                <p className='text-[#FE8A66] font-medium text-start text-[20px] mt-3'>Delivery on the same day or within 8 hours</p>
+                                <p className='text-[#F05423] font-semibold text-start text-[32px] font-plus-jakarta'>Same day Services</p>
+                                <p className='text-[#FE8A66] font-medium text-start text-[20px] mt-3 font-plus-jakarta'>Delivery on the same day or within 8 hours</p>
                             </div>
                         </motion.div>
                         <motion.div
@@ -89,8 +89,8 @@ function OurService() {
                                 <img src={sameday} />
                             </div>
                             <div className='mx-7 '>
-                                <p className='text-[#F05423] font-semibold text-start text-[32px]'>Next day Services</p>
-                                <p className='text-[#FE8A66] font-medium text-start text-[20px] mt-3'>Delivery arrives the next day or within 2 hours.</p>
+                                <p className='text-[#F05423] font-semibold text-start text-[32px] font-plus-jakarta'>Next day Services</p>
+                                <p className='text-[#FE8A66] font-medium text-start text-[20px] mt-3 font-plus-jakarta'>Delivery arrives the next day or within 2 hours.</p>
                             </div>
                         </motion.div>
                         <motion.div
@@ -104,8 +104,8 @@ function OurService() {
                                 <img src={Regular} />
                             </div>
                             <div className='mx-7 '>
-                                <p className='text-[#F05423] font-semibold text-start text-[32px]'>Regular Services</p>
-                                <p className='text-[#FE8A66] font-medium text-start text-[20px] mt-3'>Standard Shipping within 1-3 days.</p>
+                                <p className='text-[#F05423] font-semibold text-start text-[32px] font-plus-jakarta'>Regular Services</p>
+                                <p className='text-[#FE8A66] font-medium text-start text-[20px] mt-3 font-plus-jakarta'>Standard Shipping within 1-3 days.</p>
                             </div>
                         </motion.div>
                     </div>
@@ -126,7 +126,7 @@ function OurService() {
                             hidden: { opacity: 0, x: -200 }
                         }}
                         transition={{ duration: 1, delay: 0.2 }}
-                        className='text-[#F05423] text-[36px] ph:text-[24px] font-semibold'>E-commerce Fulfillment</motion.p>
+                        className='text-[#F05423] text-[36px] ph:text-[24px] font-semibold font-plus-jakarta '>E-commerce Fulfillment</motion.p>
                     <div className=' grid grid-cols-2 mt-8 ph:grid-cols-1 '>
                         <motion.div
                             initial="hidden"
@@ -148,7 +148,7 @@ function OurService() {
                                     hidden: { opacity: 0, y: -200 }
                                 }}
                                 transition={{ duration: 1, delay: 0.2 }}
-                                className='mt-9 text-[20px] ph:text-[16px] text-[#F05423]'>Race serving all operational fulfillment activities, starting from the Inbound process, QC Checking,  Labeling, Storing, Packing, Outbound to Delivery</motion.p>
+                                className='mt-9 text-[20px] ph:text-[16px] text-[#F05423] font-plus-jakarta'>Race serving all operational fulfillment activities, starting from the Inbound process, QC Checking,  Labeling, Storing, Packing, Outbound to Delivery</motion.p>
                             <motion.p
                                 initial="hidden"
                                 animate={nilaiScroll >= 2000 ? "visible" : "hidden"}
@@ -157,7 +157,7 @@ function OurService() {
                                     hidden: { opacity: 0, x: 200 }
                                 }}
                                 transition={{ duration: 1, delay: 0.2 }}
-                                className='mt-12 text-[20px] ph:text-[16px] text-[#F05423]'>Freeing SMEs and business people from the burden  of fixed costs, Fulfillment Service as well as providing  opportunities to develop business in  strategic areas in Indonesia with minimal risk</motion.p>
+                                className='mt-12 text-[20px] ph:text-[16px] text-[#F05423] font-plus-jakarta'>Freeing SMEs and business people from the burden  of fixed costs, Fulfillment Service as well as providing  opportunities to develop business in  strategic areas in Indonesia with minimal risk</motion.p>
                         </div>
                     </div>
                 </div>

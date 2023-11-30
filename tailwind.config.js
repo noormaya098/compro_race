@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'plus-jakarta': ['Plus Jakarta Sans', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
+      },
       backgroundImage: {
         'gradient-title': 'linear-gradient(92deg, #F05423 11.5%, #A83CCE 46.87%, #3D62B0 85.41%)',
       },

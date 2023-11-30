@@ -55,7 +55,7 @@ function StatusbarComponents({ children }) {
           UbahHalaman(e.key);
         }}
       >
-        <div className="text-gray-400 hover:text-red-400 hover:underline hover:border-b-2 border-transparent">
+        <div className="text-gray-400 font-plus-jakarta hover:text-red-400 hover:underline hover:border-b-2 border-transparent">
           About us
         </div>
       </Menu.Item>
@@ -66,7 +66,7 @@ function StatusbarComponents({ children }) {
           UbahHalaman(e.key);
         }}
       >
-        <div className="hover:text-red-400 text-gray-400">Shipping</div>
+        <div className="hover:text-red-400 text-gray-400 font-plus-jakarta">Shipping</div>
       </Menu.Item>
       <Menu.Item
         key="cekresi"
@@ -75,7 +75,7 @@ function StatusbarComponents({ children }) {
           UbahHalaman(e.key);
         }}
       >
-        <div className="hover:text-red-400 text-gray-400">Tracking</div>
+        <div className="hover:text-red-400 text-gray-400 font-plus-jakarta">Tracking</div>
       </Menu.Item>
       <Menu.Item
         key="karir"
@@ -84,7 +84,7 @@ function StatusbarComponents({ children }) {
           UbahHalaman(e.key);
         }}
       >
-        <div className="hover:text-red-400 text-gray-400">Career</div>
+        <div className="hover:text-red-400 text-gray-400 font-plus-jakarta">Career</div>
       </Menu.Item>
     </Menu>
   );
@@ -138,7 +138,7 @@ function StatusbarComponents({ children }) {
               }}
             />
           </div>
-          <div className="flex justify-start items-start gap-10 ">
+          <div className="flex justify-start items-start gap-10 font-plus-jakarta ">
             <div
               id="/"
               onClick={(e) => UbahHalaman(e.target.id)}
@@ -158,7 +158,7 @@ function StatusbarComponents({ children }) {
               id="cekongkir"
               onClick={(e) => UbahHalaman(e.target.id)}
               className={` text-2xl ${
-                pathname === "/" ? " " : "text-[#F05423]  "
+                pathname === "/" ? " " : "text-[#F05423] font-plus-jakarta  "
               } ${
                 NilaiScroll > 50
                   ? " text-[#FEBCA7]"
@@ -178,7 +178,7 @@ function StatusbarComponents({ children }) {
                   : NilaiScroll <= 3 && pathname === "/"
                   ? "text-[#f05423]"
                   : ""
-              }  text-2xl  cursor-pointer hover:border-b-2 font-semibold text-[16px] hover:border-white `}
+              }  text-2xl  cursor-pointer hover:border-b-2 font-semibold text-[16px] hover:border-whitefont-plus-jakarta `}
             >
               Tracking
             </div>
@@ -191,7 +191,7 @@ function StatusbarComponents({ children }) {
                   : NilaiScroll <= 3 && pathname === "/"
                   ? "text-[#f05423]"
                   : ""
-              } text-2xl  cursor-pointer hover:border-b-2 font-semibold text-[16px] hover:border-white`}
+              } text-2xl  cursor-pointer hover:border-b-2 font-semibold text-[16px] hover:border-white font-plus-jakarta`}
             >
               Career
             </div>
@@ -280,33 +280,33 @@ function StatusbarComponents({ children }) {
           <ul
             id="/"
             onClick={(e) => UbahHalaman(e.target.id)}
-            className="text-[16px] text-[#FEBCA7]"
+            className="text-[16px] text-[#FEBCA7] font-plus-jakarta"
           >
             About us
           </ul>
           <ul
             id="cekongkir"
             onClick={(e) => UbahHalaman(e.target.id)}
-            className="text-[16px] text-[#FEBCA7]"
+            className="text-[16px] text-[#FEBCA7] font-plus-jakarta"
           >
             Shipping
           </ul>
           <ul
             id="cekresi"
             onClick={(e) => UbahHalaman(e.target.id)}
-            className="text-[16px] text-[#FEBCA7]"
+            className="text-[16px] text-[#FEBCA7] font-plus-jakarta"
           >
             Tracking
           </ul>
           <ul
             id="karir"
             onClick={(e) => UbahHalaman(e.target.id)}
-            className="text-[16px] text-[#FEBCA7]"
+            className="text-[16px] text-[#FEBCA7] font-plus-jakarta"
           >
             Career
           </ul>
           <div className=" text-center  ">
-            <p className="mt-64">Hubungi Kami</p>
+            <p className="mt-64">Contact Us</p>
             <button className="mt-4 w-[92px] font-semibold text-white h-[37px] bg-[#F05423] rounded-lg">
               Contact us
             </button>

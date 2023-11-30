@@ -1,4 +1,4 @@
-import React from 'react';
+  import React from 'react';
 import Welcome from '../components/welcome';
 import StatusbarComponents from '../components/statusbar';
 import SejarahComponeent from '../components/Sejarah';

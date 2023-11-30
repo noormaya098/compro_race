@@ -49,10 +49,10 @@ function Sliderss() {
     <div>
       <div className="mx-auto">
         <motion.div>
-          <h3 className="text-center text-[32px] text-[#3D62B0] font-semibold ph:text-[32px] ph:mt-36 mt-28">
+          <h3 className="text-center text-[32px] text-[#3D62B0] font-semibold ph:text-[32px] ph:mt-36 mt-28 font-plus-jakarta">
             Meet our vehicles!
           </h3>
-          <p className="text-center ">
+          <p className="text-center font-plus-jakarta">
             We provide a lot of vehicle to rescue your needs!
           </p>
         </motion.div>
@@ -65,27 +65,27 @@ function Sliderss() {
           <div key={index}>
             <Card className="border border-blue-700 shadow-xl">
               <Image src={item.image} />
-              <p className="text-[#3D62B0] text-[16px] font-bold">{item.title}</p>
-              <p className="text-black mt-2 text-[14px]">
+              <p className="text-[#3D62B0] text-[16px] font-bold font-plus-jakarta">{item.title}</p>
+              <p className="text-black mt-2 text-[14px] font-plus-jakarta">
                 Capacity Max :  {item.capacity}
               </p>
-              <p className="text-black mt-2 text-[14px]">
+              <p className="text-black mt-2 text-[14px] font-plus-jakarta">
                 Vol (cm) : <br />
                 {item.volume}
               </p>
-              <p className="text-[#3D62B0] mt-2 text-[16px] font-bold">What Include?</p>
-              <span>
+              <p className="text-[#3D62B0] mt-2 text-[16px] font-bold font-plus-jakarta">What Include?</p>
+              <span className="font-plus-jakarta">
                 {" "}
                 <Image
                   src={vector1}
                   style={{ width: "10px", height: "12px", marginRight: "5px" }}
-                  className="mt-2"
+                  className="mt-2 "
                 />{" "}
                 Driver
               </span>
               <p>
                 {" "}
-                <span>
+                <span className="font-plus-jakarta">
                   {" "}
                   <Image
                     src={vector2}
@@ -100,7 +100,7 @@ function Sliderss() {
                 </span>
               </p>
               <p>
-                <span>
+                <span className="font-plus-jakarta">
                   {" "}
                   <Image
                     src={vector3}
@@ -114,7 +114,7 @@ function Sliderss() {
                   Protect Asurance
                 </span>
               </p>
-              <p>
+              <p className="font-plus-jakarta">
                 <span>
                   {" "}
                   <Image

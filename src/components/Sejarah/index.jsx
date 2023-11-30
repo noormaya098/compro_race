@@ -36,7 +36,7 @@ function SejarahComponeent() {
       >
         <img className="w-[600px] h-[350px] " src={assetsss} />
         <p
-          className="text-[40px] font-bold text-center mt-20"
+          className="text-[40px] font-bold text-center mt-20  font-plus-jakarta"
           style={{
             background: "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
             WebkitBackgroundClip: "text",
@@ -45,7 +45,7 @@ function SejarahComponeent() {
         >
           Milestone of the Company
         </p>
-        <p className="text-[24px] mt-5 md:text-black ph:text-black text-center">
+        <p className="text-[24px]  mt-5 md:text-black ph:text-black text-center font-plus-jakarta">
           In 2017, Raja Cepat (RACE) was founded. Thanks to loyal customers for
           trusting RACE to help their business in expedition, RACE can now
           provide comprehensive services throughout the country. Not only that,
@@ -60,34 +60,34 @@ function SejarahComponeent() {
         variants={jempolorangkanan}
         transition={{ type: "tween" }}
       >
-        <div className="text-[64px] ph:text-[32px] ph:mt-6 text-[#F05423] font-bold">
+        <div className="text-[64px] font-plus-jakarta ph:text-[32px] ph:mt-6 text-[#F05423] font-bold">
           2022
         </div>
-        <p className="text-[24px] ph:text-[14px] ph:font-semibold ">
+        <p className="text-[24px] font-plus-jakarta ph:text-[14px] ph:font-semibold ">
           RACE Operates in Jawa, Sulawesi, and Sumatera.
         </p>
-        <div className="text-[64px] ph:text-[32px] text-[#F05423] font-bold mt-10 ">
+        <div className="text-[64px] font-plus-jakarta ph:text-[32px] text-[#F05423] font-bold mt-10 ">
           2021
         </div>
-        <p className="text-[24px]  ph:text-[14px] ph:font-semibold ">
+        <p className="text-[24px] font-plus-jakarta  ph:text-[14px] ph:font-semibold ">
           RACE Operates in Denpasar, Bali.
         </p>
-        <div className="text-[64px]  ph:text-[32px] text-[#F05423] font-bold mt-10">
+        <div className="text-[64px] font-plus-jakarta  ph:text-[32px] text-[#F05423] font-bold mt-10">
           2020
         </div>
-        <p className="text-[24px]  ph:text-[14px] ph:font-semibold ">
+        <p className="text-[24px] font-plus-jakarta  ph:text-[14px] ph:font-semibold ">
           RACE Operates in Bandung, Semarang, Yogyakarta, and Surabaya.
         </p>
-        <div className="text-[64px]  ph:text-[32px] text-[#F05423] font-bold mt-10">
+        <div className="text-[64px] font-plus-jakarta  ph:text-[32px] text-[#F05423] font-bold mt-10">
           2019
         </div>
-        <p className="text-[24px]  ph:text-[14px] ph:font-semibold ">
+        <p className="text-[24px] font-plus-jakarta  ph:text-[14px] ph:font-semibold ">
           RACE Hub Start Operates.
         </p>
-        <div className="text-[64px]  ph:text-[32px] text-[#F05423] font-bold mt-10">
+        <div className="text-[64px] font-plus-jakarta  ph:text-[32px] text-[#F05423] font-bold mt-10">
           2017
         </div>
-        <p className="text-[24px]  ph:text-[14px] ph:font-semibold  ">
+        <p className="text-[24px] font-plus-jakarta  ph:text-[14px] ph:font-semibold  ">
           RACE Operates.
         </p>
       </motion.div>

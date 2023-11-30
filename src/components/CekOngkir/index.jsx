@@ -45,7 +45,7 @@ function CekOngkirComponents() {
         >
           <div className="mt-">
             <div
-              className=" mx-auto font-bold text-[32px] "
+              className=" mx-auto font-bold text-[32px] font-plus-jakarta "
               style={{
                 background: "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
                 WebkitBackgroundClip: "text",
@@ -59,7 +59,7 @@ function CekOngkirComponents() {
         <div>
           <div className="w-9/12 ph:hidden mt-56 mx-auto ">
             <div
-              className=" mx-auto font-bold text-[32px]"
+              className=" mx-auto font-bold text-[32px] font-plus-jakarta"
               style={{
                 background: "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
                 WebkitBackgroundClip: "text",
@@ -69,10 +69,10 @@ function CekOngkirComponents() {
               Check Service Prices
             </div>
             <div className="flex justify-start ">
-              <div className="w-screen  h-[114px]  flex justify-start mt-10 border rounded-lg shadow-md">
+              <div className="w-screen  h-[114px]  flex justify-start mt-10 border rounded-lg shadow-md font-plus-jakarta">
                 <div className="grid grid-cols-4  m-5 space-x-28">
                   <div className="">
-                    <p className="text-[#F05423]">From</p>
+                    <p className="text-[#F05423] font-plus-jakarta">From</p>
                     <Select
                       placeholder="Departure City"
                       className="mt-6 w-full"
@@ -99,7 +99,7 @@ function CekOngkirComponents() {
                     </Select>
                   </div>
                   <div className="ml-9">
-                    <p className="text-[#F05423]">To</p>
+                    <p className="text-[#F05423] font-plus-jakarta">To</p>
                     <Select
                       className="mt-6 w-full"
                       placeholder="Destination City"
@@ -128,7 +128,7 @@ function CekOngkirComponents() {
                     </Select>
                   </div>
                   <div className="ml-9">
-                    <p className="text-[#F05423]">Weight</p>
+                    <p className="text-[#F05423] font-plus-jakarta">Weight</p>
                     <div className="flex items-center mt-6 ">
                       <input
                         onChange={(e) =>
@@ -137,7 +137,7 @@ function CekOngkirComponents() {
                         className=" w-[50px] border-b border-gray-300"
                         placeholder="0"
                       />
-                      <h1 className="text-black font-semibold">Gram</h1>
+                      <h1 className="text-black font-semibold font-plus-jakarta">Gram</h1>
                     </div>
                   </div>
                   {/* <div className='ml-11'>
@@ -157,7 +157,7 @@ function CekOngkirComponents() {
                           console.log(error);
                         }
                       }}
-                      className="w-[130px] h-[64px] bg-[#F05423] text-white rounded-lg"
+                      className="w-[130px] h-[64px] bg-[#F05423] text-white rounded-lg font-plus-jakarta"
                     >
                       Search
                     </button>
@@ -167,7 +167,7 @@ function CekOngkirComponents() {
             </div>
             {result && (
               <div className="hasilresult  mx-auto mt-24">
-                <div className="grid grid-cols-5 font-bold border-b-2 border-black pb-2">
+                <div className="grid grid-cols-5 font-bold border-b-2 border-black pb-2 font-plus-jakarta">
                   <div>Service</div>
                   <div>Deskripsi</div>
                   <div>Estimasi</div>
@@ -199,7 +199,7 @@ function CekOngkirComponents() {
             )}
             <div className="mt-28">
               <p
-                className="text-4xl font-bold "
+                className="text-4xl font-bold font-plus-jakarta"
                 style={{
                   background:
                     "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
@@ -213,35 +213,35 @@ function CekOngkirComponents() {
               <div className="grid grid-cols-3 space-x-20 mt-10 ">
                 <div className="w-[258px] h-[325px] ">
                   <img src={orangnaikmotor} />
-                  <p className="text-[#F05423] mt-5 text-[24px] font-semibold">
+                  <p className="text-[#F05423] mt-5 text-[24px] font-semibold font-plus-jakarta">
                     Same day Services
                   </p>
-                  <p className="text-[16px] text-[#FE8A66] font-medium">
+                  <p className="text-[16px] text-[#FE8A66] font-medium font-plus-jakarta">
                     Delivery on the same day or within 8 hours
                   </p>
                 </div>
                 <div className="w-[258px] h-[325px] ">
                   <img src={sameday} />
-                  <p className="text-[#F05423] mt-5 text-[24px] font-semibold">
+                  <p className="text-[#F05423] mt-5 text-[24px] font-semibold font-plus-jakarta">
                     Next day Services
                   </p>
-                  <p className="text-[16px] text-[#FE8A66] font-medium">
+                  <p className="text-[16px] text-[#FE8A66] font-medium font-plus-jakarta">
                     Delivery arrives the next day or within 2 hours.
                   </p>
                 </div>
                 <div className="w-[258px] h-[325px] ">
                   <img src={Regular} />
-                  <p className="text-[#F05423] mt-5 text-[24px] font-semibold">
+                  <p className="text-[#F05423] mt-5 text-[24px] font-semibold font-plus-jakarta">
                     Regular Services
                   </p>
-                  <p className="text-[16px] text-[#FE8A66] font-medium">
+                  <p className="text-[16px] text-[#FE8A66] font-medium font-plus-jakarta">
                     Standard Shipping within 1-3 days.
                   </p>
                 </div>
               </div>
             </div>
-            <p className="text-center mt-36 text-black">
-              Ada kendala?<span className="text-[#F05423]">Hubungi kami</span>{" "}
+            <p className="text-center mt-36 text-black font-plus-jakarta">
+              Any Problems?<span className="text-[#F05423] font-plus-jakarta">Contact Us</span>{" "}
             </p>
           </div>
           <div className="mt-28 ph:hidden">
@@ -251,7 +251,7 @@ function CekOngkirComponents() {
         <div className="md:hidden">
           <div>
             <p
-              className="text-center text-[24px] mt-6 font-bold
+              className="text-center text-[24px] mt-6 font-bold font-plus-jakarta
                     "
               style={{
                 background: "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
@@ -263,10 +263,10 @@ function CekOngkirComponents() {
             </p>
           </div>
           <div className="flex justify-center">
-            <div className="h-[329px] w-[280px] border-2 border-orange-400 rounded-lg mt-6 shadow-md">
+            <div className="h-[329px] w-[280px] border-2 border-orange-400 rounded-lg mt-6 shadow-md ">
               <div className="m-3">
-                <div className="">
-                  <p>From</p>
+                <div className="font-plus-jakarta">
+                  <p >From</p>
                   {/* <Select placeholder="Departure City" style={{ width: "100%", marginTop: 2 }}></Select> */}
                   <Select
                     style={{ width: "100%", marginTop: 2 }}
@@ -323,7 +323,7 @@ function CekOngkirComponents() {
                 </div>
                 <div className="grid  mt-5">
                   <div>
-                    <p>Weight</p>
+                    <p className="font-plus-jakarta">Weight</p>
                     <div className="mt-3 grid grid-cols-2">
                       <Input
                         style={{ width: "100%" }}
@@ -333,7 +333,7 @@ function CekOngkirComponents() {
                         placeholder="0"
                         className="border-b-2"
                       ></Input>
-                      <div className="font-bold ml-3">Gram</div>
+                      <div className="font-bold ml-3 font-plus-jakarta">Gram</div>
                     </div>
                   </div>
                   {/* <div>
@@ -353,7 +353,7 @@ function CekOngkirComponents() {
                       console.log(error);
                     }
                   }}
-                  className="bg-[#F05423] w-[240px] h-[40px] text-white font-semibold rounded-lg"
+                  className="bg-[#F05423] w-[240px] h-[40px] text-white font-semibold rounded-lg font-plus-jakarta"
                 >
                   Search
                 </button>
@@ -362,7 +362,7 @@ function CekOngkirComponents() {
           </div>
           {result && (
             <div className="hasilresult w-11/12 mx-auto mt-24">
-              <div className="grid grid-cols-5 font-bold border-b-2 border-black pb-2">
+              <div className="grid grid-cols-5 font-bold border-b-2 border-black pb-2 font-plus-jakarta">
                 <div>Service</div>
                 <div>Deskripsi</div>
                 <div>Estimasi</div>
@@ -376,7 +376,7 @@ function CekOngkirComponents() {
                     {/* Replace with actual property name */}
                     <div>{item?.description}</div>{" "}
                     {/* Replace with actual property name */}
-                    <div>{item?.cost?.[0]?.etd} Hari</div>{" "}
+                    <div className="font-plus-jakarta">{item?.cost?.[0]?.etd} Hari</div>{" "}
                     {/* Replace with actual property name */}
                     <div>
                       {item?.cost?.[0]?.note == ""
@@ -401,26 +401,26 @@ function CekOngkirComponents() {
                 <div className="w-[403px] h-[280px]  shadow-lg rounded-lg">
                   <img src={orangnaikmotor} alt="Service 1" />
                   <div className=" m-2 ">
-                    <p>Same day Services</p>
-                    <p className="mt-2">
+                    <p className="font-plus-jakarta">Same day Services</p>
+                    <p className="mt-2 font-plus-jakarta">
                       Delivery on the same day or within 8 hours
                     </p>
                   </div>
                 </div>
                 <div className="w-[403px] h-[280px] shadow-lg rounded-lg">
                   <img src={sameday} alt="Service 2" />
-                  <div className="  m-2">
-                    <p>Next day Services</p>
-                    <p className="mt-2">
+                  <div className="  m-2 font-plus-jakarta">
+                    <p className="font-plus-jakarta">Next day Services</p>
+                    <p className="mt-2 font-plus-jakarta">
                       Delivery arrives the next day or within 2 hours.
                     </p>
                   </div>
                 </div>
                 <div className="w-[403px] h-[280px] shadow-lg rounded-lg">
                   <img src={Regular} alt="Service 3" />
-                  <div className="  m-2">
+                  <div className="  m-2 font-plus-jakarta">
                     <p>Regular Services</p>
-                    <p className="mt-2">Standard Shipping within 1-3 days.</p>
+                    <p className="mt-2 font-plus-jakarta">Standard Shipping within 1-3 days.</p>
                   </div>
                 </div>
               </div>

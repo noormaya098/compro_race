@@ -29,13 +29,13 @@ function SideBarComponents() {
                 <img src={Race_New_Baru} />
             </div>
             <div className='menu text-center mt-14 space-y-10 font-semibold'>
-                <ul id='/' onClick={(e) => UbahHalaman(e.target.id)}  className='text-[16px] text-[#FEBCA7]'>Tentang Kami</ul>
-                <ul id='cekongkir' onClick={(e) => UbahHalaman(e.target.id)}  className='text-[16px] text-[#FEBCA7]'>Cek Ongkir</ul>
-                <ul id='cekresi' onClick={(e) => UbahHalaman(e.target.id)} className='text-[16px] text-[#FEBCA7]'>Cek Resi</ul>
-                <ul id='karir' onClick={(e) => UbahHalaman(e.target.id)}  className='text-[16px] text-[#FEBCA7]'>Race Karir</ul>
+                <ul id='/' onClick={(e) => UbahHalaman(e.target.id)}  className='text-[16px] text-[#FEBCA7] font-plus-jakarta'>About us</ul>
+                <ul id='cekongkir' onClick={(e) => UbahHalaman(e.target.id)}  className='text-[16px] text-[#FEBCA7] font-plus-jakarta'>Shipping</ul>
+                <ul id='cekresi' onClick={(e) => UbahHalaman(e.target.id)} className='text-[16px] text-[#FEBCA7] font-plus-jakarta'>Tracking</ul>
+                <ul id='karir' onClick={(e) => UbahHalaman(e.target.id)}  className='text-[16px] text-[#FEBCA7] font-plus-jakarta'>Career</ul>
                 <div className=' text-center  '>
-                    <p className='mt-64'>Hubungi Kami</p>
-                    <button className='mt-4 w-[92px] font-semibold text-white h-[37px] bg-[#F05423] rounded-lg'>Contact us</button>
+                    <p className='mt-64 font-plus-jakarta'>Contact Us</p>
+                    <button className='mt-4 w-[92px] font-semibold text-white h-[37px] bg-[#F05423] rounded-lg font-plus-jakarta'>Contact us</button>
                 </div>
             </div>
         </div>
