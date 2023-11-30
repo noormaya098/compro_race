@@ -13,7 +13,7 @@ import rate from "../../assets/partner/image 8.png";
 import chilibeli from "../../assets/partner/image 9.png";
 function PartnerComponents() {
   return (
-    <div className="w-7/12 mx-auto mt-56 mb-32">
+    <div className="w-8/12 mx-auto mt-56 mb-32">
       <h1
         className="text-center text-[48px] font-bold font-plus-jakarta"
         style={{

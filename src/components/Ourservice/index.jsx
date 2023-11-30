@@ -52,7 +52,7 @@ function OurService() {
                 >
                     <h1 className='text-center text-[64px] text-white font-semibold ph:text-[32px] ph:mt-36 mt-28 font-plus-jakarta'>Our Service</h1>
                 </motion.div>
-                <div className='w-7/12 mx-auto mt-16 ph:w-11/12 '>
+                <div className='w-10/12 mx-auto mt-16 ph:w-11/12 md:w-12/12 '>
                     <motion.div
                         initial="hidden"
                         animate={isPastTriggerPoint2 ? "visible" : "hidden"}
@@ -114,7 +114,7 @@ function OurService() {
             </div >
             <Sliderss />
             <div
-                className='w-7/12 mx-auto mt-16   '
+                className='w-9/12 mx-auto mt-16   '
 
             >
                 <div className=' md:w-[1064px]   h-[385px] mt-40 '>

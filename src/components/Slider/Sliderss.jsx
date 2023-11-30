@@ -47,7 +47,7 @@ const data = [
 function Sliderss() {
   return (
     <div>
-      <div className="mx-auto">
+      <div className="mx-auto md:w-12/12">
         <motion.div>
           <h3 className="text-center text-[32px] text-[#3D62B0] font-semibold ph:text-[32px] ph:mt-36 mt-28 font-plus-jakarta">
             Meet our vehicles!
