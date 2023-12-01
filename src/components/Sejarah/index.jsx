@@ -12,7 +12,6 @@ import Mile5 from "../../assets/mile5.jpg";
 import Mile6 from "../../assets/mile6.jpg";
 import BG from "../../assets/bg.png";
 
-
 // import Mile4 from "../../assets/mile4.jpg";
 
 import { Carousel } from "antd";
@@ -40,24 +39,52 @@ function SejarahComponeent() {
 
   const carouselStyle = {
     backgroundImage: `url(${BG})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    height: 'auto', // Sesuaikan tinggi sesuai kebutuhan
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    height: "auto", // Sesuaikan tinggi sesuai kebutuhan
   };
 
- 
   return (
-    <div >
+    <div>
       <div className=" h-screen mx-auto " style={carouselStyle}>
-          <Carousel  >
-            {/* Slide 1 */}
-            <>
-              
-              <div className=" grid md:grid-cols-2 grid-cols-1 mb-40  ml- ml-20 mt-20">
-                <div className="md:w-12/12 flex flex-col items-center mx-auto mr-10">
+        <Carousel>
+          {/* Slide 1 */}
+          <>
+            <div className=" grid md:grid-cols-2 grid-cols-1 mb-40  ml- ml-20 mt-20">
+              <div className="md:w-12/12 flex flex-col items-center mx-auto mr-10">
+                <p
+                  className="text-[50px] font-bold text-center w-9/12 font-plus-jakarta mt-10 ml-10"
+                  style={{
+                    background:
+                      "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >
+                  Milestone of the Company
+                </p>
+                <p className="text-[24px]  mt-5 md:text-black ph:text-black text-center font-plus-jakarta ml-10">
+                  In 2017, Raja Cepat (RACE) was founded. Thanks to loyal
+                  customers for trusting RACE to help their business in
+                  expedition, RACE can now provide comprehensive services
+                  throughout the country. Not only that, RACE also prioritizes
+                  customer service in order to increase customer satisfaction in
+                  trusting RACE as a reliable expedition.
+                </p>
+              </div>
+
+              <img className="w-[600px] h-[350px] mt-10 ml-10" src={Mile1} />
+            </div>
+          </>
+
+          {/* Slide 2 */}
+          <>
+            <div>
+              <div className=" grid md:grid-cols-2 grid-cols-1  mt-20 ml-12 ">
+                <div className="md:w-12/12 flex flex-col items-center mx-auto">
                   <p
-                    className="text-[50px] font-bold text-center w-9/12 font-plus-jakarta mt-10 ml-10"
+                    className="text-[80px] font-bold text-center w-9/12 font-plus-jakarta mt-20"
                     style={{
                       background:
                         "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
@@ -65,168 +92,135 @@ function SejarahComponeent() {
                       WebkitTextFillColor: "transparent",
                     }}
                   >
-                    Milestone of the Company
+                    2017
                   </p>
-                  <p className="text-[24px]  mt-5 md:text-black ph:text-black text-center font-plus-jakarta ml-10">
-                    In 2017, Raja Cepat (RACE) was founded. Thanks to loyal
-                    customers for trusting RACE to help their business in
-                    expedition, RACE can now provide comprehensive services
-                    throughout the country. Not only that, RACE also prioritizes
-                    customer service in order to increase customer satisfaction
-                    in trusting RACE as a reliable expedition.
+                  <p className="text-[24px]  mt-5 md:text-[#F05423] ph:text-[#F05423] text-center font-plus-jakarta">
+                    Race start the first operations.
                   </p>
                 </div>
-
-                <img className="w-[600px] h-[350px] mt-10 ml-10" src={Mile1} />
+                <img
+                  className="w-[600px] h-[350px] mt-10 rounded-lg"
+                  src={Mile5}
+                />
               </div>
-            </>
+            </div>
+          </>
 
-            {/* Slide 2 */}
-            <>
-              <div>
-               
-                <div className=" grid md:grid-cols-2 grid-cols-1  mt-20 ml-12 ">
-                  <div className="md:w-12/12 flex flex-col items-center mx-auto">
-                    <p
-                      className="text-[80px] font-bold text-center w-9/12 font-plus-jakarta mt-20"
-                      style={{
-                        background:
-                          "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                      }}
-                    >
-                      2017
-                    </p>
-                    <p className="text-[24px]  mt-5 md:text-[#F05423] ph:text-[#F05423] text-center font-plus-jakarta">
-                      Race start the first operations.
-                    </p>
-                  </div>
-                  <img
-                    className="w-[600px] h-[350px] mt-10 rounded-lg"
-                    src={Mile5}
-                  />
+          {/* Slide 3 */}
+          <>
+            <div>
+              <div className=" grid md:grid-cols-2 grid-cols-1  mt-20 ml-12  ">
+                <div className="md:w-12/12 flex flex-col items-center mx-auto">
+                  <p
+                    className="text-[80px] font-bold text-center w-9/12 font-plus-jakarta mt-20"
+                    style={{
+                      background:
+                        "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    }}
+                  >
+                    2019
+                  </p>
+                  <p className="text-[24px]  mt-5 md:text-[#F05423] ph:text-[#F05423] text-center font-plus-jakarta ">
+                    RACE Hub Start Operate.
+                  </p>
                 </div>
+                <img
+                  className="w-[600px] h-[350px] mt-10 rounded-lg"
+                  src={Mile3}
+                />
               </div>
-            </>
+            </div>
+          </>
 
-            {/* Slide 3 */}
-            <>
-              <div>
-                
-                <div className=" grid md:grid-cols-2 grid-cols-1  mt-20 ml-12  ">
-                  <div className="md:w-12/12 flex flex-col items-center mx-auto">
-                    <p
-                      className="text-[80px] font-bold text-center w-9/12 font-plus-jakarta mt-20"
-                      style={{
-                        background:
-                          "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                      }}
-                    >
-                      2019
-                    </p>
-                    <p className="text-[24px]  mt-5 md:text-[#F05423] ph:text-[#F05423] text-center font-plus-jakarta ">
-                      RACE Hub Start Operate.
-                    </p>
-                  </div>
-                  <img
-                    className="w-[600px] h-[350px] mt-10 rounded-lg"
-                    src={Mile3}
-                  />
+          {/* Slide 4 */}
+          <>
+            <div>
+              <div className=" grid md:grid-cols-2 grid-cols-1  mt-20  ml-12">
+                <div className="md:w-12/12 flex flex-col items-center mx-auto">
+                  <p
+                    className="text-[80px] font-bold text-center w-9/12 font-plus-jakarta mt-20"
+                    style={{
+                      background:
+                        "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    }}
+                  >
+                    2020
+                  </p>
+                  <p className="text-[24px]  mt-5 md:text-[#F05423] ph:text-[#F05423] text-center font-plus-jakarta w-9/12">
+                    RACE Operates in Bandung, Semarang, Yogyakarta, and
+                    Surabaya.
+                  </p>
                 </div>
+                <img
+                  className="w-[600px] h-[350px] mt-10 rounded-lg"
+                  src={Mile2}
+                />
               </div>
-            </>
+            </div>
+          </>
 
-            {/* Slide 4 */}
-            <>
-              <div>
-               
-                <div className=" grid md:grid-cols-2 grid-cols-1  mt-20  ml-12">
-                  <div className="md:w-12/12 flex flex-col items-center mx-auto">
-                    <p
-                      className="text-[80px] font-bold text-center w-9/12 font-plus-jakarta mt-20"
-                      style={{
-                        background:
-                          "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                      }}
-                    >
-                      2020
-                    </p>
-                    <p className="text-[24px]  mt-5 md:text-[#F05423] ph:text-[#F05423] text-center font-plus-jakarta w-9/12">
-                      RACE Operates in Bandung, Semarang, Yogyakarta, and
-                      Surabaya.
-                    </p>
-                  </div>
-                  <img
-                    className="w-[600px] h-[350px] mt-10 rounded-lg"
-                    src={Mile2}
-                  />
+          {/* Slide 5 */}
+          <>
+            <div>
+              <div className=" grid md:grid-cols-2 grid-cols-1  mt-20  ml-12">
+                <div className="md:w-12/12 flex flex-col items-center mx-auto">
+                  <p
+                    className="text-[80px] font-bold text-center w-9/12 font-plus-jakarta mt-20"
+                    style={{
+                      background:
+                        "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    }}
+                  >
+                    2021
+                  </p>
+                  <p className="text-[24px]  mt-5 md:text-[#F05423] ph:text-[#F05423] text-center font-plus-jakarta">
+                    RACE Operates in Denpasar, Bali.
+                  </p>
                 </div>
+                <img
+                  className="w-[600px] h-[350px] mt-10 rounded-lg"
+                  src={Mile6}
+                />
               </div>
-            </>
+            </div>
+          </>
 
-            {/* Slide 5 */}
-            <>
-              <div>
-                <div className=" grid md:grid-cols-2 grid-cols-1  mt-20  ml-12">
-                  <div className="md:w-12/12 flex flex-col items-center mx-auto">
-                    <p
-                      className="text-[80px] font-bold text-center w-9/12 font-plus-jakarta mt-20"
-                      style={{
-                        background:
-                          "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                      }}
-                    >
-                      2021
-                    </p>
-                    <p className="text-[24px]  mt-5 md:text-[#F05423] ph:text-[#F05423] text-center font-plus-jakarta">
-                      RACE Operates in Denpasar, Bali.
-                    </p>
-                  </div>
-                  <img
-                    className="w-[600px] h-[350px] mt-10 rounded-lg"
-                    src={Mile6}
-                  />
+          {/* Slide 6 */}
+          <>
+            {" "}
+            <div>
+              <div className=" grid md:grid-cols-2 grid-cols-1  mt-20 ml-12 ">
+                <div className="md:w-12/12 flex flex-col items-center mx-auto">
+                  <p
+                    className="text-[80px] font-bold text-center w-9/12 font-plus-jakarta mt-20"
+                    style={{
+                      background:
+                        "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                    }}
+                  >
+                    2022
+                  </p>
+                  <p className="text-[24px]  mt-5 md:text-[#F05423] ph:text-[#F05423] text-center font-plus-jakarta w-9/12">
+                    RACE Operates in Jawa, Sulawesi, and Sumatera.
+                  </p>
                 </div>
+                <img
+                  className="w-[600px] h-[350px] mt-10 rounded-lg"
+                  src={Mile4}
+                />
               </div>
-            </>
-
-            {/* Slide 6 */}
-            <>
-              {" "}
-              <div>
-                <div className=" grid md:grid-cols-2 grid-cols-1  mt-20 ml-12 ">
-                  <div className="md:w-12/12 flex flex-col items-center mx-auto">
-                    <p
-                      className="text-[80px] font-bold text-center w-9/12 font-plus-jakarta mt-20"
-                      style={{
-                        background:
-                          "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                      }}
-                    >
-                      2022
-                    </p>
-                    <p className="text-[24px]  mt-5 md:text-[#F05423] ph:text-[#F05423] text-center font-plus-jakarta w-9/12">
-                      RACE Operates in Jawa, Sulawesi, and Sumatera.
-                    </p>
-                  </div>
-                  <img
-                    className="w-[600px] h-[350px] mt-10 rounded-lg"
-                    src={Mile4}
-                  />
-                </div>
-              </div>
-            </>
-          </Carousel>
-        </div>
+            </div>
+          </>
+        </Carousel>
+      </div>
 
       {/* <div className=" grid md:grid-cols-2 grid-cols-1  mb-52  mt-20  ">
         <motion.div
