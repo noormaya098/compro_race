@@ -59,7 +59,7 @@ function CekResiKomponents() {
     try {
       const data = await axios.get(`
             https://apirace.eurekalogistics.co.id/sp/get-sm-detail?msm=${InputanNilai}`);
-      console.log(`data`, data?.data?.data[0]);
+      console.log(`data detail search`, data?.data?.data?.[0]?.positionDriverNow);
       setLokasiDriverLongLat(data?.data?.data?.[0]?.positionDriverNow);
       if (data?.data === null) {
         notification.error({
@@ -329,7 +329,7 @@ function CekResiKomponents() {
             )}
           </div>
         </div>
-        {DataHistory[0]?.data && (
+        {DataHistory && (
           <div className="justify-center grid grid-cols-2 mx-auto mt-32 ph:hidden w-full space-x-3  ">
             <div className=" p-5 border-2 shadow-xl rounded-md   ">
               <div className="font-bold text-center text-[23px]">
