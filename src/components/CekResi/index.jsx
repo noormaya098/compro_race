@@ -3,7 +3,7 @@ import Rectangle from "../../assets/Rectangle 37.png";
 import FooterComponents from "../Footer";
 import MapsGoogle from "../GoogleMap/GoogleMapsComponents";
 import axios from "axios";
-import { notification, Table, Tag, Image } from "antd";
+import { notification, Table, Tag, Image, Card } from "antd";
 import GoogleMpasStore from "../../ZustandStore/GooglemapStore";
 import { getCoordinates } from "../../funcs/GetLongLatGoogle";
 import { dbdatabase } from "../../firebase/config";
@@ -59,9 +59,12 @@ function CekResiKomponents() {
     try {
       const data = await axios.get(`
             https://apirace.eurekalogistics.co.id/sp/get-sm-detail?msm=${InputanNilai}`);
-      console.log(`data detail search`, data?.data?.data?.[0]?.positionDriverNow);
+      console.log(
+        `data detail search`,
+        data?.data?.data?.[0]?.positionDriverNow
+      );
       setLokasiDriverLongLat(data?.data?.data?.[0]?.positionDriverNow);
-      if (data?.data === null) {  
+      if (data?.data === null) {
         notification.error({
           message: "Data Tidak Ditemukan",
         });
@@ -78,11 +81,14 @@ function CekResiKomponents() {
           data?.data?.data[0]?.alamatMuat?.alamat,
           data?.data?.data[0]?.alamatBongkar?.alamat
         );
-        
+
         historykendaraan(data?.data?.data[0]?.idMsm);
       }
       setLoading(false);
-      console.log(`data?.data?.data[0]?.data?.alamatMuat?.alamat,`,data?.data?.data[0]?.alamatMuat);
+      console.log(
+        `data?.data?.data[0]?.data?.alamatMuat?.alamat,`,
+        data?.data?.data[0]?.alamatMuat
+      );
     } catch (error) {
       setLoading(false);
       notification.error({
@@ -93,7 +99,7 @@ function CekResiKomponents() {
 
   useEffect(() => {
     if (nosm != null) {
-      AmbilDetailAwal()
+      AmbilDetailAwal();
     } else {
       AmbilDetailAwal();
       GetLatLongMuatBongkar();
@@ -108,7 +114,7 @@ function CekResiKomponents() {
       );
       console.log(data?.data);
       setDataHistory([data?.data]);
-    } catch (error) { }
+    } catch (error) {}
   };
 
   console.log(`data DataHistory`, DataHistory);
@@ -122,9 +128,7 @@ function CekResiKomponents() {
     setLoading(true);
     console.log(`dari func`, AlamatMuat, AlamatBongkar);
     const muat = await getCoordinates(AlamatMuat); // Assuming getCoordinates is the correct function to call
-    const bongkar = await getCoordinates(
-      AlamatBongkar
-    );
+    const bongkar = await getCoordinates(AlamatBongkar);
     setLatLongMuat(muat);
     setLatLongBongkar(bongkar);
     setLoading(false);
@@ -260,7 +264,7 @@ function CekResiKomponents() {
             }}
           >
             {/* Lacak Paket Anda */}
-            Track Your Package
+            Delivery Tracking
           </p>
 
           <div className="md:w-[1064px] md:h-[105px] ph:h-[130px] flex flex-col  mt-5 shadow rounded-lg">
@@ -300,49 +304,58 @@ function CekResiKomponents() {
             }}
           >
             {/* Lacak Paket Anda */}
-            Track Your Package
+            Delivery Tracking
           </p>
 
           <div className="md:w-full md:h-[105px] ph:h-[130px] mt-5 shadow rounded-lg">
-            <input
-              onChange={(e) => {
-                ubahnosm(e.target.value);
-                setInputanNilai(e.target.value);
-              }}
-              className="md:w-[874px] md:h-[60px] m-5  border rounded-md font-plus-jakarta "
-              style={{ paddingLeft: "20px" }} // Mengatur warna teks menjadi hitam
-              placeholder="Masukkan nomor resi pengiriman anda"
-              value={ubahnosm()}
-            ></input>
-            <button
-              disabled={Loading}
-              className="bg-[#F05423] ph:w-[260px]  p-3 rounded-md h-[45px] text-white font-semibold font-plus-jakarta text-center"
-              onClick={() => {
-                PindahHalaman(InputanNilai);
-                AmbilDetailAwal();
+            <Card
+              style={{
+                boxShadow: "5px 5px 5px 0 rgba(0, 0, 0, 0.1)", // Ubah nilai ini sesuai dengan bayangan yang Anda inginkan
               }}
             >
-              {Loading ? "Loading..." : "Search"}
-            </button>
-            {DataHistory[0]?.data != null && (
+              <input
+                onChange={(e) => {
+                  ubahnosm(e.target.value);
+                  setInputanNilai(e.target.value);
+                }}
+                className="md:w-[874px] md:h-[60px] m-5  border rounded-md font-plus-jakarta "
+                style={{ paddingLeft: "20px" }} // Mengatur warna teks menjadi hitam
+                placeholder="Masukkan nomor resi pengiriman anda"
+                value={ubahnosm()}
+              ></input>
               <button
-                onClick={copylink}
-                className="bg-[#30a953] ph:w-[260px]  p-3 rounded-md h-[45px] ml-5 text-white font-semibold font-plus-jakarta "
+                disabled={Loading}
+                className="bg-[#F05423] ph:w-[260px]  p-3 rounded-md h-[45px] text-white font-semibold font-plus-jakarta text-center"
+                onClick={() => {
+                  PindahHalaman(InputanNilai);
+                  AmbilDetailAwal();
+                }}
               >
-                CopyURL
+                {Loading ? "Loading..." : "Search"}
               </button>
-            )}
+              {DataHistory[0]?.data != null && (
+                <button
+                  onClick={copylink}
+                  className="bg-[#30a953] ph:w-[260px]  p-3 rounded-md h-[45px] ml-5 text-white font-semibold font-plus-jakarta "
+                >
+                  CopyURL
+                </button>
+              )}
+            </Card>
           </div>
         </div>
         {DataHistory[0] && (
           <div className="justify-center grid grid-cols-2 mx-auto mt-32 ph:hidden w-full space-x-3  ">
             <div className=" p-5 border-2 shadow-xl rounded-md   ">
-              <div className="font-bold text-center text-[23px]">
-                Tracking Kiriman
+              <div className="font-bold text-start text-[36px]">
+                {/* Tracking Kiriman */}
+                Tracking Information
               </div>
+              <hr />
               <div className="mt-4">
                 <p className="text-[27px] font-bold font-plus-jakarta">
-                  Detail Alamat
+                  {/* Detail Alamat */}
+                  Detail of delivery
                 </p>
                 <Table
                   columns={columns}
@@ -441,7 +454,9 @@ function CekResiKomponents() {
         <div></div>
         <p className="ph:hidden text-center mt-24 mb-24 text-black font-plus-jakarta">
           Any Problems?
-          <span className="text-[#F05423] font-plus-jakarta ml-2 cursor-pointer">Contact our Customer Service</span>{" "}
+          <span className="text-[#F05423] font-plus-jakarta ml-2 cursor-pointer">
+            Contact our Customer Service
+          </span>{" "}
         </p>
       </div>
       <FooterComponents />

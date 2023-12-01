@@ -16,7 +16,7 @@ function Home() {
     <div className=' overflow-hidden'>
       {/* <SideBarComponents/> */}
       <Welcome />
-      <div className='w-9/12 mx-auto'>
+      <div className='w-12/12 mx-auto'>
         <SejarahComponeent />
       </div>
       <OurService />

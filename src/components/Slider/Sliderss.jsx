@@ -115,7 +115,7 @@ function Sliderss() {
                 </span>
               </p>
               <p className="font-plus-jakarta">
-                <span>
+                <span className="font-plus-jakarta">
                   {" "}
                   <Image
                     src={vector4}

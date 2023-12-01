@@ -8,7 +8,22 @@ import StatusbarComponents from "../statusbar";
 import SejarahComponeent from "../Sejarah";
 import { motion } from "framer-motion";
 import { Carousel } from "antd";
+import Mile1 from "../../assets/mile1.png";
+import Mile2 from "../../assets/mile2.jpg";
+import Mile3 from "../../assets/mile3.jpg";
+import Mile4 from "../../assets/mile4.jpg";
+import Mile5 from "../../assets/mile5.jpg";
+import Mile6 from "../../assets/mile6.jpg";
+import BG from "../../assets/bg.png";
+// import { Carousel } from "antd";
 function Welcome() {
+  const carouselStyle = {
+    backgroundImage: `url(${BG})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    height: "auto", // Sesuaikan tinggi sesuai kebutuhan
+  };
   return (
     <>
       <StatusbarComponents />
@@ -43,7 +58,9 @@ function Welcome() {
         {/* </motion.div> */}
       </div>
       <div className="h-auto bg-gradient-to-r from-orange-500 via-purple-500 to-blue-500 flex items-center justify-between p-12 mx-auto">
-        <p className="text-white text-[24px] font-plus-jakarta">Let's explore more about RajaCepat</p>
+        <p className="text-white text-[24px] font-plus-jakarta">
+          Let's explore more about RajaCepat
+        </p>
         <button className="bg-transparent text-[24px] text-white font-bold py-2 px-4 border border-white rounded-2xl font-plus-jakarta">
           Explore Now
         </button>
