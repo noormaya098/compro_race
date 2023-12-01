@@ -57,11 +57,11 @@ function Welcome() {
         </Carousel>
         {/* </motion.div> */}
       </div>
-      <div className="h-auto bg-gradient-to-r from-orange-500 via-purple-500 to-blue-500 flex items-center justify-between p-12 mx-auto">
-        <p className="text-white text-[24px] font-plus-jakarta">
+      <div className="h-auto bg-gradient-to-r from-orange-500 via-purple-500 to-blue-500 flex items-center justify-between p-10 mx-auto ph:grid ph:grid-flow-col-1 ph:justify-center ">
+        <h4 className="text-white font-plus-jakarta">
           Let's explore more about RajaCepat
-        </p>
-        <button className="bg-transparent text-[24px] text-white font-bold py-2 px-4 border border-white rounded-2xl font-plus-jakarta">
+        </h4>
+        <button className="bg-transparent  text-white font-bold ph:py-1 ph:h-10 py-2 px-4 border border-white rounded-2xl font-plus-jakarta ph:mt-3 ph:justify-center ph:w-28 ph:ml-20 ph:text-xs">
           Explore Now
         </button>
       </div>

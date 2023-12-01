@@ -49,6 +49,13 @@ function StatusbarComponents({ children }) {
   const menu = (
     <Menu>
       <Menu.Item
+        
+      >
+        <div >
+        <img src={Race_New}   className="w-16 "/>
+        </div>
+      </Menu.Item>
+      <Menu.Item
         key="/"
         onClick={(e) => {
           toggleDropdown();
@@ -66,7 +73,9 @@ function StatusbarComponents({ children }) {
           UbahHalaman(e.key);
         }}
       >
-        <div className="hover:text-red-400 text-gray-400 font-plus-jakarta">Shipping</div>
+        <div className="hover:text-red-400 text-gray-400 font-plus-jakarta">
+          Shipping
+        </div>
       </Menu.Item>
       <Menu.Item
         key="cekresi"
@@ -75,7 +84,9 @@ function StatusbarComponents({ children }) {
           UbahHalaman(e.key);
         }}
       >
-        <div className="hover:text-red-400 text-gray-400 font-plus-jakarta">Tracking</div>
+        <div className="hover:text-red-400 text-gray-400 font-plus-jakarta">
+          Tracking
+        </div>
       </Menu.Item>
       <Menu.Item
         key="karir"
@@ -84,7 +95,9 @@ function StatusbarComponents({ children }) {
           UbahHalaman(e.key);
         }}
       >
-        <div className="hover:text-red-400 text-gray-400 font-plus-jakarta">Career</div>
+        <div className="hover:text-red-400 text-gray-400 font-plus-jakarta">
+          Career
+        </div>
       </Menu.Item>
     </Menu>
   );
@@ -127,14 +140,13 @@ function StatusbarComponents({ children }) {
         <div className="w-screen h-[100px] px-20 py-5 flex justify-between items-center">
           <div className="w-[197px] h-[77px] ">
             <img
-            className="cursor-pointer"
+              className="cursor-pointer"
               src={Race_New}
               alt="Race New Logo"
               key="/"
               onClick={(e) => {
                 console.log(e);
                 pindahhalaman("/");
-             
               }}
             />
           </div>
@@ -200,50 +212,63 @@ function StatusbarComponents({ children }) {
       </motion.div>
 
       <>
-        <div
-          className={`md:hidden ${
-            DiClickNihstate ? "ph:hidden" : "ph:opacity-100 "
-          } ml-5 mt-7 h-7 flex items-center ph:flex ph:justify-end mx-auto w-11/12 relative`}
-        >
-          <Dropdown overlay={menu} trigger={["click"]} placement="bottomLeft">
-            <Button
-              className={`rounded-full bg-orange-500 mb-5  ${
-                pathname === "/"
-                  ? "bg-white bg-opacity-80"
-                  : "bg-orange-600 bg-opacity-100"
-              } w-[40px] h-[40px] flex items-center justify-center`}
-              onClick={toggleDropdown}
+        <div className="grid grid-cols-2">
+          <div className="flex justify-start mt-2 mb-2">
+          <img src={Race_New}   className="w-20 ml-5"/>
+        </div>
+          <div>
+            {" "}
+            <div
+              className={`md:hidden ${
+                DiClickNihstate ? "ph:hidden" : "ph:opacity-100 "
+              }  mt-7 h-7 flex items-center ph:flex ph:justify-end mx-auto w-11/12 relative mr`}
             >
-              {DiClickNihstate ? (
-                "X"
-              ) : (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#ffffff"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="lucide lucide-align-justify"
+              <Dropdown
+                overlay={menu}
+                trigger={["click"]}
+                placement="bottomLeft"
+                
+              >
+                <Button
+                  className={`rounded-full bg-orange-500 mb-5  ${
+                    pathname === "/"
+                      ? "bg-orange-600 bg-opacity-80"
+                      : "bg-orange-600 bg-opacity-100"
+                  } w-[40px] h-[40px] flex items-center justify-center`}
+                  onClick={toggleDropdown}
                 >
-                  <line x1="3" y1="6" x2="21" y2="6" />
-                  <line x1="3" y1="12" x2="21" y2="12" />
-                  <line x1="3" y1="18" x2="21" y2="18" />
-                </svg>
-              )}
-            </Button>
-          </Dropdown>
+                  {DiClickNihstate ? (
+                    "X"
+                  ) : (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#ffffff"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-align-justify"
+                    >
+                      <line x1="3" y1="6" x2="21" y2="6" />
+                      <line x1="3" y1="12" x2="21" y2="12" />
+                      <line x1="3" y1="18" x2="21" y2="18" />
+                    </svg>
+                  )}
+                </Button>
+              </Dropdown>
 
-          {DiClickNihstate && (
-            <div className="absolute top-0 right-0 mt-2 mr-2">
-              <button className="text-white" onClick={toggleDropdown}>
-                X
-              </button>
+              {DiClickNihstate && (
+                <div className="absolute top-0 right-0 mt-2 mr-2">
+                  <button className="text-white" onClick={toggleDropdown}>
+                    X
+                  </button>
+                </div>
+              )}
             </div>
-          )}
+          </div>
         </div>
       </>
       <div

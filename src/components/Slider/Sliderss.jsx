@@ -60,7 +60,7 @@ function Sliderss() {
 
 
       {/* slide */}
-      <div className="mx-auto w-9/12 grid grid-cols-5 mt-4 justify-center gap-x-4 gap-y-6">
+      <div className="mx-auto w-9/12 ph:grid-cols-1 grid grid-cols-5 mt-4 justify-center gap-x-4 gap-y-6">
         {data.map((item, index) => (
           <div key={index}>
             <Card className="border border-blue-700 shadow-xl">
@@ -73,62 +73,7 @@ function Sliderss() {
                 Vol (cm) : <br />
                 {item.volume}
               </p>
-              <p className="text-[#3D62B0] mt-2 text-[16px] font-bold font-plus-jakarta">What Include?</p>
-              <span className="font-plus-jakarta">
-                {" "}
-                <Image
-                  src={vector1}
-                  style={{ width: "10px", height: "12px", marginRight: "5px" }}
-                  className="mt-2 "
-                />{" "}
-                Driver
-              </span>
-              <p>
-                {" "}
-                <span className="font-plus-jakarta">
-                  {" "}
-                  <Image
-                    src={vector2}
-                    style={{
-                      width: "10px",
-                      height: "12px",
-                      marginRight: "5px",
-                    }}
-                    className="mt-2"
-                  />{" "}
-                  Gas
-                </span>
-              </p>
-              <p>
-                <span className="font-plus-jakarta">
-                  {" "}
-                  <Image
-                    src={vector3}
-                    style={{
-                      width: "10px",
-                      height: "12px",
-                      marginRight: "5px",
-                    }}
-                    className="mt-2"
-                  />{" "}
-                  Protect Asurance
-                </span>
-              </p>
-              <p className="font-plus-jakarta">
-                <span className="font-plus-jakarta">
-                  {" "}
-                  <Image
-                    src={vector4}
-                    style={{
-                      width: "10px",
-                      height: "12px",
-                      marginRight: "5px",
-                    }}
-                    className="mt-2"
-                  />{" "}
-                  CS 24/7
-                </span>
-              </p>
+              
             </Card>
           </div>
         ))}

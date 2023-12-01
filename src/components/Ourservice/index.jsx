@@ -43,14 +43,14 @@ function OurService() {
 
     return (
         <>
-            <div className='bg-gradient-to-t from-[#FFFFFF00] to-[#F05423]  '>
+            <div className='bg-gradient-to-t from-[#FFFFFF00] to-[#F05423] ph:mb-48 '>
                 <motion.div
                     initial="hidden"
                     animate={isPastTriggerPoint ? "visible" : "hidden"}
                     variants={jempolorang}
                     transition={{ type: "tween" }}
                 >
-                    <h1 className='text-center text-[64px] text-white font-semibold ph:text-[32px] ph:mt-36 mt-28 font-plus-jakarta'>Our Service</h1>
+                    <h1 className='text-center text-[64px] text-white font-semibold ph:text-[32px] ph:mt-36 mt-28 font-plus-jakarta ph:mt-10'>Our Service</h1>
                 </motion.div>
                 <div className='w-10/12 mx-auto mt-16 ph:w-11/12 md:w-12/12 '>
                     <motion.div

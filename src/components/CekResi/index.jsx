@@ -286,6 +286,14 @@ function CekResiKomponents() {
               >
                 {Loading ? "Loading..." : "Search"}
               </button>
+              {DataHistory[0]?.data != null && (
+                <button
+                  onClick={copylink}
+                  className="bg-[#30a953] ph:w-[260px]  p-3 rounded-md h-[45px] ml-5 text-white font-semibold font-plus-jakarta "
+                >
+                  CopyURL
+                </button>
+              )}
             </div>
           </div>
           {/* 

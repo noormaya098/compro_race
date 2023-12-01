@@ -13,9 +13,9 @@ import rate from "../../assets/partner/image 8.png";
 import chilibeli from "../../assets/partner/image 9.png";
 function PartnerComponents() {
   return (
-    <div className="w-8/12 mx-auto mt-56 mb-32">
+    <div className="w-8/12 mx-auto mt-56 mb-32 ph:mt-72">
       <h1
-        className="text-center text-[48px] font-bold font-plus-jakarta"
+        className="text-center text-[48px] ph:text-[24px] font-bold font-plus-jakarta"
         style={{
           background: "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
           WebkitBackgroundClip: "text",
@@ -24,7 +24,7 @@ function PartnerComponents() {
       >
         Partner and Clients
       </h1>
-      <div className="wrap-gambar grid grid-cols-4 mt-20 ph:space-x-5">
+      <div className="wrap-gambar grid grid-cols-4 mt-20 ph:space-x-5 ph:mt-10">
         <div>
           <img src={erlangga} />
         </div>
@@ -65,7 +65,7 @@ function PartnerComponents() {
       </div>
       <div className="w-full">
         <h1
-          className="text-[48px] text-center font-bold mt-16 ph:text-[32px] ph:mt-[50px] font-plus-jakarta"
+          className="text-[48px] text-center font-bold mt-16 ph:text-[20px] ph:mt-[50px] font-plus-jakarta"
           style={{
             background: "linear-gradient(50deg, #F09023, #A83CCE, #3D62B0)",
             WebkitBackgroundClip: "text",
@@ -75,7 +75,7 @@ function PartnerComponents() {
           Excited to collaborate with RACE?
         </h1>
         <div className=" text-center justify-items-center flex justify-center w-full font-plus-jakarta">
-          <button className="bg-[#F05423] w-[150px] h-[60px] font-semibold text-white mt-6 text-[24px] mb-64 ph:rounded-xl ph:mt-12 rounded-md">
+          <button className="bg-[#F05423] ph:text-sm ph:h-10 ph:w-24 ph:mt-5  w-[150px] h-[60px] font-semibold text-white mt-6 text-[24px] mb-64 ph:rounded-xl  rounded-md">
             Contact us
           </button>
         </div>
