@@ -53,7 +53,7 @@ function SejarahComponeent() {
           <Carousel  >
             {/* Slide 1 */}
             <>
-              {/* Slide 1 */}
+              
               <div className=" grid md:grid-cols-2 grid-cols-1 mb-40  ml- ml-20 mt-20">
                 <div className="md:w-12/12 flex flex-col items-center mx-auto mr-10">
                   <p
@@ -84,7 +84,7 @@ function SejarahComponeent() {
             {/* Slide 2 */}
             <>
               <div>
-                {/* Slide 2 */}
+               
                 <div className=" grid md:grid-cols-2 grid-cols-1  mt-20 ml-12 ">
                   <div className="md:w-12/12 flex flex-col items-center mx-auto">
                     <p
@@ -113,7 +113,7 @@ function SejarahComponeent() {
             {/* Slide 3 */}
             <>
               <div>
-                {/* Slide 3 */}
+                
                 <div className=" grid md:grid-cols-2 grid-cols-1  mt-20 ml-12  ">
                   <div className="md:w-12/12 flex flex-col items-center mx-auto">
                     <p
@@ -142,7 +142,7 @@ function SejarahComponeent() {
             {/* Slide 4 */}
             <>
               <div>
-                {/* Slide 4 */}
+               
                 <div className=" grid md:grid-cols-2 grid-cols-1  mt-20  ml-12">
                   <div className="md:w-12/12 flex flex-col items-center mx-auto">
                     <p
