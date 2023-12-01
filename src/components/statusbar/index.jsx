@@ -47,14 +47,7 @@ function StatusbarComponents({ children }) {
   console.log(`ini di statusbar`, DiClickNihstate);
 
   const menu = (
-    <Menu>
-      <Menu.Item
-        
-      >
-        <div >
-        <img src={Race_New}   className="w-16 "/>
-        </div>
-      </Menu.Item>
+    <Menu className="w-36 text-center shadow-lg">
       <Menu.Item
         key="/"
         onClick={(e) => {
@@ -137,10 +130,10 @@ function StatusbarComponents({ children }) {
             : "top-0 fixed transition-all duration-1000  ease-in-out bg-white shadow-md z-50"
         }   `}
       >
-        <div className="w-screen h-[100px] px-20 py-5 flex justify-between items-center">
-          <div className="w-[197px] h-[77px] ">
+        <div className="w-screen h-[150px] px-20 py-5 flex justify-between items-center">
+          <div className="w-[197px] h-[100px] ">
             <img
-              className="cursor-pointer"
+              className="cursor-pointer h-[100px]"
               src={Race_New}
               alt="Race New Logo"
               key="/"
@@ -212,16 +205,16 @@ function StatusbarComponents({ children }) {
       </motion.div>
 
       <>
-        <div className="grid grid-cols-2">
+        <div className="grid grid-cols-2 h-20">
           <div className="flex justify-start mt-2 mb-2">
-          <img src={Race_New}   className="w-20 ml-5"/>
+          <img src={Race_New}   className="w-24 ml-5"/>
         </div>
           <div>
             {" "}
             <div
               className={`md:hidden ${
                 DiClickNihstate ? "ph:hidden" : "ph:opacity-100 "
-              }  mt-7 h-7 flex items-center ph:flex ph:justify-end mx-auto w-11/12 relative mr`}
+              }  mt-7 h-7 flex items-center ph:flex ph:justify-end mx-auto w-11/12 relative `}
             >
               <Dropdown
                 overlay={menu}
@@ -230,11 +223,11 @@ function StatusbarComponents({ children }) {
                 
               >
                 <Button
-                  className={`rounded-full bg-orange-500 mb-5  ${
+                  className={`rounded-full bg-orange-500 mb-5 mt-5 ${
                     pathname === "/"
                       ? "bg-orange-600 bg-opacity-80"
                       : "bg-orange-600 bg-opacity-100"
-                  } w-[40px] h-[40px] flex items-center justify-center`}
+                  } w-[50px] h-[50px] flex items-center justify-center`}
                   onClick={toggleDropdown}
                 >
                   {DiClickNihstate ? (
