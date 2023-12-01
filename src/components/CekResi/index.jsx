@@ -61,7 +61,7 @@ function CekResiKomponents() {
             https://apirace.eurekalogistics.co.id/sp/get-sm-detail?msm=${InputanNilai}`);
       console.log(`data detail search`, data?.data?.data?.[0]?.positionDriverNow);
       setLokasiDriverLongLat(data?.data?.data?.[0]?.positionDriverNow);
-      if (data?.data === null) {
+      if (data?.data === null) {  
         notification.error({
           message: "Data Tidak Ditemukan",
         });
@@ -75,12 +75,14 @@ function CekResiKomponents() {
         });
         setdataDetailsemua([data?.data?.data[0]]);
         GetLatLongMuatBongkar(
-          data?.data?.data[0]?.muat,
-          data?.data?.data[0]?.bongkar
+          data?.data?.data[0]?.alamatMuat?.alamat,
+          data?.data?.data[0]?.alamatBongkar?.alamat
         );
+        
         historykendaraan(data?.data?.data[0]?.idMsm);
       }
       setLoading(false);
+      console.log(`data?.data?.data[0]?.data?.alamatMuat?.alamat,`,data?.data?.data[0]?.alamatMuat);
     } catch (error) {
       setLoading(false);
       notification.error({
@@ -91,9 +93,12 @@ function CekResiKomponents() {
 
   useEffect(() => {
     if (nosm != null) {
+      AmbilDetailAwal()
+    } else {
       AmbilDetailAwal();
+      GetLatLongMuatBongkar();
     }
-  }, []);
+  }, [nosm]);
 
   console.log(`LokasiDriverLongLat`, LokasiDriverLongLat);
   const historykendaraan = async (id_msm) => {
@@ -103,10 +108,10 @@ function CekResiKomponents() {
       );
       console.log(data?.data);
       setDataHistory([data?.data]);
-    } catch (error) {}
+    } catch (error) { }
   };
 
-  console.log(`data dataDetailsemua`);
+  console.log(`data DataHistory`, DataHistory);
   const mapdata = DataHistory[0]?.data.map((i) => i);
   console.log(mapdata);
   async function PindahHalaman(asw) {
@@ -116,9 +121,9 @@ function CekResiKomponents() {
   async function GetLatLongMuatBongkar(AlamatMuat, AlamatBongkar) {
     setLoading(true);
     console.log(`dari func`, AlamatMuat, AlamatBongkar);
-    const muat = await getCoordinates(dataDetailsemua?.[0].alamatMuat?.alamat); // Assuming getCoordinates is the correct function to call
+    const muat = await getCoordinates(AlamatMuat); // Assuming getCoordinates is the correct function to call
     const bongkar = await getCoordinates(
-      dataDetailsemua?.[0].alamatBongkar?.alamat
+      AlamatBongkar
     );
     setLatLongMuat(muat);
     setLatLongBongkar(bongkar);
@@ -329,7 +334,7 @@ function CekResiKomponents() {
             )}
           </div>
         </div>
-        {DataHistory && (
+        {DataHistory[0] && (
           <div className="justify-center grid grid-cols-2 mx-auto mt-32 ph:hidden w-full space-x-3  ">
             <div className=" p-5 border-2 shadow-xl rounded-md   ">
               <div className="font-bold text-center text-[23px]">

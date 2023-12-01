@@ -66,7 +66,7 @@ function MapsGoogle({ width = '100%', height = '400px', LatLongMuat, LatLongBong
     if (!isLoaded) {
         return <div></div>;
     }
-
+console.log(`LokasiDriverLongLat`,LokasiDriverLongLat);
     return (
         <>
             {directionJalanan && (
