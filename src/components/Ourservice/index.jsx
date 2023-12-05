@@ -64,7 +64,7 @@ function OurService() {
                     </motion.div>
                     <div className='card-wrapper grid grid-cols-3 mt-16 ph:grid-cols-1 ph:space-y-7 ph:flex ph:flex-col items-center'>
                         <motion.div 
-                            className='w-[341px] bg-white h-[468px] rounded-[20px] font-plus-jakarta'
+                            className='w-[341px] bg-white h-[468px] rounded-[20px] font-plus-jakarta ph:h-[400px]'
                             initial="hidden"
                             animate={isPastTriggerPoint3 ? "visible" : "hidden"}
                             variants={kiri}
@@ -75,11 +75,11 @@ function OurService() {
                             </div>
                             <div className='mx-7 '>
                                 <p className='text-[#F05423] font-semibold text-start text-[20px] font-plus-jakarta'>Same day Services</p>
-                                <p className='text-[#FE8A66] font-medium text-start text-[14px] mt-3 font-plus-jakarta'>Delivery on the same day or within 8 hours</p>
+                                <p className='text-[#FE8A66] font-medium text-start text-[14px] mt-1 font-plus-jakarta'>Delivery on the same day or within 8 hours</p>
                             </div>
                         </motion.div>
                         <motion.div
-                            className='w-[341px] bg-white h-[468px] rounded-[20px]'
+                            className='w-[341px] bg-white h-[468px] rounded-[20px] ph:h-[400px]'
                             initial="hidden"
                             animate={isPastTriggerPoint3 ? "visible" : "hidden"}
                             variants={jempolorang}
@@ -90,11 +90,11 @@ function OurService() {
                             </div>
                             <div className='mx-7 '>
                                 <p className='text-[#F05423] font-semibold text-start text-[20px] font-plus-jakarta'>Next day Services</p>
-                                <p className='text-[#FE8A66] font-medium text-start text-[14px] mt-3 font-plus-jakarta'>Delivery arrives the next day or within 2 hours.</p>
+                                <p className='text-[#FE8A66] font-medium text-start text-[14px] mt-1 font-plus-jakarta'>Delivery arrives the next day or within 2 hours.</p>
                             </div>
                         </motion.div>
                         <motion.div
-                            className='w-[341px] bg-white h-[468px] rounded-[20px]'
+                            className='w-[341px] bg-white h-[468px] rounded-[20px] ph:h-[400px]'
                             initial="hidden"
                             animate={isPastTriggerPoint3 ? "visible" : "hidden"}
                             variants={kanan}
@@ -105,7 +105,7 @@ function OurService() {
                             </div>
                             <div className='mx-7 '>
                                 <p className='text-[#F05423] font-semibold text-start text-[20px] font-plus-jakarta'>Regular Services</p>
-                                <p className='text-[#FE8A66] font-medium text-start text-[14px] mt-3 font-plus-jakarta'>Standard Shipping within 1-3 days.</p>
+                                <p className='text-[#FE8A66] font-medium text-start text-[14px] mt-1 font-plus-jakarta'>Standard Shipping within 1-3 days.</p>
                             </div>
                         </motion.div>
                     </div>

@@ -48,7 +48,7 @@ function SejarahComponeent() {
   return (
     <div>
       <div className=" h-screen mx-auto " style={carouselStyle}>
-        <Carousel autoplay className="h-screen ph:h-[500px] ">
+        <Carousel autoplay className="h-screen ph:h-[500px]">
           {/* Slide 1 */}
           <>
             <div className=" grid md:grid-cols-2  grid-cols-1 mb-40 ph:mb-0 ph:mt-0   ml-20 mt-20  ph:grid-cols-1 ph:flex-col ph:flex ph:ml-0">
@@ -76,7 +76,7 @@ function SejarahComponeent() {
 
               <div >
                 <img
-                  className="w-[600px] h-[350px] mt-5 ml-10 ph:w-9/12 ph:h-2/3"
+                  className="w-[600px] h-[400px] mt-8 ml-10 ph:w-9/12 ph:h-2/3"
                   src={Mile1}
                 />
               </div>
@@ -133,7 +133,7 @@ function SejarahComponeent() {
                   </p>
                 </div>
                 <img
-                  className="w-[600px] h-[350px] mt-10  rounded-lg ph:w-10/12 ph:h-2/3 ph:mr-5"
+                  className="w-[600px] h-[400px]  mt-10  rounded-lg ph:w-10/12 ph:h-2/3 ph:mr-5"
                   src={Mile3}
                 />
               </div>
@@ -163,7 +163,7 @@ function SejarahComponeent() {
                   </p>
                 </div>
                 <img
-                  className="w-[600px] h-[350px] mt-10  rounded-lg ph:w-10/12 ph:h-2/3 ph:mr-5"
+                  className="w-[600px] h-[400px]  mt-10  rounded-lg ph:w-10/12 ph:h-2/3 ph:mr-5"
                   src={Mile2}
                 />
               </div>

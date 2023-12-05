@@ -70,8 +70,7 @@ function Sliderss() {
                 Capacity Max :  {item.capacity}
               </p>
               <p className="text-black text-[14px] font-plus-jakarta font-medium ">
-                Vol (cm) : <br />
-                {item.volume}
+                Vol (cm) : {item.volume}
               </p>
               
             </Card>

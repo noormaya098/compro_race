@@ -61,7 +61,8 @@ function Welcome() {
         <h4 className="text-white font-plus-jakarta">
           Let's explore more about RajaCepat
         </h4>
-        <button className="bg-transparent  text-white font-bold ph:py-1 ph:h-10 py-2 px-4 border border-white rounded-2xl font-plus-jakarta ph:mt-3 ph:justify-center ph:w-28 ph:ml-20 ph:text-xs">
+        <button className="bg-transparent text-white font-bold ph:py-0 ph:h-8 py-2 px-4 border border-white rounded-2xl font-plus-jakarta ph:mt-3 ph:justify-center ph:w-[100px]  ph:ml-20 ph:text-[10px]">
+
           Explore Now
         </button>
       </div>
