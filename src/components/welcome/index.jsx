@@ -57,7 +57,7 @@ function Welcome() {
         </Carousel>
         {/* </motion.div> */}
       </div>
-      <div className="h-auto bg-gradient-to-r from-orange-500 via-purple-500 to-blue-500 flex items-center justify-between p-10 mx-auto ph:grid ph:grid-flow-col-1 ph:justify-center ">
+      <div className="h-auto bg-gradient-to-r from-orange-500 via-purple-500 to-blue-500 flex items-center justify-between ph:p-5 p-10 mx-auto ph:grid ph:grid-flow-col-1 ph:justify-center ">
         <h4 className="text-white font-plus-jakarta">
           Let's explore more about RajaCepat
         </h4>

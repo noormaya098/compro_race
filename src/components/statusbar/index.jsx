@@ -55,7 +55,7 @@ function StatusbarComponents({ children }) {
           UbahHalaman(e.key);
         }}
       >
-        <div className="text-gray-400 font-plus-jakarta hover:text-red-400 hover:underline hover:border-b-2 border-transparent">
+        <div className="text-gray-400 font-plus-jakarta hover:text-red-400 hover:underline hover:border-b-2 border-transparent mb-2 mt-2">
           About us
         </div>
       </Menu.Item>
@@ -66,7 +66,7 @@ function StatusbarComponents({ children }) {
           UbahHalaman(e.key);
         }}
       >
-        <div className="hover:text-red-400 text-gray-400 font-plus-jakarta">
+        <div className="hover:text-red-400 text-gray-400 font-plus-jakarta mb-2 mt-2">
           Shipping
         </div>
       </Menu.Item>
@@ -77,7 +77,7 @@ function StatusbarComponents({ children }) {
           UbahHalaman(e.key);
         }}
       >
-        <div className="hover:text-red-400 text-gray-400 font-plus-jakarta">
+        <div className="hover:text-red-400 text-gray-400 font-plus-jakarta mb-2 mt-2">
           Tracking
         </div>
       </Menu.Item>
@@ -88,7 +88,7 @@ function StatusbarComponents({ children }) {
           UbahHalaman(e.key);
         }}
       >
-        <div className="hover:text-red-400 text-gray-400 font-plus-jakarta">
+        <div className="hover:text-red-400 text-gray-400 font-plus-jakarta mb-2 mt-2">
           Career
         </div>
       </Menu.Item>

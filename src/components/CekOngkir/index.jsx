@@ -213,7 +213,7 @@ function CekOngkirComponents() {
               <div className="grid grid-cols-3 space-x-20 mt-10 ">
                 <div className="w-[258px] h-[325px] ">
                   <img src={orangnaikmotor} />
-                  <p className="text-[#F05423] mt-5 text-[24px] font-semibold font-plus-jakarta">
+                  <p className="text-[#F05423] mt-5 text-[20px] font-semibold font-plus-jakarta">
                     Same day Services
                   </p>
                   <p className="text-[16px] text-[#FE8A66] font-medium font-plus-jakarta">
@@ -222,7 +222,7 @@ function CekOngkirComponents() {
                 </div>
                 <div className="w-[258px] h-[325px] ">
                   <img src={sameday} />
-                  <p className="text-[#F05423] mt-5 text-[24px] font-semibold font-plus-jakarta">
+                  <p className="text-[#F05423] mt-5 text-[20px] font-semibold font-plus-jakarta">
                     Next day Services
                   </p>
                   <p className="text-[16px] text-[#FE8A66] font-medium font-plus-jakarta">
@@ -231,7 +231,7 @@ function CekOngkirComponents() {
                 </div>
                 <div className="w-[258px] h-[325px] ">
                   <img src={Regular} />
-                  <p className="text-[#F05423] mt-5 text-[24px] font-semibold font-plus-jakarta">
+                  <p className="text-[#F05423] mt-5 text-[20px] font-semibold font-plus-jakarta">
                     Regular Services
                   </p>
                   <p className="text-[16px] text-[#FE8A66] font-medium font-plus-jakarta">
@@ -245,14 +245,14 @@ function CekOngkirComponents() {
           <span className="text-[#F05423] font-plus-jakarta ml-2 cursor-pointer">Contact our Customer Service</span>{" "}
         </p>
           </div>
-          <div className="mt-28 ph:hidden">
+          <div className="ph:hidden ">
             <FooterComponents />
           </div>
         </div>
         <div className="md:hidden">
           <div>
             <p
-              className="text-center text-[24px] mt-6 font-bold font-plus-jakarta
+              className="text-center text-[20px] mt-6 font-bold font-plus-jakarta
                     "
               style={{
                 background: "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",

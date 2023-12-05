@@ -13,7 +13,7 @@ import rate from "../../assets/partner/image 8.png";
 import chilibeli from "../../assets/partner/image 9.png";
 function PartnerComponents() {
   return (
-    <div className="w-8/12 mx-auto mt-56 mb-32 ph:mt-72">
+    <div className="w-8/12 mx-auto mt-56 mb-32 ph:mt-52">
       <h1
         className="text-center text-[48px] ph:text-[24px] font-bold font-plus-jakarta"
         style={{
@@ -63,7 +63,7 @@ function PartnerComponents() {
           <img src={chilibeli} />
         </div>
       </div>
-      <div className="w-full">
+      <div className="w-full ph:mt-20">
         <h1
           className="text-[48px] text-center font-bold mt-16 ph:text-[20px] ph:mt-[50px] font-plus-jakarta"
           style={{
@@ -75,7 +75,7 @@ function PartnerComponents() {
           Excited to collaborate with RACE?
         </h1>
         <div className=" text-center justify-items-center flex justify-center w-full font-plus-jakarta">
-          <button className="bg-[#F05423] ph:text-sm ph:h-10 ph:w-24 ph:mt-5  w-[150px] h-[60px] font-semibold text-white mt-6 text-[24px] mb-64 ph:rounded-xl  rounded-md">
+          <button className="bg-[#F05423] ph:text-sm ph:h-10 ph:w-24 ph:mt-5  w-[150px] h-[60px] font-semibold text-white mt-6 text-[24px]  ph:rounded-xl  rounded-md">
             Contact us
           </button>
         </div>

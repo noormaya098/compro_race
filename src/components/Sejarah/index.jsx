@@ -48,7 +48,7 @@ function SejarahComponeent() {
   return (
     <div>
       <div className=" h-screen mx-auto " style={carouselStyle}>
-        <Carousel autoplay className="h-screen ph:h-[500px]">
+        <Carousel autoplay className="h-screen ph:h-[500px] ">
           {/* Slide 1 */}
           <>
             <div className=" grid md:grid-cols-2  grid-cols-1 mb-40 ph:mb-0 ph:mt-0   ml-20 mt-20  ph:grid-cols-1 ph:flex-col ph:flex ph:ml-0">
@@ -64,7 +64,7 @@ function SejarahComponeent() {
                 >
                   Milestone of the Company
                 </p>
-                <p className="text-[24px]  mt-5 md:text-black ph:text-black text-center font-plus-jakarta ml-10 ph:text-xs">
+                <p className="text-[24px]  mt-2 md:text-black ph:text-black text-center font-plus-jakarta ml-10 ph:text-xs">
                   In 2017, Raja Cepat (RACE) was founded. Thanks to loyal
                   customers for trusting RACE to help their business in
                   expedition, RACE can now provide comprehensive services
@@ -90,7 +90,7 @@ function SejarahComponeent() {
                 
                 <div className="md:w-12/12 flex flex-col items-center mx-auto">
                   <p
-                    className="text-[80px] font-bold text-center w-9/12 font-plus-jakarta mt-20 ph:text-3xl ph:mt-0"
+                    className="text-[80px] font-bold text-center w-9/12 ph:mr-10 font-plus-jakarta mt-20 ph:text-3xl ph:mt-0"
                     style={{
                       background:
                         "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
@@ -100,12 +100,12 @@ function SejarahComponeent() {
                   >
                     2017
                   </p>
-                  <p className="text-[24px]  mt-5 md:text-[#F05423] ph:text-[#F05423] text-center font-plus-jakarta ph:text-lg">
+                  <p className="text-[24px] ph:mr-10  mt-2 md:text-[#F05423] ph:text-[#F05423] text-center font-plus-jakarta ph:text-lg">
                     Race start the first operations.
                   </p>
                 </div>
                 <img
-                  className="w-[600px] h-[350px] mt-10  rounded-lg ph:w-11/12 ph:h-2/3 ph:mr-5"
+                  className="w-[600px] h-[400px] mt-10  rounded-lg ph:w-10/12 ph:h-2/3 ph:mr-5"
                   src={Mile5}
                 />
               </div>
@@ -118,7 +118,7 @@ function SejarahComponeent() {
               <div className=" grid md:grid-cols-2 grid-cols-1  mt-20 ml-12 ">
                 <div className="md:w-12/12 flex flex-col items-center mx-auto">
                   <p
-                    className="text-[80px] font-bold text-center w-9/12 font-plus-jakarta mt-20 ph:text-3xl ph:mt-0"
+                    className="text-[80px] font-bold text-center ph:mr-10 w-9/12 font-plus-jakarta mt-20 ph:text-3xl ph:mt-0"
                     style={{
                       background:
                         "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
@@ -128,12 +128,12 @@ function SejarahComponeent() {
                   >
                     2019
                   </p>
-                  <p className="text-[24px]  mt-5 md:text-[#F05423] ph:text-[#F05423] text-center font-plus-jakarta ph:text-lg">
+                  <p className="text-[24px] ph:mr-10  mt-2 md:text-[#F05423] ph:text-[#F05423] text-center font-plus-jakarta ph:text-lg">
                   RACE Hub Start Operate.
                   </p>
                 </div>
                 <img
-                  className="w-[600px] h-[350px] mt-10  rounded-lg ph:w-11/12 ph:h-2/3 ph:mr-5"
+                  className="w-[600px] h-[350px] mt-10  rounded-lg ph:w-10/12 ph:h-2/3 ph:mr-5"
                   src={Mile3}
                 />
               </div>
@@ -147,7 +147,7 @@ function SejarahComponeent() {
               <div className=" grid md:grid-cols-2 grid-cols-1  mt-20 ml-12 ">
                 <div className="md:w-12/12 flex flex-col items-center mx-auto">
                   <p
-                    className="text-[80px] font-bold text-center w-9/12 font-plus-jakarta mt-20 ph:text-3xl ph:mt-0"
+                    className="text-[80px] font-bold text-center ph:mr-10 w-9/12 font-plus-jakarta mt-20 ph:text-3xl ph:mt-0"
                     style={{
                       background:
                         "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
@@ -157,13 +157,13 @@ function SejarahComponeent() {
                   >
                     2020
                   </p>
-                  <p className="text-[24px]  mt-5 md:text-[#F05423] ph:text-[#F05423] text-center font-plus-jakarta ph:text-lg">
+                  <p className="text-[24px] ph:mr-10  mt-2 md:text-[#F05423] ph:text-[#F05423] text-center font-plus-jakarta ph:text-lg">
                   RACE Operates in Bandung, Semarang, Yogyakarta, and
                     Surabaya.
                   </p>
                 </div>
                 <img
-                  className="w-[600px] h-[350px] mt-10  rounded-lg ph:w-11/12 ph:h-2/3 ph:mr-5"
+                  className="w-[600px] h-[350px] mt-10  rounded-lg ph:w-10/12 ph:h-2/3 ph:mr-5"
                   src={Mile2}
                 />
               </div>
@@ -177,7 +177,7 @@ function SejarahComponeent() {
               <div className=" grid md:grid-cols-2 grid-cols-1  mt-20 ml-12 ">
                 <div className="md:w-12/12 flex flex-col items-center mx-auto">
                   <p
-                    className="text-[80px] font-bold text-center w-9/12 font-plus-jakarta mt-20 ph:text-3xl ph:mt-0"
+                    className="text-[80px] font-bold text-center ph:mr-10 w-9/12 font-plus-jakarta mt-20 ph:text-3xl ph:mt-0"
                     style={{
                       background:
                         "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
@@ -187,12 +187,12 @@ function SejarahComponeent() {
                   >
                       2021
                   </p>
-                  <p className="text-[24px]  mt-5 md:text-[#F05423] ph:text-[#F05423] text-center font-plus-jakarta ph:text-lg">
+                  <p className="text-[24px] ph:mr-10  mt-2 md:text-[#F05423] ph:text-[#F05423] text-center font-plus-jakarta ph:text-lg">
                   RACE Operates in Denpasar, Bali.
                   </p>
                 </div>
                 <img
-                  className="w-[600px] h-[350px] mt-10  rounded-lg ph:w-11/12 ph:h-2/3 ph:mr-5"
+                  className="w-[600px] h-[350px] mt-10  rounded-lg ph:w-10/12 ph:h-2/3 ph:mr-5"
                   src={Mile6}
                 />
               </div>
@@ -206,7 +206,7 @@ function SejarahComponeent() {
               <div className=" grid md:grid-cols-2 grid-cols-1  mt-20 ml-12 ">
                 <div className="md:w-12/12 flex flex-col items-center mx-auto">
                   <p
-                    className="text-[80px] font-bold text-center w-9/12 font-plus-jakarta mt-20 ph:text-3xl ph:mt-0"
+                    className="text-[80px] font-bold ph:mr-10 text-center w-9/12 font-plus-jakarta mt-20 ph:text-3xl ph:mt-0"
                     style={{
                       background:
                         "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
@@ -216,12 +216,12 @@ function SejarahComponeent() {
                   >
                      2022
                   </p>
-                  <p className="text-[24px]  mt-5 md:text-[#F05423] ph:text-[#F05423] text-center font-plus-jakarta ph:text-lg">
+                  <p className="text-[24px] ph:mr-10  mt-2 md:text-[#F05423] ph:text-[#F05423] text-center font-plus-jakarta ph:text-lg">
                   RACE Operates in Jawa, Sulawesi, and Sumatera.
                   </p>
                 </div>
                 <img
-                  className="w-[600px] h-[350px] mt-10  rounded-lg ph:w-11/12 ph:h-2/3 ph:mr-5"
+                  className="w-[600px] h-[350px] mt-10  rounded-lg ph:w-10/12 ph:h-2/3 ph:mr-5"
                   src={Mile4}
                 />
               </div>
@@ -250,7 +250,7 @@ function SejarahComponeent() {
           >
             Milestone of the Company
           </p>
-          <p className="text-[24px]  mt-5 md:text-black ph:text-black text-center font-plus-jakarta">
+          <p className="text-[24px]  mt-2 md:text-black ph:text-black text-center font-plus-jakarta">
             In 2017, Raja Cepat (RACE) was founded. Thanks to loyal customers
             for trusting RACE to help their business in expedition, RACE can now
             provide comprehensive services throughout the country. Not only

@@ -29,7 +29,7 @@ function FooterComponents() {
                             <p className='text-[16px] font-plus-jakarta'>Fulfillment Service</p>
                         </div>
                         <div className='mt-5 text-white'>
-                            <p className='text-[24px] font-plus-jakarta'>Pengiriman</p>
+                            <p className='text-[24px] font-plus-jakarta'>Delivery</p>
                             <p className='text-[16px] font-plus-jakarta'>Tracking</p>
                             <p className='text-[16px] font-plus-jakarta'>Shipping Cost</p>
                             <p className='text-[16px] font-plus-jakarta'>Our Locations</p>
@@ -49,34 +49,34 @@ function FooterComponents() {
             </div>
 
             {/* mobile */}
-            <div className='w-full hidden ph:block bottom-0 h-[612px] overflow-hidden ' style={{
+            <div className='w-full hidden ph:block bottom-0 h-[700px] overflow-hidden ' style={{
                 backgroundImage: `url(${BackgroundMobile})`, backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat'
             }}>
-                <div className='w-9/12 mx-auto mt-10'>
+                <div className='w-9/12 mx-auto mt-10 '>
                     <img className='w-[88px] h-[57px]' src={RaceLogo} />
                     <div className='text-white mt-4'>
-                        <ul className='text-[16px] font-plus-jakarta'>Perusahaan</ul>
-                        <ul className='text-[13px]'>Profil perusahaan</ul>
-                        <ul className='text-[13px]'>Hubungi Kami</ul>
-                        <ul className='text-[13px]'>karir</ul>
-                        <ul className='mt-5 text-[16px] font-plus-jakarta'>Produk</ul>
-                        <ul className='text-[13px]'>Delivery Service</ul>
-                        <ul className='text-[13px]'>Fulfillment Service</ul>
-                        <ul className='mt-5 text-[16px] font-plus-jakarta'>Pengiriman</ul>
-                        <ul className='text-[13px]'>Lacak Resi</ul>
-                        <ul className='text-[13px]'>Cek Tarif</ul>
-                        <ul className='text-[13px]'>Lokasi</ul>
-                        <ul className='mt-5 text-[16px] font-plus-jakarta'>Lainnya</ul>
-                        <ul className='text-[13px]'>FAQ</ul>
-                        <ul className='text-[13px]'>Kemitraan</ul>
+                        <ul className='text-[16px] font-plus-jakarta font-bold ph:mb-2'>Raja Cepat</ul>
+                        <ul className='text-[14px] ph:mb-2 font-plus-jakarta'>Company Profile</ul>
+                        <ul className='text-[14px] ph:mb-2 font-plus-jakarta'>Contact Us</ul>
+                        <ul className='text-[14px] ph:mb-2 font-plus-jakarta'>Career</ul>
+                        <ul className='mt-5 text-[16px] font-plus-jakarta font-bold ph:mb-2'>Product</ul>
+                        <ul className='text-[14px] ph:mb-2 font-plus-jakarta'>Delivery Service</ul>
+                        <ul className='text-[14px] ph:mb-2 font-plus-jakarta'>Fulfillment Service</ul>
+                        <ul className='mt-5 text-[16px] font-plus-jakarta ph:mb-2'>Delivery</ul>
+                        <ul className='text-[14px] ph:mb-2 font-plus-jakarta'>Tracking</ul>
+                        <ul className='text-[14px] ph:mb-2 font-plus-jakarta'>Shipping Cost</ul>
+                        <ul className='text-[14px] ph:mb-2 font-plus-jakarta'>Locations</ul>
+                        <ul className='mt-5 text-[16px] font-plus-jakarta ph:mb-2 font-bold'>Others</ul>
+                        <ul className='text-[14px] ph:mb-2 font-plus-jakarta'>FAQ</ul>
+                        <ul className='text-[14px] ph:mb-2 font-plus-jakarta'>Partnership</ul>
                         <ul className='mt-5 text-[16px] font-plus-jakarta'>Download Apps</ul>
                     </div>
                     <div className='grid grid-cols-2 mt-3 w-full '>
-                        <div>
+                        <div className='ph:mr-3'>
                             <img src={googleplay} />
                         </div>
-                        <div>
+                        <div className='ph:ml-3'>
                             <img src={appstore} />
                         </div>
                     </div>
