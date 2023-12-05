@@ -245,7 +245,7 @@ function CekOngkirComponents() {
           <span className="text-[#F05423] font-plus-jakarta ml-2 cursor-pointer">Contact our Customer Service</span>{" "}
         </p>
           </div>
-          <div className="ph:hidden ">
+          <div className="mt-28 ph:hidden ">
             <FooterComponents />
           </div>
         </div>

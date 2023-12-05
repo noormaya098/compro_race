@@ -74,8 +74,8 @@ function OurService() {
                                 <img src={orangnaikmotor} />
                             </div>
                             <div className='mx-7 '>
-                                <p className='text-[#F05423] font-semibold text-start text-[32px] font-plus-jakarta'>Same day Services</p>
-                                <p className='text-[#FE8A66] font-medium text-start text-[20px] mt-3 font-plus-jakarta'>Delivery on the same day or within 8 hours</p>
+                                <p className='text-[#F05423] font-semibold text-start text-[20px] font-plus-jakarta'>Same day Services</p>
+                                <p className='text-[#FE8A66] font-medium text-start text-[14px] mt-3 font-plus-jakarta'>Delivery on the same day or within 8 hours</p>
                             </div>
                         </motion.div>
                         <motion.div
@@ -89,8 +89,8 @@ function OurService() {
                                 <img src={sameday} />
                             </div>
                             <div className='mx-7 '>
-                                <p className='text-[#F05423] font-semibold text-start text-[32px] font-plus-jakarta'>Next day Services</p>
-                                <p className='text-[#FE8A66] font-medium text-start text-[20px] mt-3 font-plus-jakarta'>Delivery arrives the next day or within 2 hours.</p>
+                                <p className='text-[#F05423] font-semibold text-start text-[20px] font-plus-jakarta'>Next day Services</p>
+                                <p className='text-[#FE8A66] font-medium text-start text-[14px] mt-3 font-plus-jakarta'>Delivery arrives the next day or within 2 hours.</p>
                             </div>
                         </motion.div>
                         <motion.div
@@ -104,8 +104,8 @@ function OurService() {
                                 <img src={Regular} />
                             </div>
                             <div className='mx-7 '>
-                                <p className='text-[#F05423] font-semibold text-start text-[32px] font-plus-jakarta'>Regular Services</p>
-                                <p className='text-[#FE8A66] font-medium text-start text-[20px] mt-3 font-plus-jakarta'>Standard Shipping within 1-3 days.</p>
+                                <p className='text-[#F05423] font-semibold text-start text-[20px] font-plus-jakarta'>Regular Services</p>
+                                <p className='text-[#FE8A66] font-medium text-start text-[14px] mt-3 font-plus-jakarta'>Standard Shipping within 1-3 days.</p>
                             </div>
                         </motion.div>
                     </div>
@@ -148,7 +148,7 @@ function OurService() {
                                     hidden: { opacity: 0, y: -200 }
                                 }}
                                 transition={{ duration: 1, delay: 0.2 }}
-                                className='mt-9 text-[20px] ph:text-[14px]  text-[#F05423] font-plus-jakarta'>Race serving all operational fulfillment activities, starting from the Inbound process, QC Checking,  Labeling, Storing, Packing, Outbound to Delivery</motion.p>
+                                className='mt-9 text-[20px] ph:text-[14px]  text-[#F05423] font-plus-jakarta'>Race serving all operational fulfillment activities, <b>starting from the Inbound process, QC Checking,  Labeling, Storing, Packing, Outbound to Delivery</b></motion.p>
                             <motion.p
                                 initial="hidden"
                                 animate={nilaiScroll >= 2000 ? "visible" : "hidden"}

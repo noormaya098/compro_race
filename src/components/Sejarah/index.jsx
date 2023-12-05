@@ -54,7 +54,7 @@ function SejarahComponeent() {
             <div className=" grid md:grid-cols-2  grid-cols-1 mb-40 ph:mb-0 ph:mt-0   ml-20 mt-20  ph:grid-cols-1 ph:flex-col ph:flex ph:ml-0">
               <div className="md:w-12/12 flex flex-col items-center mx-auto mr-10">
                 <p
-                  className="text-[50px] font-bold text-center w-9/12 font-plus-jakarta mt-10 ml-10 ph:text-lg ph:mt-20"
+                  className="text-[50px] font-bold text-center w-9/12 font-plus-jakarta mt-10 ml-10 ph:text-3xl ph:mt-20"
                   style={{
                     background:
                       "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
@@ -64,7 +64,7 @@ function SejarahComponeent() {
                 >
                   Milestone of the Company
                 </p>
-                <p className="text-[24px]  mt-2 md:text-black ph:text-black text-center font-plus-jakarta ml-10 ph:text-xs">
+                <p className="text-[20px]  mt-2 md:text-black ph:text-black text-center font-plus-jakarta ml-10 ph:text-xs">
                   In 2017, Raja Cepat (RACE) was founded. Thanks to loyal
                   customers for trusting RACE to help their business in
                   expedition, RACE can now provide comprehensive services
@@ -76,7 +76,7 @@ function SejarahComponeent() {
 
               <div >
                 <img
-                  className="w-[600px] h-[350px] mt-16 ml-10 ph:w-9/12 ph:h-2/3"
+                  className="w-[600px] h-[350px] mt-5 ml-10 ph:w-9/12 ph:h-2/3"
                   src={Mile1}
                 />
               </div>

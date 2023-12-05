@@ -52,7 +52,7 @@ function Sliderss() {
           <h3 className="text-center text-[32px] text-[#3D62B0] font-semibold ph:text-[32px] ph:mt-36 mt-28 font-plus-jakarta">
             Meet our vehicles!
           </h3>
-          <p className="text-center font-plus-jakarta ph:p-5">
+          <p className="text-center font-plus-jakarta ph:p-2">
             We provide a lot of vehicle to rescue your needs!
           </p>
         </motion.div>
