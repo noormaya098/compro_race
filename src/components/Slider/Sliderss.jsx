@@ -63,8 +63,8 @@ function Sliderss() {
       <div className="mx-auto w-9/12 ph:grid-cols-1 grid grid-cols-5 mt-4 justify-center gap-x-4 gap-y-6">
         {data.map((item, index) => (
           <div key={index}>
-            <Card className="border border-blue-700 shadow-xl">
-              <Image src={item.image} />
+            <Card className="border border-blue-700 shadow-xl" style={{minHeight : 300 , maxHeight : 400}}>
+              <Image src={item.image}  />
               <p className="text-[#3D62B0] text-[20px] font-bold font-plus-jakarta ">{item.title}</p>
               <p className="text-black text-[14px] font-plus-jakarta font-medium">
                 Capacity Max :  {item.capacity}

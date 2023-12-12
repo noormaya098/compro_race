@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import orangnaikmotor from "../../assets/orangnaikmotor.png"
+import cargo_darat from "../../assets/cargo_darat.jpg"
+import cargo_laut from "../../assets/cargo_laut.jpg"
+import cargo_udara from "../../assets/cargo_udara.jpg"
 import sameday from "../../assets/sameday.png"
 import Regular from "../../assets/Regular.png"
 import fulfilment from "../../assets/fulfilment 1.png"
@@ -62,16 +65,16 @@ function OurService() {
                         <h1 className='text-white text-center text-[40px] font-semibold ph:text-[24px] font-plus-jakarta'>Charter & Courier</h1>
                         <p className='text-white text-center text-[24px] font-plus-jakarta'>We have a few product that can fit in you any situations, let take a look!</p>
                     </motion.div>
-                    <div className='card-wrapper grid grid-cols-3 mt-16 ph:grid-cols-1 ph:space-y-7 ph:flex ph:flex-col items-center'>
-                        <motion.div 
-                            className='w-[341px] bg-white h-[468px] rounded-[20px] font-plus-jakarta ph:h-[400px]'
+                    <div className='card-wrapper flex space-x-5 mt-16 ph:grid-cols-1 ph:space-y-7 ph:flex ph:flex-col items-center '>
+                        <motion.div
+                            className='w-[241px] bg-white h-[368px] rounded-[20px] font-plus-jakarta ph:h-[400px]'
                             initial="hidden"
                             animate={isPastTriggerPoint3 ? "visible" : "hidden"}
                             variants={kiri}
                             transition={{ duration: 0.5 }}
                         >
                             <div className='flex justify-center '>
-                                <img src={orangnaikmotor} />
+                                <img src={orangnaikmotor} style={{minHeight : 220}}/>
                             </div>
                             <div className='mx-7 '>
                                 <p className='text-[#F05423] font-semibold text-start text-[20px] font-plus-jakarta'>Same day Services</p>
@@ -79,14 +82,14 @@ function OurService() {
                             </div>
                         </motion.div>
                         <motion.div
-                            className='w-[341px] bg-white h-[468px] rounded-[20px] ph:h-[400px]'
+                            className='w-[241px] bg-white h-[368px] rounded-[20px] font-plus-jakarta ph:h-[400px]'
                             initial="hidden"
                             animate={isPastTriggerPoint3 ? "visible" : "hidden"}
                             variants={jempolorang}
                             transition={{ duration: 0.5, delay: 0.2 }} // You can stagger the animations with delays
                         >
                             <div className='flex justify-center '>
-                                <img src={sameday} />
+                                <img src={sameday}style={{minHeight : 220}} />
                             </div>
                             <div className='mx-7 '>
                                 <p className='text-[#F05423] font-semibold text-start text-[20px] font-plus-jakarta'>Next day Services</p>
@@ -94,18 +97,63 @@ function OurService() {
                             </div>
                         </motion.div>
                         <motion.div
-                            className='w-[341px] bg-white h-[468px] rounded-[20px] ph:h-[400px]'
+                            className='w-[241px] bg-white h-[368px] rounded-[20px] font-plus-jakarta ph:h-[400px]'
                             initial="hidden"
                             animate={isPastTriggerPoint3 ? "visible" : "hidden"}
                             variants={kanan}
                             transition={{ duration: 0.5, delay: 0.4 }}
                         >
                             <div className='flex justify-center '>
-                                <img src={Regular} />
+                                <img src={Regular}style={{minHeight : 220}} />
                             </div>
                             <div className='mx-7 '>
                                 <p className='text-[#F05423] font-semibold text-start text-[20px] font-plus-jakarta'>Regular Services</p>
                                 <p className='text-[#FE8A66] font-medium text-start text-[14px] mt-1 font-plus-jakarta'>Standard Shipping within 1-3 days.</p>
+                            </div>
+                        </motion.div>
+                        <motion.div
+                            className='w-[241px] bg-white h-[368px] rounded-[20px] font-plus-jakarta ph:h-[400px]'
+                            initial="hidden"
+                            animate={isPastTriggerPoint3 ? "visible" : "hidden"}
+                            variants={kiri}
+                            transition={{ duration: 0.5 }}
+                        >
+                            <div className='flex justify-center '>
+                                <img style={{minHeight : 220}} src={cargo_darat} />
+                            </div>
+                            <div className='mx-7 '>
+                                <p className='text-[#F05423] font-semibold text-start text-[20px] font-plus-jakarta'>Cargo Darat</p>
+                                <p className='text-[#FE8A66] font-medium text-start text-[14px] mt-1 font-plus-jakarta'>Delivery on the same day or within 8 hours</p>
+                            </div>
+                        </motion.div>
+                        <motion.div
+                            className='w-[241px] bg-white h-[368px] rounded-[20px] font-plus-jakarta ph:h-[400px]'
+                            initial="hidden"
+                            animate={isPastTriggerPoint3 ? "visible" : "hidden"}
+                            variants={kiri}
+                            transition={{ duration: 0.5 }}
+                        >
+                            <div className='flex justify-center '>
+                                <img src={cargo_laut} style={{minHeight : 220}}/>
+                            </div>
+                            <div className='mx-7 '>
+                                <p className='text-[#F05423] font-semibold text-start text-[20px] font-plus-jakarta'>Cargo Laut</p>
+                                <p className='text-[#FE8A66] font-medium text-start text-[14px] mt-1 font-plus-jakarta'>Delivery on the same day or within 8 hours</p>
+                            </div>
+                        </motion.div>
+                        <motion.div
+                            className='w-[241px] bg-white h-[368px] rounded-[20px] font-plus-jakarta ph:h-[400px]'
+                            initial="hidden"
+                            animate={isPastTriggerPoint3 ? "visible" : "hidden"}
+                            variants={kiri}
+                            transition={{ duration: 0.5 }}
+                        >
+                            <div className='flex justify-center '>
+                                <img src={cargo_udara} style={{minHeight : 220}}/>
+                            </div>
+                            <div className='mx-7 '>
+                                <p className='text-[#F05423] font-semibold text-start text-[20px] font-plus-jakarta'>Cargo Udara</p>
+                                <p className='text-[#FE8A66] font-medium text-start text-[14px] mt-1 font-plus-jakarta'>Delivery on the same day or within 8 hours</p>
                             </div>
                         </motion.div>
                     </div>
@@ -126,7 +174,7 @@ function OurService() {
                             hidden: { opacity: 0, x: -200 }
                         }}
                         transition={{ duration: 1, delay: 0.2 }}
-                        className='text-[#F05423] text-[36px] ph:text-[24px] font-bold font-plus-jakarta ph:text-center'>E-commerce Fulfillment</motion.p>
+                        className='text-[#F05423] text-[36px] ph:text-[24px] font-bold font-plus-jakarta ph:text-center'>WareHouse</motion.p>
                     <div className=' grid grid-cols-2 mt-8 ph:grid-cols-1 '>
                         <motion.div
                             initial="hidden"
@@ -148,7 +196,7 @@ function OurService() {
                                     hidden: { opacity: 0, y: -200 }
                                 }}
                                 transition={{ duration: 1, delay: 0.2 }}
-                                className='mt-9 text-[20px] ph:text-[14px]  text-[#F05423] font-plus-jakarta'>Race serving all operational fulfillment activities, <b>starting from the Inbound process, QC Checking,  Labeling, Storing, Packing, Outbound to Delivery</b></motion.p>
+                                className='mt-9 text-[20px] ph:text-[14px]  text-[#F05423] font-plus-jakarta'>A dynamic facility pivotal in the supply chain, catering to all operational fulfillment activities including the Inbound process, QC Checking, Labeling, Storing, Packing, Outbound, and Delivery.  </motion.p>
                             <motion.p
                                 initial="hidden"
                                 animate={nilaiScroll >= 2000 ? "visible" : "hidden"}
@@ -157,7 +205,7 @@ function OurService() {
                                     hidden: { opacity: 0, x: 200 }
                                 }}
                                 transition={{ duration: 1, delay: 0.2 }}
-                                className='mt-12 text-[20px] ph:text-[14px]  text-[#F05423] font-plus-jakarta'>Freeing SMEs and business people from the burden  of fixed costs, Fulfillment Service as well as providing  opportunities to develop business in  strategic areas in Indonesia with minimal risk</motion.p>
+                                className='mt-12 text-[20px] ph:text-[14px]  text-[#F05423] font-plus-jakarta'>It plays a key role in liberating SMEs and business people from the burden of fixed costs, offering a Fulfillment Service that enables business expansion in strategic areas of Indonesia with minimal risk.The warehouse serves as a crucial partner to its clients, fostering business growth and efficiency.</motion.p>
                         </div>
                     </div>
                 </div>

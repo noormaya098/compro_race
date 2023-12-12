@@ -5,7 +5,7 @@ import Regular from "../../assets/Regular.png";
 import FooterComponents from "../Footer";
 import SideBarComponents from "../sidebar/SideBar";
 import ClickSiteBarStore from "../../ZustandStore/ClickSiteBar";
-import { Input, Select , Divider } from "antd";
+import { Input, Select, Divider, Button } from "antd";
 import "./Carausel.css";
 import {
   GetProvinsi,
@@ -29,6 +29,10 @@ function CekOngkirComponents() {
     GetProvinsi();
   }, []);
 
+  const handleContactClick = () => {
+    const url = `https://wa.me/6281281050420`;
+    window.open(url, '_blank');
+  };
   console.log(`DatasemuaMuat`, DatasemuaMuat);
   // console.log(`DatasemuaBongkar`, DatasemuaBongkar);
 
@@ -43,7 +47,7 @@ function CekOngkirComponents() {
           className={`mobile w-9-12 bg-red-300 ${DiClickNihstate === true ? "" : "mt-10"
             } ph:hidden`}
         >
-          <div className="mt-">
+          {/* <div className="mt-">
             <div
               className=" mx-auto font-bold text-[32px] font-plus-jakarta "
               style={{
@@ -54,12 +58,13 @@ function CekOngkirComponents() {
             >
               Check Service Prices
             </div>
-          </div>
+          </div> */}
         </div>
         <div>
-          <div className="w-9/12 ph:hidden mt-56 mx-auto ">
+          <div className="w-9/12 ph:hidden mt-36 mx-auto ">
+
             <div
-              className=" mx-auto font-bold text-[32px] font-plus-jakarta"
+              className=" mx-auto font-bold text-[32px] font-plus-jakarta flex justify-center mb-7"
               style={{
                 background: "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
                 WebkitBackgroundClip: "text",
@@ -68,7 +73,27 @@ function CekOngkirComponents() {
             >
               Check Service Prices
             </div>
-            <div className="flex justify-start ">
+            <div className="flex justify-center ">
+              <div className="shadow-xl bg-red-100 p-4 rounded-xl">
+                <button onClick={handleContactClick} style={{
+                  background: "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}>Contact Marketing Kami</button>
+              </div>
+
+            </div>
+            {/* <div
+              className=" mx-auto font-bold text-[32px] font-plus-jakarta"
+              style={{
+                background: "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              Check Service Prices
+            </div> */}
+            {/* <div className="flex justify-start ">
               <div className="w-screen  h-[114px]  flex justify-start mt-10 border rounded-lg shadow-md font-plus-jakarta">
                 <div className="grid grid-cols-4  m-5 space-x-28">
                   <div className="">
@@ -140,12 +165,7 @@ function CekOngkirComponents() {
                       <h1 className="text-black font-semibold font-plus-jakarta">Gram</h1>
                     </div>
                   </div>
-                  {/* <div className='ml-11'>
-                                        <p className='text-[#F05423]'>Asurance</p>
-                                        <div className='flex items-center mt-6 '>
-                                            <select placeholder='Tidak' className='w-full'></select>
-                                        </div>
-                                    </div> */}
+               
                   <div className="ml-9 flex items-center">
                     <button
                       onClick={async (e) => {
@@ -164,7 +184,7 @@ function CekOngkirComponents() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
             {result && (
               <div className="hasilresult  mx-auto mt-24">
                 <div className="grid grid-cols-5 font-bold border-b-2 border-black pb-2 font-plus-jakarta">
@@ -197,7 +217,7 @@ function CekOngkirComponents() {
                   ))}
               </div>
             )}
-            <div className="mt-28">
+            {/* <div className="mt-28">
               <p
                 className="text-4xl font-bold font-plus-jakarta"
                 style={{
@@ -239,11 +259,11 @@ function CekOngkirComponents() {
                   </p>
                 </div>
               </div>
-            </div>
+            </div> */}
             <p className="ph:hidden text-center mt-24 mb-24 text-black font-plus-jakarta">
-          Any Problems?
-          <span className="text-[#F05423] font-plus-jakarta ml-2 cursor-pointer">Contact our Customer Service</span>{" "}
-        </p>
+              Any Problems?
+              <span className="text-[#F05423] font-plus-jakarta ml-2 cursor-pointer">Contact our Customer Service</span>{" "}
+            </p>
           </div>
           <div className="mt-28 ph:hidden ">
             <FooterComponents />

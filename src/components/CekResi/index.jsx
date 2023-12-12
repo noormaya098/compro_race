@@ -101,7 +101,7 @@ function CekResiKomponents() {
     if (nosm != null) {
       AmbilDetailAwal();
     } else {
-      AmbilDetailAwal();
+      // AmbilDetailAwal(); 
       GetLatLongMuatBongkar();
     }
   }, [nosm]);
@@ -256,7 +256,7 @@ function CekResiKomponents() {
         <div className=" md:hidden mt-32 w-11/12 mx-auto  ">
           <img className="" src={Rectangle} />
           <p
-            className=" text-center text-[32px] font-bold font-['Plus_Jakarta_Sans'] bg-clip-text text-transparent font-plus-jakarta"
+            className=" text-center text-[32px] font-bold font-['Plus_Jakarta_Sans'] bg-clip-text text-transparent "
             style={{
               background: "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
               WebkitBackgroundClip: "text",
@@ -274,7 +274,7 @@ function CekResiKomponents() {
               onChange={(e) => setInputanNilai(e.target.value)}
               placeholder="Masukkan nomor resi pengiriman anda"
             ></input>
-            <div className="flex justify-center">
+            <div className="flex justify-center flex-row">
               <button
                 disabled={Loading}
                 className="bg-[#F05423] ph:w-[260px]  p-3 rounded-md h-[45px] text-white font-semibold font-plus-jakarta text-center"

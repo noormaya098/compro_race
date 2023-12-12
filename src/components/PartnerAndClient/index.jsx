@@ -9,9 +9,19 @@ import jadnio from "../../assets/partner/image 10.png";
 import jaja from "../../assets/partner/Jajaid 1.png";
 import uni from "../../assets/partner/image 5.png";
 import auriga from "../../assets/partner/image 6.png";
+import webuy from "../../assets/partner/webuy_logo.jpg";
+import sinbad from "../../assets/partner/sinbad_logo.png";
+import kitani from "../../assets/partner/kitani_logo.png";
+import gokomodo_logo from "../../assets/partner/gokomodo_logo.png";
 import rate from "../../assets/partner/image 8.png";
 import chilibeli from "../../assets/partner/image 9.png";
 function PartnerComponents() {
+  const handleContactClick = () => {
+    const url = `https://wa.me/6281281050420`;
+    window.open(url, '_blank');
+  };
+
+
   return (
     <div className="w-9/12 mx-auto mt-56 mb-32 ph:mt-52">
       <h1
@@ -25,45 +35,45 @@ function PartnerComponents() {
         Partner and Clients
       </h1>
       <div className="wrap-gambar grid grid-cols-4 mt-20 ph:space-x-5 ph:mt-10">
-        <div>
+        <div className="items-center flex ">
           <img src={erlangga} />
         </div>
-        <div>
+        <div className="items-center flex ">
           <img src={imacro} />
         </div>
-        <div>
-          <img src={kitabeli} />
+        <div className="items-start mt flex ">
+          <img width={100}  src={webuy} alt="webuy_logo"/>
         </div>
-        <div>
+        <div className="items-center flex ">
           <img src={cosmax} />
         </div>
 
-        <div className="items-center mt-8">
+        <div className="items-center flex mt-16">
           <img src={superindo} />
         </div>
-        <div className="items-center flex mt-8">
+        <div className="items-center flex mt-16">
           <img src={eubook} />
         </div>
-        <div className="items-center flex mt-8">
-          <img src={jadnio} />
+        <div className="items-center flex mt-16">
+          <img src={gokomodo_logo} width={100} />
         </div>
-        <div className="items-center flex mt-8">
+        <div className="items-center flex mt-16">
           <img src={jaja} />
         </div>
-        <div className="items-center flex mt-5">
+        <div className="items-center flex mt-16">
           <img src={uni} />
         </div>
-        <div className="items-center flex mt-5">
+        <div className="items-center flex mt-16">
           <img src={auriga} />
         </div>
-        <div className="items-center flex mt-5">
-          <img src={rate} />
+        <div className="items-center flex mt-16">
+          <img src={sinbad} width={200} />
         </div>
-        <div className="items-center flex mt-5">
-          <img src={chilibeli} />
+        <div className="items-center flex mt-16">
+          <img width={200} src={kitani} />
         </div>
       </div>
-      <div className="w-full ph:mt-20">
+      <div className="w-full ph:mt-20 mt-40">
         <h1
           className="text-[48px] text-center font-bold mt-16 ph:text-[20px] ph:mt-[50px] font-plus-jakarta"
           style={{
@@ -75,7 +85,7 @@ function PartnerComponents() {
           Excited to collaborate with RACE?
         </h1>
         <div className=" text-center justify-items-center flex justify-center w-full font-plus-jakarta">
-          <button className="bg-[#F05423] ph:text-sm ph:h-10 ph:w-24 ph:mt-5  w-[150px] h-[60px] font-semibold text-white mt-6 text-[24px]  ph:rounded-xl  rounded-md">
+          <button onClick={handleContactClick}  className="bg-[#F05423] ph:text-sm ph:h-10 ph:w-24 ph:mt-5  w-[150px] h-[60px] font-semibold text-white mt-6 text-[24px]  ph:rounded-xl  rounded-md">
             Contact us
           </button>
         </div>
