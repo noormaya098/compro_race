@@ -80,80 +80,38 @@ function CekOngkirComponents() {
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}>Contact Marketing Kami</button> */}
-                <table style={{ borderCollapse: 'collapse', width: '100%' }}>
-                  <td style={{ padding: '8px' }}>
-                    <tr>No</tr>
-                    <tr>1</tr>
-                    <tr>2</tr>
-                    <tr>3</tr>
-                    <tr>4</tr>
-                    <tr>5</tr>
-                    <tr>6</tr>
-                    <tr>7</tr>
-                    <tr>8</tr>
-                    <tr>9</tr>
-                    <tr>10</tr>
-                    <tr>11</tr>
-                    <tr>12</tr>
-                    <tr>13</tr>
-                    <tr>14</tr>
-                    <tr>15</tr>
-                  </td>
-                  <td style={{ padding: '8px' }}>
-                    <tr>Wilayah</tr>
-                    <tr>Bogor</tr>
-                    <tr>Solo</tr>
-                    <tr>Jakarta</tr>
-                    <tr>Medan</tr>
-                    <tr>Malang</tr>
-                    <tr>Bali</tr>
-                    <tr>Madiun</tr>
-                    <tr>Yogyakarta</tr>
-                    <tr>Bandung</tr>
-                    <tr>Fatmawati</tr>
-                    <tr>Makasar</tr>
-                    <tr>Bekasi</tr>
-                    <tr>Pekanbaru</tr>
-                    <tr>Semarang</tr>
-                    <tr>Surabaya</tr>
-                  </td>
-                  <td style={{ padding: '8px' }}>
-                    <tr>Nama Sales</tr>
-                    <tr>Audi</tr>
-                    <tr>M. Ikhsan</tr>
-                    <tr>Erik</tr>
-                    <tr>Habib</tr>
-                    <tr>Wahyu</tr>
-                    <tr>Daniel</tr>
-                    <tr>Alvian</tr>
-                    <tr>Raditya</tr>
-                    <tr>Rifky</tr>
-                    <tr>Jevri</tr>
-                    <tr>Hariadi</tr>
-                    <tr>SOON</tr>
-                    <tr>SOON</tr>
-                    <tr>SOON</tr>
-                    <tr>SOON</tr>
-                  </td>
-                  <td style={{  padding: '8px' }}>
-                    <tr>Nomor Whatsapp</tr>
-                    <tr>85811044034</tr>
-                    <tr>85216024688</tr>
-                    <tr>82298277561</tr>
-                    <tr>82272842691</tr>
-                    <tr>82221821821</tr>
-                    <tr>82146776067</tr>
-                    <tr>81332029736</tr>
-                    <tr>81328999938</tr>
-                    <tr>81283646815</tr>
-                    <tr>81281050420</tr>
-                    <tr>8991323130</tr>
-                    <tr>SOON</tr>
-                    <tr>SOON</tr>
-                    <tr>SOON</tr>
-                    <tr>SOON</tr>
-                  </td>
+                <table style={{ borderCollapse: 'collapse', width: '100%', border: '1px solid black' }}>
+                  <thead style={{ backgroundColor: '#f05423', color: 'white' }}>
+                    <tr>
+                      {/* <th style={{ padding: '8px' ,}}>No</th> */}
+                      <th style={{ padding: '8px' ,border: '1px solid black' }}>Wilayah</th>
+                      <th style={{ padding: '8px' ,border: '1px solid black' }}>Nama Sales</th>
+                      <th style={{ padding: '8px' ,border: '1px solid black' }}>Chat Sales</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {["Bogor", "Solo", "Jakarta", "Medan", "Malang", "Bali", "Madiun", "Yogyakarta", "Bandung", "Fatmawati", "Makasar", "Bekasi", "Pekanbaru", "Semarang", "Surabaya"].map((wilayah, index) => {
+                      const namaSales = ["Audi", "M. Ikhsan", "Erik", "Habib", "Wahyu", "Daniel", "Alvian", "Raditya", "Rifky", "Jevri", "Hariadi", "SOON", "SOON", "SOON", "SOON"][index];
+                      const nomorWhatsapp = ["6285811044034", "6285216024688", "6282298277561", "6282272842691", "6282221821821", "6282146776067", "6281332029736", "6281328999938", "6281283646815", "6281281050420", "628991323130", "SOON", "SOON", "SOON", "SOON"][index];
+
+                      return (
+                        <tr key={index}>
+                          {/* <td style={{ padding: '8px' ,border: '1px solid black'}}>{index + 1}</td> */}
+                          <td style={{ padding: '8px' ,border: '1px solid black' }}>{wilayah}</td>
+                          <td style={{ padding: '8px' ,border: '1px solid black' }}>{namaSales}</td>
+                          <td style={{ padding: '8px' ,border: '1px solid black' }}>
+                            {nomorWhatsapp !== 'SOON' ? (
+                              <a href={`https://wa.me/${nomorWhatsapp}`} target="_blank" rel="noopener noreferrer">
+                                <button style={{ padding: '5px 10px', borderRadius: "10px", backgroundColor: "green" , color :"white"}}>Chat Whatsapp</button>
+                              </a>
+                            ) : 'SOON'}
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
                 </table>
+
 
               </div>
 
