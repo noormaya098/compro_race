@@ -66,7 +66,7 @@ function MapsGoogle({ width = '100%', height = '400px', LatLongMuat, LatLongBong
     if (!isLoaded) {
         return <div></div>;
     }
-console.log(`LokasiDriverLongLat`,LokasiDriverLongLat);
+console.log(`LokasiDriverLongLat di component map`,LokasiDriverLongLat);
     return (
         <>
             {directionJalanan && (
@@ -78,7 +78,7 @@ console.log(`LokasiDriverLongLat`,LokasiDriverLongLat);
                         scaledSize: new window.google.maps.Size(30, 30), // Adjust the size here
                         origin: new window.google.maps.Point(0, 0),
                         anchor: new window.google.maps.Point(25, 25)
-                    }}  position={{ lat: LokasiDriverLongLat?.latitude, lng: LokasiDriverLongLat?.longitude }} />
+                    }}  position={{ lat: LokasiDriverLongLat?.lat, lng: LokasiDriverLongLat?.lon }} />
                     {directionJalanan && (
                         <DirectionsRenderer
                             directions={directionJalanan}
