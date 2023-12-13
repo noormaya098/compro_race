@@ -6,6 +6,8 @@ import image2 from "../../assets/img2.png";
 import image3 from "../../assets/img3.png";
 import image4 from "../../assets/img4.png";
 import image5 from "../../assets/img5.png";
+import daihatsigrandmax from "../../assets/daihatsi-grand-max.png";
+import l300 from "../../assets/l300-removebg-preview.png";
 import vector1 from "../../assets/Vector1.png";
 import vector2 from "../../assets/Vector2.png";
 import vector3 from "../../assets/Vector3.png";
@@ -25,13 +27,13 @@ const data = [
     volume: "P 475 x L 170 x T 175",
   },
   {
-    image: image3,
+    image: l300,
     title: "L300",
     capacity: "800kg",
     volume: "P 237 x L 163 x T 122",
   },
   {
-    image: image5,
+    image: daihatsigrandmax,
     title: "Grand Max",
     capacity: "600kg",
     volume: "P 220 x L 135 x T 130",
