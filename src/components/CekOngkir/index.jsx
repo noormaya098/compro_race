@@ -75,11 +75,86 @@ function CekOngkirComponents() {
             </div>
             <div className="flex justify-center ">
               <div className="shadow-xl bg-red-100 p-4 rounded-xl">
-                <button onClick={handleContactClick} style={{
+                {/* <button onClick={handleContactClick} style={{
                   background: "linear-gradient(50deg, #F05423, #A83CCE, #3D62B0)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
-                }}>Contact Marketing Kami</button>
+                }}>Contact Marketing Kami</button> */}
+                <table style={{ borderCollapse: 'collapse', width: '100%' }}>
+                  <td style={{ padding: '8px' }}>
+                    <tr>No</tr>
+                    <tr>1</tr>
+                    <tr>2</tr>
+                    <tr>3</tr>
+                    <tr>4</tr>
+                    <tr>5</tr>
+                    <tr>6</tr>
+                    <tr>7</tr>
+                    <tr>8</tr>
+                    <tr>9</tr>
+                    <tr>10</tr>
+                    <tr>11</tr>
+                    <tr>12</tr>
+                    <tr>13</tr>
+                    <tr>14</tr>
+                    <tr>15</tr>
+                  </td>
+                  <td style={{ padding: '8px' }}>
+                    <tr>Wilayah</tr>
+                    <tr>Bogor</tr>
+                    <tr>Solo</tr>
+                    <tr>Jakarta</tr>
+                    <tr>Medan</tr>
+                    <tr>Malang</tr>
+                    <tr>Bali</tr>
+                    <tr>Madiun</tr>
+                    <tr>Yogyakarta</tr>
+                    <tr>Bandung</tr>
+                    <tr>Fatmawati</tr>
+                    <tr>Makasar</tr>
+                    <tr>Bekasi</tr>
+                    <tr>Pekanbaru</tr>
+                    <tr>Semarang</tr>
+                    <tr>Surabaya</tr>
+                  </td>
+                  <td style={{ padding: '8px' }}>
+                    <tr>Nama Sales</tr>
+                    <tr>Audi</tr>
+                    <tr>M. Ikhsan</tr>
+                    <tr>Erik</tr>
+                    <tr>Habib</tr>
+                    <tr>Wahyu</tr>
+                    <tr>Daniel</tr>
+                    <tr>Alvian</tr>
+                    <tr>Raditya</tr>
+                    <tr>Rifky</tr>
+                    <tr>Jevri</tr>
+                    <tr>Hariadi</tr>
+                    <tr>SOON</tr>
+                    <tr>SOON</tr>
+                    <tr>SOON</tr>
+                    <tr>SOON</tr>
+                  </td>
+                  <td style={{  padding: '8px' }}>
+                    <tr>Nomor Whatsapp</tr>
+                    <tr>85811044034</tr>
+                    <tr>85216024688</tr>
+                    <tr>82298277561</tr>
+                    <tr>82272842691</tr>
+                    <tr>82221821821</tr>
+                    <tr>82146776067</tr>
+                    <tr>81332029736</tr>
+                    <tr>81328999938</tr>
+                    <tr>81283646815</tr>
+                    <tr>81281050420</tr>
+                    <tr>8991323130</tr>
+                    <tr>SOON</tr>
+                    <tr>SOON</tr>
+                    <tr>SOON</tr>
+                    <tr>SOON</tr>
+                  </td>
+                </table>
+
               </div>
 
             </div>
