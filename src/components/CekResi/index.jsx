@@ -63,6 +63,7 @@ function CekResiKomponents() {
         `data detail search`,
         data?.data?.data?.[0]?.positionDriverNow
       );
+      setLatLongBongkar(data?.data?.data?.[0]?.alamatBongkar)
       setLokasiDriverLongLat(data?.data?.data?.[0]?.positionDriverNow);
       if (data?.data === null) {
         notification.error({
@@ -130,7 +131,7 @@ function CekResiKomponents() {
     const muat = await getCoordinates(AlamatMuat); // Assuming getCoordinates is the correct function to call
     const bongkar = await getCoordinates(AlamatBongkar);
     setLatLongMuat(muat);
-    setLatLongBongkar(bongkar);
+    // setLatLongBongkar(bongkar);
     setLoading(false);
   }
   useEffect(() => {

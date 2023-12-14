@@ -33,7 +33,7 @@ function MapsGoogle({ width = '100%', height = '400px', LatLongMuat, LatLongBong
             try {
                 const result = await directionsService.route({
                     origin: new window.google.maps.LatLng(LatLongMuat?.lat, LatLongMuat?.lng),
-                    destination: new window.google.maps.LatLng(LatLongBongkar?.lat, LatLongBongkar?.lng),
+                    destination: new window.google.maps.LatLng(LatLongBongkar?.lat, LatLongBongkar?.long),
                     travelMode: window.google.maps.TravelMode.DRIVING,
                 });
                 setDirectionJalanan(result);
@@ -48,7 +48,7 @@ function MapsGoogle({ width = '100%', height = '400px', LatLongMuat, LatLongBong
 
     const center = {
         lat: (LatLongMuat?.lat + LatLongBongkar?.lat) / 2,
-        lng: (LatLongMuat?.lng + LatLongBongkar?.lng) / 2
+        lng: (LatLongMuat?.lng + LatLongBongkar?.long) / 2
     };
     console.log(`LatLongMuat`, LatLongMuat);
     console.log(`LatLongBongkar`, LatLongBongkar);
@@ -72,7 +72,7 @@ console.log(`LokasiDriverLongLat di component map`,LokasiDriverLongLat);
             {directionJalanan && (
                 <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={14} onLoad={mapOnLoad} onUnmount={mapOnUnmount}>
                     <Marker position={{ lat: LatLongMuat?.lat, lng: LatLongMuat?.lng }} />
-                    <Marker position={{ lat: LatLongBongkar?.lat, lng: LatLongBongkar?.lng }} />
+                    <Marker position={{ lat: LatLongBongkar?.lat, lng: LatLongBongkar?.long }} />
                     <Marker icon={{
                         url: iconTruck,
                         scaledSize: new window.google.maps.Size(30, 30), // Adjust the size here
