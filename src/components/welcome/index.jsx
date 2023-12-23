@@ -4,6 +4,8 @@ import Race_New_Bg from "../../assets/Race_New _Bg.png";
 import Property1 from "../../assets/Property 1=Banner 1.png";
 import Property2 from "../../assets/Property 1=Banner 2.png";
 import Property3 from "../../assets/Property 1=Banner 3.png";
+import asiyah_banner from "../../assets/Untitled-1-03.png";
+import Tahun_baru_Race from "../../assets/Tahun baru Race-01.png";
 import StatusbarComponents from "../statusbar";
 import SejarahComponeent from "../Sejarah";
 import { motion } from "framer-motion";
@@ -42,8 +44,11 @@ function Welcome() {
                     </div> */}
         <Carousel
           autoplay
-          className="md:w-screen bg-red-400 flex justify-center md:h-1/6"
+          className="md:w-screen bg-red-400 flex justify-center md:h-1/3"
         >
+          <div className="flex justify-center">
+            <img className="w-screen" src={Tahun_baru_Race} />
+          </div>
           <div className="flex justify-center">
             <img className="w-screen" src={Property1} />
           </div>
@@ -52,7 +57,7 @@ function Welcome() {
             <img className="w-screen" src={Property2} />
           </div>
           <div>
-            <img className="w-screen" src={Property3} />
+            <img className="w-screen"  src={asiyah_banner} />
           </div>
         </Carousel>
         {/* </motion.div> */}

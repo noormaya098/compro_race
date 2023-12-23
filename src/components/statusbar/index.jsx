@@ -130,7 +130,7 @@ function StatusbarComponents({ children }) {
             : "top-0 fixed transition-all duration-1000  ease-in-out bg-white shadow-md z-50"
         }   `}
       >
-        <div className="w-screen h-[150px] px-20 py-5 flex justify-between items-center">
+        <div className="w-screen h-[100px] px-20 py-5 flex justify-between items-center">
           <div className="w-[197px] h-[100px] ">
             <img
               className="cursor-pointer h-[100px]"
