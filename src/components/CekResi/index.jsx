@@ -115,7 +115,7 @@ function CekResiKomponents() {
       );
       console.log(data?.data);
       setDataHistory([data?.data]);
-    } catch (error) {}
+    } catch (error) { }
   };
 
   console.log(`data DataHistory`, DataHistory);
@@ -408,32 +408,34 @@ function CekResiKomponents() {
           </div>
         )}
         {/* INI Maps HP */}
-        {LatLongMuat == null && (
-          <div className=" md:hidden overflow-auto">
-            <div className="mt-4 ">
-              <p className="text-[27px] font-bold font-plus-jakarta">
-                Detail Alamat
-              </p>
-              <Table
-                columns={columns}
-                dataSource={dataDetailsemua}
-                pagination={false}
-              />
-              <Table
-                className="mt-1"
-                columns={columns2}
-                dataSource={DataHistory}
-                pagination={false}
-              />
-              <p className="text-[27px] font-bold mt-3 font-plus-jakarta">
-                History Pengiriman
-              </p>
-              <Table
-                className="mt-1"
-                columns={columns3}
-                dataSource={mapdata}
-                pagination={false}
-              />
+        {DataHistory[0] && (
+          <div className=" md:hidden ">
+            <div className="table-responsive overflow-auto mx-auto flex justify-center">
+              <div className="mt-4 w-full">
+                <p className="text-[27px] font-bold font-plus-jakarta">
+                  Detail Alamat
+                </p>
+                <Table
+                  columns={columns}
+                  dataSource={dataDetailsemua}
+                  pagination={false}
+                />
+                <Table
+                  className="mt-1"
+                  columns={columns2}
+                  dataSource={DataHistory}
+                  pagination={false}
+                />
+                <p className="text-[27px] font-bold mt-3 font-plus-jakarta">
+                  History Pengiriman
+                </p>
+                <Table
+                  className="mt-1"
+                  columns={columns3}
+                  dataSource={mapdata}
+                  pagination={false}
+                />
+              </div>
             </div>
             <div className="flex flex-col p-5 shadow-xl rounded-md border-2 mt-10 mb-10 font-plus-jakarta">
               <div className="">
