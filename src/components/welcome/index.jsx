@@ -5,7 +5,7 @@ import Property1 from "../../assets/Property 1=Banner 1.png";
 import Property2 from "../../assets/Property 1=Banner 2.png";
 import Property3 from "../../assets/Property 1=Banner 3.png";
 import asiyah_banner from "../../assets/Untitled-1-03.png";
-import Tahun_baru_Race from "../../assets/Tahun baru Race-01.png";
+import Tahun_baru_Race from "../../assets/HAPPY CHINESE NEW YEAR-3.jpg";
 import StatusbarComponents from "../statusbar";
 import SejarahComponeent from "../Sejarah";
 import { motion } from "framer-motion";

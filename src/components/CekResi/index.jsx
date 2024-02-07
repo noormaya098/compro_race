@@ -46,6 +46,9 @@ function CekResiKomponents() {
   });
   const [DataHistory, setDataHistory] = useState([]);
   const [dataDetailsemua, setdataDetailsemua] = useState([]);
+  const [DriverKalauKosong, setDriverKalauKosong] = useState("")
+  const [NopolKosongan, setNopolKosongan] = useState("")
+  const [jenisKendaraanKosongan, setjenisKendaraanKosongan] = useState("")
   const navigate = useNavigate();
   function ubahnosm(e) {
     if (nosm === null) {
@@ -65,6 +68,9 @@ function CekResiKomponents() {
       );
       setLatLongBongkar(data?.data?.data?.[0]?.alamatBongkar)
       setLokasiDriverLongLat(data?.data?.data?.[0]?.positionDriverNow);
+      setDriverKalauKosong(data?.data?.data?.[0]?.driver)
+      setNopolKosongan(data?.data?.data?.[0]?.nopol)
+      setjenisKendaraanKosongan(data?.data?.data?.[0]?.jenisKendaraan)
       if (data?.data === null) {
         notification.error({
           message: "Data Tidak Ditemukan",
@@ -174,8 +180,8 @@ function CekResiKomponents() {
       dataIndex: "jenisKendaraan",
       key: "jenisKendaraan",
       render: (jenisKendaraan) => {
-        if (jenisKendaraan === "") {
-          return "-";
+        if (jenisKendaraan === null) {
+          return jenisKendaraanKosongan;
         } else {
           return jenisKendaraan;
         }
@@ -186,8 +192,8 @@ function CekResiKomponents() {
       dataIndex: "Nopol",
       key: "Nopol",
       render: (Nopol) => {
-        if (Nopol === "") {
-          return "-";
+        if (Nopol === null) {
+          return NopolKosongan;
         } else {
           return Nopol;
         }
@@ -198,8 +204,8 @@ function CekResiKomponents() {
       dataIndex: "driver",
       key: "driver",
       render: (driver) => {
-        if (driver === "") {
-          return "-";
+        if (driver === null) {
+          return DriverKalauKosong;
         } else {
           return driver;
         }
@@ -227,14 +233,14 @@ function CekResiKomponents() {
     },
   ];
   const columns4 = [
-    // {
-    //     title: 'Update Date',
-    //     dataIndex: 'updateDate',
-    //     key: 'pickupDate',
-    //     render: (pickupDate) => {
-    //         return pickupDate
-    //     }
-    // },
+    {
+      title: 'Update Date',
+      dataIndex: 'updateDate',
+      key: 'pickupDate',
+      render: (pickupDate) => {
+        return pickupDate
+      }
+    },
     {
       title: "status",
       dataIndex: "keterangan",
@@ -371,37 +377,40 @@ function CekResiKomponents() {
                   dataSource={dataDetailsemua}
                   pagination={false}
                 />
-                <Table
-                  className="mt-1"
-                  columns={columns2}
-                  dataSource={DataHistory}
-                  pagination={false}
-                />
+
                 <p className="text-[27px] font-bold mt-3 font-plus-jakarta">
                   History Pengiriman
                 </p>
                 <Table
+                  columns={columns4}
+                  dataSource={DataHistory[0]?.data}
+                  pagination={false}
+                />
+                {/* <Table
                   className="mt-1"
                   columns={columns3}
                   dataSource={mapdata}
                   pagination={false}
-                />
+                /> */}
               </div>
             </div>
-            <div className="flex flex-col p-5 shadow-xl rounded-md border-2">
+            <div className="flex flex-col p-5 shadow-xl h-[40rem] rounded-md border-2">
               <div className="">
                 <MapsGoogle
                   LatLongMuat={LatLongMuat}
                   LatLongBongkar={LatLongBongkar}
                   LokasiDriverLongLat={LokasiDriverLongLat}
                 />
-              </div>
-              <div className="mt-3  h-full  border-2 shadow-md rounded-md">
                 <Table
-                  columns={columns4}
-                  dataSource={DataHistory[0]?.data}
+                  className="mt-1"
+                  columns={columns2}
+                  dataSource={DataHistory}
                   pagination={false}
                 />
+
+                {/* </div> */}
+                {/* <div className="mt-3  h-full  border-2 shadow-md rounded-md">
+                
                 {/* <img alt='Foto' /> */}
               </div>
             </div>
