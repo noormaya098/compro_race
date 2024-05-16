@@ -1,5 +1,5 @@
 // Welcome.js
-import React from "react";
+import React, { useEffect } from "react";
 import Race_New_Bg from "../../assets/Race_New _Bg.png";
 import Property1 from "../../assets/Property 1=Banner 1.png";
 import Property2 from "../../assets/Property 1=Banner 2.png";
@@ -17,8 +17,11 @@ import Mile4 from "../../assets/mile4.jpg";
 import Mile5 from "../../assets/mile5.jpg";
 import Mile6 from "../../assets/mile6.jpg";
 import BG from "../../assets/bg.png";
+import { BannerStore } from "../../ZustandStore/Banner";
 // import { Carousel } from "antd";
 function Welcome() {
+  const { banner, GetBanner } = BannerStore()
+  console.log(`banner`, banner)
   const carouselStyle = {
     backgroundImage: `url(${BG})`,
     backgroundSize: "cover",
@@ -26,6 +29,9 @@ function Welcome() {
     backgroundRepeat: "no-repeat",
     height: "auto", // Sesuaikan tinggi sesuai kebutuhan
   };
+  useEffect(() => {
+    GetBanner()
+  }, [])
   return (
     <>
       <StatusbarComponents />
@@ -44,21 +50,13 @@ function Welcome() {
                     </div> */}
         <Carousel
           autoplay
-          className="md:w-screen bg-red-400 flex justify-center md:h-1/3"
+          className="md:w-screen bg-red-400 flex justify-center md:h-1/3 mt-[10px]"
         >
-          <div className="flex justify-center">
-            <img className="w-screen" src={Tahun_baru_Race} />
-          </div>
-          <div className="flex justify-center">
-            <img className="w-screen" src={Property1} />
-          </div>
-
-          <div>
-            <img className="w-screen" src={Property2} />
-          </div>
-          <div>
-            <img className="w-screen"  src={asiyah_banner} />
-          </div>
+          {banner.map((item) => (
+            <div className="flex justify-center">
+              <img className="w-screen" src={item.picture} />
+            </div>
+          ))}
         </Carousel>
         {/* </motion.div> */}
       </div>

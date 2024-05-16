@@ -46,9 +46,9 @@ function CekResiKomponents() {
   });
   const [DataHistory, setDataHistory] = useState([]);
   const [dataDetailsemua, setdataDetailsemua] = useState([]);
-  const [DriverKalauKosong, setDriverKalauKosong] = useState("")
-  const [NopolKosongan, setNopolKosongan] = useState("")
-  const [jenisKendaraanKosongan, setjenisKendaraanKosongan] = useState("")
+  const [DriverKalauKosong, setDriverKalauKosong] = useState("");
+  const [NopolKosongan, setNopolKosongan] = useState("");
+  const [jenisKendaraanKosongan, setjenisKendaraanKosongan] = useState("");
   const navigate = useNavigate();
   function ubahnosm(e) {
     if (nosm === null) {
@@ -66,11 +66,11 @@ function CekResiKomponents() {
         `data detail search`,
         data?.data?.data?.[0]?.positionDriverNow
       );
-      setLatLongBongkar(data?.data?.data?.[0]?.alamatBongkar)
+      setLatLongBongkar(data?.data?.data?.[0]?.alamatBongkar);
       setLokasiDriverLongLat(data?.data?.data?.[0]?.positionDriverNow);
-      setDriverKalauKosong(data?.data?.data?.[0]?.driver)
-      setNopolKosongan(data?.data?.data?.[0]?.nopol)
-      setjenisKendaraanKosongan(data?.data?.data?.[0]?.jenisKendaraan)
+      setDriverKalauKosong(data?.data?.data?.[0]?.driver);
+      setNopolKosongan(data?.data?.data?.[0]?.nopol);
+      setjenisKendaraanKosongan(data?.data?.data?.[0]?.jenisKendaraan);
       if (data?.data === null) {
         notification.error({
           message: "Data Tidak Ditemukan",
@@ -108,7 +108,7 @@ function CekResiKomponents() {
     if (nosm != null) {
       AmbilDetailAwal();
     } else {
-      // AmbilDetailAwal(); 
+      // AmbilDetailAwal();
       GetLatLongMuatBongkar();
     }
   }, [nosm]);
@@ -121,7 +121,7 @@ function CekResiKomponents() {
       );
       console.log(data?.data);
       setDataHistory([data?.data]);
-    } catch (error) { }
+    } catch (error) {}
   };
 
   console.log(`data DataHistory`, DataHistory);
@@ -146,15 +146,72 @@ function CekResiKomponents() {
   }, [LatLongMuat, LatLongBongkar, nosm]);
 
   const columns = [
+    // {
+    //   title: "Customer",
+    //   dataIndex: "Customer",
+    //   key: "Customer",
+    //   render: () => {
+    //     return dataDetailsemua[0].customer
+    //   }
+    // },
     {
       title: "Alamat Asal",
       dataIndex: ["alamatMuat", "alamat"], // Accessing nested property
       key: "alamatMuat",
+      render: (e, w) => {
+        console.log(e, w);
+        return (
+          <>
+            {dataDetailsemua[0].customer}
+            <br />
+            <br />
+            {e}
+          </>
+        );
+      },
     },
     {
       title: "Alamat Tujuan",
       dataIndex: ["alamatBongkar", "alamat"], // Accessing nested property
       key: "alamatBongkar",
+      render: (e, w) => {
+        console.log(e, w);
+        return (
+          <>
+            {dataDetailsemua[0].sekolahTujuan}
+            <br />
+            <br />
+            {e}
+          </>
+        );
+      },
+    },
+    {
+      title: "Ikat/Koli/Qty/Berat",
+      dataIndex: ["alamatBongkar", "alamat"], // Accessing nested property
+      key: "alamatBongkar",
+      render: (e, w) => {
+        console.log(e, w);
+        return (
+          <>
+            {dataDetailsemua[0].ikat}/{dataDetailsemua[0].koli}/{dataDetailsemua[0].qty}/{dataDetailsemua[0].berat}
+          </>
+        );
+      },
+    },
+  ];
+  const columns2 = [
+    {
+      title: "Nama Driver",
+      dataIndex: "driver",
+      key: "driver",
+      render: (driver) => {
+        if (driver === null) {
+          return DriverKalauKosong;
+        } else {
+          return driver;
+        }
+      },
     },
     {
       title: "No Telp Driver",
@@ -162,18 +219,11 @@ function CekResiKomponents() {
       key: "telp",
       render: (telp) => {
         if (telp === "") {
-          return "-";
+          return dataDetailsemua[0].telp;
         } else {
-          return telp;
+          return dataDetailsemua[0].telp;
         }
       },
-    },
-  ];
-  const columns2 = [
-    {
-      title: "Customer",
-      dataIndex: "Customer",
-      key: "Customer",
     },
     {
       title: "Jenis Kendaraan",
@@ -199,19 +249,26 @@ function CekResiKomponents() {
         }
       },
     },
+  ];
+  console.log(`dataDetailsemua`, dataDetailsemua);
+  const columns5 = [
     {
-      title: "Nama Driver",
+      title: "",
       dataIndex: "driver",
       key: "driver",
       render: (driver) => {
-        if (driver === null) {
-          return DriverKalauKosong;
-        } else {
-          return driver;
-        }
+        return dataDetailsemua[0]?.positionDriverNow?.lastUpdate;
       },
     },
-  ];
+    {
+      title: "",
+      dataIndex: "driver",
+      key: "driver",
+      render: (driver) => {
+        return dataDetailsemua[0]?.positionDriverNow?.address;
+      },
+    },
+  ].flat();
   const columns3 = [
     {
       title: "Waktu",
@@ -234,17 +291,21 @@ function CekResiKomponents() {
   ];
   const columns4 = [
     {
-      title: 'Update Date',
-      dataIndex: 'updateDate',
-      key: 'pickupDate',
-      render: (pickupDate) => {
-        return pickupDate
-      }
+      title: "Update Date",
+      dataIndex: "date",
+      key: "date",
     },
     {
       title: "status",
       dataIndex: "keterangan",
       key: "keterangan",
+    },
+
+    
+    {
+      title: "memo",
+      dataIndex: "memo",
+      key: "memo",
     },
     {
       title: "foto",
@@ -252,10 +313,17 @@ function CekResiKomponents() {
       width: "80px",
       key: "foto",
       render: (foto) => {
-        return <Image src={foto} />;
+        if (
+          foto == "https://api.eurekalogistics.co.id/images/no-pictures.png"
+        ) {
+          return;
+        } else {
+          return <Image src={foto} />;
+        }
       },
     },
   ];
+
   return (
     <>
       <div className="mt-32 w-9/12 mx-auto  ">
@@ -383,7 +451,7 @@ function CekResiKomponents() {
                 </p>
                 <Table
                   columns={columns4}
-                  dataSource={DataHistory[0]?.data}
+                  dataSource={dataDetailsemua?.[0]?.statusKendaraan}
                   pagination={false}
                 />
                 {/* <Table
@@ -394,7 +462,7 @@ function CekResiKomponents() {
                 /> */}
               </div>
             </div>
-            <div className="flex flex-col p-5 shadow-xl h-[40rem] rounded-md border-2">
+            <div className="flex flex-col p-5 shadow-xl rounded-md border-2">
               <div className="">
                 <MapsGoogle
                   LatLongMuat={LatLongMuat}
@@ -405,6 +473,14 @@ function CekResiKomponents() {
                   className="mt-1"
                   columns={columns2}
                   dataSource={DataHistory}
+                  pagination={false}
+                />
+                <div style={{ fontWeight: "bold" }} className="mt-5">
+                  Lokasi Driver Terkini
+                </div>
+                <Table
+                  columns={columns5}
+                  dataSource={dataDetailsemua}
                   pagination={false}
                 />
 
@@ -457,7 +533,7 @@ function CekResiKomponents() {
               <div className="mt-3  h-full  border-2 shadow-md rounded-md font-plus-jakarta">
                 <Table
                   columns={columns4}
-                  dataSource={DataHistory[0]?.data}
+                  dataSource={dataDetailsemua?.[0]?.statusKendaraan}
                   pagination={false}
                 />
                 {/* <img alt='Foto' /> */}
