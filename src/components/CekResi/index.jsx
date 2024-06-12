@@ -326,7 +326,7 @@ function CekResiKomponents() {
 
   return (
     <>
-      <div className="mt-32 w-9/12 mx-auto  ">
+      <div className="mt-32 w-11/12 mx-auto  ">
         {/* ini HP */}
         <div className=" md:hidden mt-32 w-11/12 mx-auto  ">
           <img className="" src={Rectangle} />
@@ -511,7 +511,7 @@ function CekResiKomponents() {
                   dataSource={DataHistory}
                   pagination={false}
                 />
-                <p className="text-[27px] font-bold mt-3 font-plus-jakarta">
+                {/* <p className="text-[27px] font-bold mt-3 font-plus-jakarta">
                   History Pengiriman
                 </p>
                 <Table
@@ -519,7 +519,7 @@ function CekResiKomponents() {
                   columns={columns3}
                   dataSource={mapdata}
                   pagination={false}
-                />
+                /> */}
               </div>
             </div>
             <div className="flex flex-col p-5 shadow-xl rounded-md border-2 mt-10 mb-10 font-plus-jakarta">
