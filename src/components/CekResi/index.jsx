@@ -25,6 +25,8 @@ function CekResiKomponents() {
   const [LatLongMuat, setLatLongMuat] = useState("");
   const [LatLongBongkar, setLatLongBongkar] = useState("");
   const [LokasiDriverLongLat, setLokasiDriverLongLat] = useState(null);
+  const [searchType, setSearchType] = useState("msm"); // Default search type
+
   const firestore = dbdatabase;
   function copylink() {
     const url = `https://track.rajacepat.com/cekresi/result?nosm=${nosm}`;
@@ -57,50 +59,53 @@ function CekResiKomponents() {
       return InputanNilai;
     }
   }
+
   const AmbilDetailAwal = async () => {
     setLoading(true);
     try {
-      const data = await axios.get(`
-            https://apirace.eurekalogistics.co.id/sp/get-sm-detail?msm=${InputanNilai}`);
-      console.log(
-        `data detail search`,
-        data?.data?.data?.[0]?.positionDriverNow
+      const response = await axios.get(
+        `https://apirace.eurekalogistics.co.id/sp/get-sm-detail?msm=${InputanNilai}&searchType=${searchType}`
       );
-      setLatLongBongkar(data?.data?.data?.[0]?.alamatBongkar);
-      setLokasiDriverLongLat(data?.data?.data?.[0]?.positionDriverNow);
-      setDriverKalauKosong(data?.data?.data?.[0]?.driver);
-      setNopolKosongan(data?.data?.data?.[0]?.nopol);
-      setjenisKendaraanKosongan(data?.data?.data?.[0]?.jenisKendaraan);
-      if (data?.data === null) {
-        notification.error({
-          message: "Data Tidak Ditemukan",
-        });
-      } else {
-        notification.success({
-          message: "Sukses Mendapatkan Data",
-        });
-        GoogleMpasStore.setState({
-          AlamatMuat: data?.data?.data[0]?.muat,
-          AlamatBongkar: data?.data?.data[0]?.bongkar,
-        });
-        setdataDetailsemua([data?.data?.data[0]]);
-        GetLatLongMuatBongkar(
-          data?.data?.data[0]?.alamatMuat?.alamat,
-          data?.data?.data[0]?.alamatBongkar?.alamat
-        );
 
-        historykendaraan(data?.data?.data[0]?.idMsm);
+      const detail = response?.data?.data?.[0];
+      console.log(`Data Detail Search:`, detail);
+
+      if (!detail) {
+        notification.error({ message: "Data Tidak Ditemukan" });
+        return;
       }
-      setLoading(false);
-      console.log(
-        `data?.data?.data[0]?.data?.alamatMuat?.alamat,`,
-        data?.data?.data[0]?.alamatMuat
-      );
-    } catch (error) {
-      setLoading(false);
-      notification.error({
-        message: "Terjadi Error",
+
+      setLatLongBongkar(detail.alamatBongkar);
+      setLokasiDriverLongLat(detail.positionDriverNow);
+      setDriverKalauKosong(detail.driver);
+      setNopolKosongan(detail.nopol);
+      setjenisKendaraanKosongan(detail.jenisKendaraan);
+
+      notification.success({ message: "Sukses Mendapatkan Data" });
+
+      GoogleMpasStore.setState({
+        AlamatMuat: detail.muat,
+        AlamatBongkar: detail.bongkar,
       });
+
+      setdataDetailsemua([detail]);
+
+      GetLatLongMuatBongkar(
+        detail.alamatMuat?.alamat,
+        detail.alamatBongkar?.alamat
+      );
+
+      // Pastikan id_msm ada sebelum memanggil historykendaraan()
+      if (detail.idMsm) {
+        historykendaraan(detail.idMsm);
+      } else {
+        console.warn("idMsm tidak ditemukan dalam response API!");
+      }
+    } catch (error) {
+      notification.error({ message: "Terjadi Error saat mengambil detail" });
+      console.error(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -127,6 +132,7 @@ function CekResiKomponents() {
   console.log(`data DataHistory`, DataHistory);
   const mapdata = DataHistory[0]?.data.map((i) => i);
   console.log(mapdata);
+
   async function PindahHalaman(asw) {
     navigate(`/cekresi/result?nosm=${asw}`);
   }
@@ -194,7 +200,8 @@ function CekResiKomponents() {
         console.log(e, w);
         return (
           <>
-            {dataDetailsemua[0].ikat}/{dataDetailsemua[0].koli}/{dataDetailsemua[0].qty}/{dataDetailsemua[0].berat}
+            {dataDetailsemua[0].ikat}/{dataDetailsemua[0].koli}/
+            {dataDetailsemua[0].qty}/{dataDetailsemua[0].berat}
           </>
         );
       },
@@ -301,7 +308,6 @@ function CekResiKomponents() {
       key: "keterangan",
     },
 
-    
     {
       title: "memo",
       dataIndex: "memo",
@@ -343,6 +349,15 @@ function CekResiKomponents() {
           </p>
 
           <div className="md:w-[1064px] md:h-[105px] ph:h-[130px] flex flex-col  mt-5 shadow rounded-lg">
+            <select
+              className="border rounded-md p-2 md:w-[200px] md:h-[60px] font-plus-jakarta"
+              onChange={(e) => setSearchType(e.target.value)}
+              value={searchType}
+            >
+              <option value="msm">Resi Race</option>
+              <option value="referensi">No Faktur</option>
+              <option value="referensi_1">No Surat Jalan</option>
+            </select>
             <input
               value={ubahnosm()}
               className="md:w-[874px] md:h-[60px] m-5  border rounded-md"
@@ -396,34 +411,45 @@ function CekResiKomponents() {
                 boxShadow: "5px 5px 5px 0 rgba(0, 0, 0, 0.1)", // Ubah nilai ini sesuai dengan bayangan yang Anda inginkan
               }}
             >
-              <input
-                onChange={(e) => {
-                  ubahnosm(e.target.value);
-                  setInputanNilai(e.target.value);
-                }}
-                className="md:w-[874px] md:h-[60px] m-5  border rounded-md font-plus-jakarta "
-                style={{ paddingLeft: "20px" }} // Mengatur warna teks menjadi hitam
-                placeholder="Masukkan nomor resi pengiriman anda"
-                value={ubahnosm()}
-              ></input>
-              <button
-                disabled={Loading}
-                className="bg-[#F05423] ph:w-[260px]  p-3 rounded-md h-[45px] text-white font-semibold font-plus-jakarta text-center"
-                onClick={() => {
-                  PindahHalaman(InputanNilai);
-                  AmbilDetailAwal();
-                }}
-              >
-                {Loading ? "Loading..." : "Search"}
-              </button>
-              {DataHistory[0]?.data != null && (
-                <button
-                  onClick={copylink}
-                  className="bg-[#30a953] ph:w-[260px]  p-3 rounded-md h-[45px] ml-5 text-white font-semibold font-plus-jakarta "
+              <div className="flex items-center space-x-3 m-5">
+                <select
+                  className="border rounded-md p-2 md:w-[200px] md:h-[60px] font-plus-jakarta"
+                  onChange={(e) => setSearchType(e.target.value)}
+                  value={searchType}
                 >
-                  CopyURL
+                  <option value="msm">Resi Race</option>
+                  <option value="referensi">No Faktur</option>
+                  <option value="referensi_1">No Surat Jalan</option>
+                </select>
+                <input
+                  onChange={(e) => {
+                    ubahnosm(e.target.value);
+                    setInputanNilai(e.target.value);
+                  }}
+                  className="md:w-[874px] md:h-[60px] m-5  border rounded-md font-plus-jakarta "
+                  style={{ paddingLeft: "20px" }} // Mengatur warna teks menjadi hitam
+                  placeholder="Masukkan nomor resi pengiriman anda"
+                  value={ubahnosm()}
+                ></input>
+                <button
+                  disabled={Loading}
+                  className="bg-[#F05423] ph:w-[260px]  p-3 rounded-md h-[45px] text-white font-semibold font-plus-jakarta text-center"
+                  onClick={() => {
+                    PindahHalaman(InputanNilai);
+                    AmbilDetailAwal();
+                  }}
+                >
+                  {Loading ? "Loading..." : "Search"}
                 </button>
-              )}
+                {DataHistory[0]?.data != null && (
+                  <button
+                    onClick={copylink}
+                    className="bg-[#30a953] ph:w-[260px]  p-3 rounded-md h-[45px] ml-5 text-white font-semibold font-plus-jakarta "
+                  >
+                    CopyURL
+                  </button>
+                )}
+              </div>
             </Card>
           </div>
         </div>
