@@ -47,7 +47,7 @@ function SejarahComponeent() {
 
   return (
     <div>
-      <div className=" h-screen mx-auto " style={carouselStyle}>
+      <div className=" h-screen mx-auto bg-black" style={carouselStyle}>
         <Carousel autoplay className="h-screen ph:h-[500px]">
           {/* Slide 1 */}
           <>
@@ -74,7 +74,7 @@ function SejarahComponeent() {
                 </p>
               </div>
 
-              <div >
+              <div>
                 <img
                   className="w-[600px] h-[400px] mt-8 ml-10 ph:w-9/12 ph:h-2/3"
                   src={Mile1}
@@ -87,7 +87,6 @@ function SejarahComponeent() {
           <>
             <div>
               <div className=" grid md:grid-cols-2 grid-cols-1  mt-20 ml-12 ">
-                
                 <div className="md:w-12/12 flex flex-col items-center mx-auto">
                   <p
                     className="text-[80px] font-bold text-center w-9/12 ph:mr-10 font-plus-jakarta mt-20 ph:text-3xl ph:mt-0"
@@ -129,7 +128,7 @@ function SejarahComponeent() {
                     2019
                   </p>
                   <p className="text-[24px] ph:mr-10  mt-2 md:text-[#F05423] ph:text-[#F05423] text-center font-plus-jakarta ph:text-lg">
-                  RACE Hub Start Operate.
+                    RACE Hub Start Operate.
                   </p>
                 </div>
                 <img
@@ -139,7 +138,6 @@ function SejarahComponeent() {
               </div>
             </div>
           </>
-          
 
           {/* Slide 4 */}
           <>
@@ -158,7 +156,7 @@ function SejarahComponeent() {
                     2020
                   </p>
                   <p className="text-[24px] ph:mr-10  mt-2 md:text-[#F05423] ph:text-[#F05423] text-center font-plus-jakarta ph:text-lg">
-                  RACE Operates in Bandung, Semarang, Yogyakarta, and
+                    RACE Operates in Bandung, Semarang, Yogyakarta, and
                     Surabaya.
                   </p>
                 </div>
@@ -169,7 +167,6 @@ function SejarahComponeent() {
               </div>
             </div>
           </>
-          
 
           {/* Slide 5 */}
           <>
@@ -185,10 +182,10 @@ function SejarahComponeent() {
                       WebkitTextFillColor: "transparent",
                     }}
                   >
-                      2021
+                    2021
                   </p>
                   <p className="text-[24px] ph:mr-10  mt-2 md:text-[#F05423] ph:text-[#F05423] text-center font-plus-jakarta ph:text-lg">
-                  RACE Operates in Denpasar, Bali.
+                    RACE Operates in Denpasar, Bali.
                   </p>
                 </div>
                 <img
@@ -198,7 +195,6 @@ function SejarahComponeent() {
               </div>
             </div>
           </>
-       
 
           {/* Slide 6 */}
           <>
@@ -214,10 +210,10 @@ function SejarahComponeent() {
                       WebkitTextFillColor: "transparent",
                     }}
                   >
-                     2022
+                    2022
                   </p>
                   <p className="text-[24px] ph:mr-10  mt-2 md:text-[#F05423] ph:text-[#F05423] text-center font-plus-jakarta ph:text-lg">
-                  RACE Operates in Jawa, Sulawesi, and Sumatera.
+                    RACE Operates in Jawa, Sulawesi, and Sumatera.
                   </p>
                 </div>
                 <img
@@ -227,7 +223,6 @@ function SejarahComponeent() {
               </div>
             </div>
           </>
-        
         </Carousel>
       </div>
 

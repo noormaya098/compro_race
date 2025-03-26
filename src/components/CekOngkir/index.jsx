@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import orangnaikmotor from "../../assets/orangnaikmotor.png";
 import sameday from "../../assets/sameday.png";
 import Regular from "../../assets/Regular.png";
@@ -14,8 +14,11 @@ import {
 import { GetPriceListCost } from "../../funcs/GetPriceListCost";
 import { dbdatabase } from "../../firebase/config";
 import { doc, onSnapshot } from "firebase/firestore";
+import ChatPage from "../../pages/ChatPage";
+import LogoRace from "../../assets/chat-floating.png";
+
 function CekOngkirComponents() {
-  const firestore = dbdatabase
+  const firestore = dbdatabase;
   console.log(`firestore ini`, firestore);
   const unsub = onSnapshot(doc(firestore, "location", "123"), (doc) => {
     console.log("Current data: ", doc.data());
@@ -31,10 +34,16 @@ function CekOngkirComponents() {
 
   const handleContactClick = () => {
     const url = `https://wa.me/6281281050420`;
-    window.open(url, '_blank');
+    window.open(url, "_blank");
   };
   console.log(`DatasemuaMuat`, DatasemuaMuat);
   // console.log(`DatasemuaBongkar`, DatasemuaBongkar);
+
+  const [showChat, setShowChat] = useState(false);
+
+  const handleOpenChat = () => {
+    setShowChat(true);
+  };
 
   return (
     <div>
@@ -44,8 +53,9 @@ function CekOngkirComponents() {
           className={`${DiClickNihstate == false ? "" : ""} ph:hidden`}
         ></div>
         <div
-          className={`mobile w-9-12 bg-red-300 ${DiClickNihstate === true ? "" : "mt-10"
-            } ph:hidden`}
+          className={`mobile w-9-12 bg-red-300 ${
+            DiClickNihstate === true ? "" : "mt-8"
+          } ph:hidden`}
         >
           {/* <div className="mt-">
             <div
@@ -62,7 +72,6 @@ function CekOngkirComponents() {
         </div>
         <div>
           <div className="w-9/12 ph:hidden mt-36 mx-auto ">
-
             <div
               className=" mx-auto font-bold text-[32px] font-plus-jakarta flex justify-center mb-7"
               style={{
@@ -80,41 +89,132 @@ function CekOngkirComponents() {
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                 }}>Contact Marketing Kami</button> */}
-                <table style={{ borderCollapse: 'collapse', width: '100%', border: '1px solid black' }}>
-                  <thead style={{ backgroundColor: '#f05423', color: 'white' }}>
+                <table
+                  style={{
+                    borderCollapse: "collapse",
+                    width: "100%",
+                    border: "1px solid black",
+                  }}
+                >
+                  <thead style={{ backgroundColor: "#f05423", color: "white" }}>
                     <tr>
                       {/* <th style={{ padding: '8px' ,}}>No</th> */}
-                      <th style={{ padding: '8px' ,border: '1px solid black' }}>Wilayah</th>
-                      <th style={{ padding: '8px' ,border: '1px solid black' }}>Nama Sales</th>
-                      <th style={{ padding: '8px' ,border: '1px solid black' }}>Chat Sales</th>
+                      <th style={{ padding: "8px", border: "1px solid black" }}>
+                        Wilayah
+                      </th>
+                      <th style={{ padding: "8px", border: "1px solid black" }}>
+                        Nama Sales
+                      </th>
+                      <th style={{ padding: "8px", border: "1px solid black" }}>
+                        Chat Sales
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
-                    {["Bogor", "Solo", "Jakarta", "Medan", "Malang", "Bali", "Madiun", "Yogyakarta", "Bandung", "Fatmawati", "Makasar", "Bekasi", "Pekanbaru", "Semarang", "Surabaya"].map((wilayah, index) => {
-                      const namaSales = ["Audi", "M. Ikhsan", "Erik", "Habib", "Wahyu", "Daniel", "Alvian", "Raditya", "Rifky", "Jevri", "Hariadi", "SOON", "SOON", "SOON", "SOON"][index];
-                      const nomorWhatsapp = ["6285811044034", "6285216024688", "6282298277561", "6282272842691", "6282221821821", "6282146776067", "6281332029736", "6281328999938", "6281283646815", "6281281050420", "628991323130", "SOON", "SOON", "SOON", "SOON"][index];
+                    {[
+                      "Bogor",
+                      "Solo",
+                      "Jakarta",
+                      "Medan",
+                      "Malang",
+                      "Bali",
+                      "Madiun",
+                      "Yogyakarta",
+                      "Bandung",
+                      "Fatmawati",
+                      "Makasar",
+                      "Bekasi",
+                      "Pekanbaru",
+                      "Semarang",
+                      "Surabaya",
+                    ].map((wilayah, index) => {
+                      const namaSales = [
+                        "Audi",
+                        "M. Ikhsan",
+                        "Erik",
+                        "Habib",
+                        "Wahyu",
+                        "Daniel",
+                        "Alvian",
+                        "Raditya",
+                        "Rifky",
+                        "Jevri",
+                        "Hariadi",
+                        "SOON",
+                        "SOON",
+                        "SOON",
+                        "SOON",
+                      ][index];
+                      const nomorWhatsapp = [
+                        "6285811044034",
+                        "6285216024688",
+                        "6282298277561",
+                        "6282272842691",
+                        "6282221821821",
+                        "6282146776067",
+                        "6281332029736",
+                        "6281328999938",
+                        "6281283646815",
+                        "6281281050420",
+                        "628991323130",
+                        "SOON",
+                        "SOON",
+                        "SOON",
+                        "SOON",
+                      ][index];
 
                       return (
                         <tr key={index}>
                           {/* <td style={{ padding: '8px' ,border: '1px solid black'}}>{index + 1}</td> */}
-                          <td style={{ padding: '8px' ,border: '1px solid black' }}>{wilayah}</td>
-                          <td style={{ padding: '8px' ,border: '1px solid black' }}>{namaSales}</td>
-                          <td style={{ padding: '8px' ,border: '1px solid black' }}>
-                            {nomorWhatsapp !== 'SOON' ? (
-                              <a href={`https://wa.me/${nomorWhatsapp}`} target="_blank" rel="noopener noreferrer">
-                                <button style={{ padding: '5px 10px', borderRadius: "10px", backgroundColor: "green" , color :"white"}}>Chat Whatsapp</button>
+                          <td
+                            style={{
+                              padding: "8px",
+                              border: "1px solid black",
+                            }}
+                          >
+                            {wilayah}
+                          </td>
+                          <td
+                            style={{
+                              padding: "8px",
+                              border: "1px solid black",
+                            }}
+                          >
+                            {namaSales}
+                          </td>
+                          <td
+                            style={{
+                              padding: "8px",
+                              border: "1px solid black",
+                            }}
+                          >
+                            {nomorWhatsapp !== "SOON" ? (
+                              <a
+                                href={`https://wa.me/${nomorWhatsapp}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                <button
+                                  style={{
+                                    padding: "5px 10px",
+                                    borderRadius: "10px",
+                                    backgroundColor: "green",
+                                    color: "white",
+                                  }}
+                                >
+                                  Chat Whatsapp
+                                </button>
                               </a>
-                            ) : 'SOON'}
+                            ) : (
+                              "SOON"
+                            )}
                           </td>
                         </tr>
                       );
                     })}
                   </tbody>
                 </table>
-
-
               </div>
-
             </div>
             {/* <div
               className=" mx-auto font-bold text-[32px] font-plus-jakarta"
@@ -295,7 +395,9 @@ function CekOngkirComponents() {
             </div> */}
             <p className="ph:hidden text-center mt-24 mb-24 text-black font-plus-jakarta">
               Any Problems?
-              <span className="text-[#F05423] font-plus-jakarta ml-2 cursor-pointer">Contact our Customer Service</span>{" "}
+              <span className="text-[#F05423] font-plus-jakarta ml-2 cursor-pointer">
+                Contact our Customer Service
+              </span>{" "}
             </p>
           </div>
           <div className="mt-28 ph:hidden ">
@@ -320,7 +422,7 @@ function CekOngkirComponents() {
             <div className="h-[329px] w-[280px] border-2 border-orange-400 rounded-lg mt-6 shadow-md ">
               <div className="m-3">
                 <div className="font-plus-jakarta">
-                  <p >From</p>
+                  <p>From</p>
                   {/* <Select placeholder="Departure City" style={{ width: "100%", marginTop: 2 }}></Select> */}
                   <Select
                     style={{ width: "100%", marginTop: 2 }}
@@ -387,7 +489,9 @@ function CekOngkirComponents() {
                         placeholder="0"
                         className="border-b-2"
                       ></Input>
-                      <div className="font-bold ml-3 font-plus-jakarta">Gram</div>
+                      <div className="font-bold ml-3 font-plus-jakarta">
+                        Gram
+                      </div>
                     </div>
                   </div>
                   {/* <div>
@@ -430,7 +534,9 @@ function CekOngkirComponents() {
                     {/* Replace with actual property name */}
                     <div>{item?.description}</div>{" "}
                     {/* Replace with actual property name */}
-                    <div className="font-plus-jakarta">{item?.cost?.[0]?.etd} Hari</div>{" "}
+                    <div className="font-plus-jakarta">
+                      {item?.cost?.[0]?.etd} Hari
+                    </div>{" "}
                     {/* Replace with actual property name */}
                     <div>
                       {item?.cost?.[0]?.note == ""
@@ -474,7 +580,9 @@ function CekOngkirComponents() {
                   <img src={Regular} alt="Service 3" />
                   <div className="  m-2 font-plus-jakarta">
                     <p>Regular Services</p>
-                    <p className="mt-2 font-plus-jakarta">Standard Shipping within 1-3 days.</p>
+                    <p className="mt-2 font-plus-jakarta">
+                      Standard Shipping within 1-3 days.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -485,6 +593,37 @@ function CekOngkirComponents() {
           </div>
         </div>
       </div>
+      {/* Floating Chat Icon with Logo */}
+      <>
+        {/* Chat button */}
+        <div className="fixed bottom-5 right-5 z-50">
+          <div
+            onClick={handleOpenChat}
+            className="cursor-pointer   flex items-center justify-center"
+          >
+            <img
+              onClick={handleOpenChat}
+              src={LogoRace}
+              alt="chat"
+              className="w-[3rem] h-[3rem] object-fill"
+            />
+          </div>
+        </div>
+
+        {/* Chat Box */}
+        {showChat && (
+          <div className="fixed bottom-24 right-5 z-50 bg-white p-4 rounded-xl shadow-xl w-96">
+            <button
+              onClick={() => setShowChat(false)}
+              className="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-xl font-bold"
+            >
+              &times;
+            </button>{" "}
+            {/* Lebar dikurangi ke w-80 */}
+            <ChatPage />
+          </div>
+        )}
+      </>
     </div>
   );
 }

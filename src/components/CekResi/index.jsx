@@ -8,7 +8,9 @@ import GoogleMpasStore from "../../ZustandStore/GooglemapStore";
 import { getCoordinates } from "../../funcs/GetLongLatGoogle";
 import { dbdatabase } from "../../firebase/config";
 import { doc, onSnapshot } from "firebase/firestore";
+import LogoRace from "../../assets/chat-floating.png";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
+import ChatPage from "../../pages/ChatPage";
 function CekResiKomponents() {
   const {
     AlamatMuat,
@@ -26,6 +28,11 @@ function CekResiKomponents() {
   const [LatLongBongkar, setLatLongBongkar] = useState("");
   const [LokasiDriverLongLat, setLokasiDriverLongLat] = useState(null);
   const [searchType, setSearchType] = useState("msm"); // Default search type
+  const [showChat, setShowChat] = useState(false);
+
+  const handleOpenChat = () => {
+    setShowChat(true);
+  };
 
   const firestore = dbdatabase;
   function copylink() {
@@ -581,7 +588,38 @@ function CekResiKomponents() {
           </span>{" "}
         </p>
       </div>
+
       <FooterComponents />
+      {/* Floating Chat Icon with Logo */}
+      <>
+        {/* Chat button */}
+        <div className="fixed bottom-5 right-5 z-50">
+          <div
+            onClick={handleOpenChat}
+            className="cursor-pointer flex items-center justify-center"
+          >
+            <img
+              src={LogoRace}
+              alt="chat"
+              className="w-[3rem] h-[3rem] object-contain"
+            />
+          </div>
+        </div>
+
+        {/* Chat Box */}
+        {showChat && (
+          <div className="fixed bottom-24 right-5 z-50 bg-white p-4 rounded-xl shadow-xl w-96">
+            <button
+              onClick={() => setShowChat(false)}
+              className="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-xl font-bold"
+            >
+              &times;
+            </button>{" "}
+            {/* Lebar dikurangi ke w-80 */}
+            <ChatPage />
+          </div>
+        )}
+      </>
     </>
   );
 }
