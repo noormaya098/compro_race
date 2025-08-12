@@ -27,7 +27,6 @@ function Home() {
 
   return (
     <div className=" overflow-hidden">
-      {/* <SideBarComponents/> */}
       <Welcome />
       <div className="w-12/12 mx-auto">
         <SejarahComponeent />
